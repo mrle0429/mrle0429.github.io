@@ -17,6 +17,19 @@
   
   
   <entry>
+    <title>xinwen</title>
+    <link href="/2023/01/18/xinwen/"/>
+    <url>/2023/01/18/xinwen/</url>
+    
+    <content type="html"><![CDATA[<p>新闻</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>测试文章</title>
     <link href="/2023/01/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
     <url>/2023/01/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
@@ -34,7 +47,7 @@
     <link href="/2023/01/18/helloPage/"/>
     <url>/2023/01/18/helloPage/</url>
     
-    <content type="html"><![CDATA[<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p>eeeee</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p>eeeee<br>你好<br><img src="/%22https:/th.bing.com/th/id/OIP.wc_dCG_KbIKZwMdtD3gL2QHaEt?w=282&h=180&c=7&r=0&o=5&pid=1.7%22" alt="照片"></p>]]></content>
     
     
     
