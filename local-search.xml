@@ -4,24 +4,11 @@
   
   
   <entry>
-    <title>new</title>
-    <link href="/2023/01/18/new/"/>
-    <url>/2023/01/18/new/</url>
+    <title>test</title>
+    <link href="/2023/01/18/test/"/>
+    <url>/2023/01/18/test/</url>
     
-    <content type="html"><![CDATA[<p>！</p><img src="/.com//01/18/new/bp-1674026393988-1.png" class title="nihao1">]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>nihao</title>
-    <link href="/2023/01/18/nihao/"/>
-    <url>/2023/01/18/nihao/</url>
-    
-    <content type="html"><![CDATA[<p>z</p><p>这是我的第一个博客</p><p><img src="/.com//Blog\myblog\source_posts\nihao\bp.png" alt="bp"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/2023/01/18/test/1.png" alt="1"></p>]]></content>
     
     
     
