@@ -4,35 +4,9 @@
   
   
   <entry>
-    <title>test</title>
-    <link href="/2023/01/18/test/"/>
-    <url>/2023/01/18/test/</url>
-    
-    <content type="html"><![CDATA[<p><img src="/2023/01/18/test/1.png" alt="1"></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>xinwen</title>
-    <link href="/2023/01/18/xinwen/"/>
-    <url>/2023/01/18/xinwen/</url>
-    
-    <content type="html"><![CDATA[<p>新闻</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>测试文章</title>
-    <link href="/2023/01/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-    <url>/2023/01/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <title>测试</title>
+    <link href="/2023/01/18/%E6%B5%8B%E8%AF%95/"/>
+    <url>/2023/01/18/%E6%B5%8B%E8%AF%95/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -43,12 +17,18 @@
   
   
   <entry>
-    <title>helloPage</title>
-    <link href="/2023/01/18/helloPage/"/>
-    <url>/2023/01/18/helloPage/</url>
+    <title>快速排序</title>
+    <link href="/2023/01/18/%E9%80%92%E5%BD%92/"/>
+    <url>/2023/01/18/%E9%80%92%E5%BD%92/</url>
     
-    <content type="html"><![CDATA[<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p>eeeee<br>你好<br><img src="/%22https:/th.bing.com/th/id/OIP.wc_dCG_KbIKZwMdtD3gL2QHaEt?w=282&h=180&c=7&r=0&o=5&pid=1.7%22" alt="照片"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>两个重要的条件：基线条件（停止条件）   递归条件（执行条件）</p><h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><p>与数组和了链表一样，是一种数据类型。类似于贴便签，顺序为后入先出。</p><h2 id="递归中的调用栈"><a href="#递归中的调用栈" class="headerlink" title="递归中的调用栈"></a>递归中的调用栈</h2><p>定义阶乘函数fac来理解其</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fac</span>(<span class="hljs-params">x</span>):<br>    <span class="hljs-keyword">if</span> x==<span class="hljs-number">1</span>:   <span class="hljs-comment">#基线条件</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span>:   <span class="hljs-comment">#递归条件</span><br>        <span class="hljs-keyword">return</span> x * fact(x-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure><p><img src="/2023/01/18/%E9%80%92%E5%BD%92/1.jpg" alt="1"><img src="/2023/01/18/%E9%80%92%E5%BD%92/2.jpg" alt="2"></p><p>调用栈相当于帮助程序在调用子函数时记住母函数执行位置，以便返回后继续执行。</p><h1 id="D-amp-C-分而治之"><a href="#D-amp-C-分而治之" class="headerlink" title="D&amp;C(分而治之)"></a>D&amp;C(分而治之)</h1><h2 id="一种解决问题的思路"><a href="#一种解决问题的思路" class="headerlink" title="一种解决问题的思路"></a>一种解决问题的思路</h2><p><img src="/2023/01/18/%E9%80%92%E5%BD%92/3.jpg" alt="3"></p><p>解决步骤：</p><ol><li>找出极限条件</li><li>分解问题，直到符合基线条件</li></ol><h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><h2 id="一种算法"><a href="#一种算法" class="headerlink" title="一种算法"></a>一种算法</h2><p>步骤：</p><ol><li>选择基准值</li><li>将数组分为大于基准值的子数组和大于基准值的子数组</li><li>再对子数组进行快速排序</li></ol><p>当数组为空或仅有一个数组时就无需排序，所以这是基准条件</p><p><em>图示</em></p><p><code>[33,10,15,7]</code> 排序这个数组</p><p>取&#x3D;&#x3D;33&#x3D;&#x3D;为基准数</p><p><code>[10,15,7][33][ ]</code>得到两个子数组，一个为空达到基准条件</p><p>取&#x3D;&#x3D;10&#x3D;&#x3D;为基准数</p><p><code>[7][10][15]+[33]+[ ]</code>达到基准条件，快速排序完成</p><p><em>代码</em></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">sort</span>(<span class="hljs-params">array</span>):<br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(array) &lt; <span class="hljs-number">2</span>:<br>        renturn array  <span class="hljs-comment">#基线条件</span><br>    <span class="hljs-keyword">else</span>:<br>        standard = array[<span class="hljs-number">0</span>]  <span class="hljs-comment">#默认选择第一个为基准值</span><br>        less = [<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> array[<span class="hljs-number">1</span>:] <span class="hljs-keyword">if</span> i &lt;= array]<br>        big = [<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> array[<span class="hljs-number">1</span>:] <span class="hljs-keyword">if</span> i &gt; array]<br>        <span class="hljs-keyword">return</span> sort(less) + [standard] + [big]<br></code></pre></td></tr></table></figure>]]></content>
     
+    
+    <categories>
+      
+      <category>学习资料</category>
+      
+    </categories>
     
     
   </entry>
