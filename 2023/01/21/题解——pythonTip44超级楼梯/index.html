@@ -13,26 +13,24 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Mrle">
+  <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="更新了头像">
+    <meta name="description" content="题目描述： ‘’有一楼梯共n级，刚开始时你在第一级，若每次只能跨上一级或二级，要走上第n级，共有多少种走法？现在给你一个正整数n（0&lt;n&lt;40),请你输出不同的走法数。” 示例输入：n &#x3D; 2 输出：1  思路这题好熟悉，高中数学，就是排列组合了。用m个1步和k个2步走上台阶，可能的走法。 以需要走7步数为例吧：step 1  零个1：A^7^77&#x3D;1+1+1+1+">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pic_text">
-<meta property="og:url" content="http://example.com/2023/01/19/pic-text/index.html">
+<meta property="og:title" content="题解——pythonTip44超级楼梯">
+<meta property="og:url" content="http://example.com/2023/01/21/%E9%A2%98%E8%A7%A3%E2%80%94%E2%80%94pythonTip44%E8%B6%85%E7%BA%A7%E6%A5%BC%E6%A2%AF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="更新了头像">
+<meta property="og:description" content="题目描述： ‘’有一楼梯共n级，刚开始时你在第一级，若每次只能跨上一级或二级，要走上第n级，共有多少种走法？现在给你一个正整数n（0&lt;n&lt;40),请你输出不同的走法数。” 示例输入：n &#x3D; 2 输出：1  思路这题好熟悉，高中数学，就是排列组合了。用m个1步和k个2步走上台阶，可能的走法。 以需要走7步数为例吧：step 1  零个1：A^7^77&#x3D;1+1+1+1+">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/%E5%A4%B4%E5%83%8F.png">
-<meta property="article:published_time" content="2023-01-19T15:20:01.000Z">
-<meta property="article:modified_time" content="2023-01-20T09:38:37.226Z">
+<meta property="article:published_time" content="2023-01-21T09:07:41.000Z">
+<meta property="article:modified_time" content="2023-01-21T09:51:01.223Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/%E5%A4%B4%E5%83%8F.png">
   
   
   
-  <title>pic_text - Hexo</title>
+  <title>题解——pythonTip44超级楼梯 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="pic_text"></span>
+            <span id="subtitle" data-typed-text="题解——pythonTip44超级楼梯"></span>
           
         </div>
 
@@ -208,14 +206,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        Mrle
+        John Doe
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-19 23:20" pubdate>
-          2023年1月19日 晚上
+        <time datetime="2023-01-21 17:07" pubdate>
+          2023年1月21日 下午
         </time>
       </span>
     
@@ -226,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5 字
+          670 字
         
       </span>
     
@@ -237,7 +235,7 @@
         
         
         
-          1 分钟
+          6 分钟
         
       </span>
     
@@ -283,13 +281,30 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">pic_text</h1>
+            <h1 style="display: none">题解——pythonTip44超级楼梯</h1>
             
             
               <div class="markdown-body">
                 
-                <p>更新了头像<br><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/%E5%A4%B4%E5%83%8F.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="tup"></p>
-
+                <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><blockquote>
+<p>‘’有一楼梯共n级，刚开始时你在第一级，若每次只能跨上一级或二级，要走上第n级，共有多少种走法？<br>现在给你一个正整数n（0&lt;n&lt;40),请你输出不同的走法数。”</p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>输入：n &#x3D; 2</p>
+<p>输出：1</p>
+</blockquote>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这题好熟悉，高中数学，就是排列组合了。用m个1步和k个2步走上台阶，可能的走法。</p>
+<h5 id="以需要走7步数为例吧："><a href="#以需要走7步数为例吧：" class="headerlink" title="以需要走7步数为例吧："></a>以需要走7步数为例吧：</h5><h5 id="step-1-零个1：A-7-7"><a href="#step-1-零个1：A-7-7" class="headerlink" title="step 1  零个1：A^7^7"></a>step 1  零个1：A^7^<del>7</del></h5><p>7&#x3D;1+1+1+1+1+1+1</p>
+<h5 id="step-2-一个2：A-1-6"><a href="#step-2-一个2：A-1-6" class="headerlink" title="step 2 一个2：A^1^6"></a>step 2 一个2：A^1^<del>6</del></h5><p>7&#x3D;2+1+1+1+1+1</p>
+<p>…</p>
+<h5 id="step-3-两个2：A-2-5-x2F-A-2-2-重复元素排序问题"><a href="#step-3-两个2：A-2-5-x2F-A-2-2-重复元素排序问题" class="headerlink" title="step 3 两个2：A^2^5&#x2F; A^2^2    (重复元素排序问题)"></a>step 3 两个2：A^2^<del>5</del>&#x2F; A^2^<del>2</del>    (重复元素排序问题)</h5><p>7&#x3D;2+2+1+1+1</p>
+<p>…</p>
+<h5 id="step4-三个2：A-3-4-x2F-A-3-3"><a href="#step4-三个2：A-3-4-x2F-A-3-3" class="headerlink" title="step4 三个2：A^3^4&#x2F;A^3^3"></a>step4 三个2：A^3^<del>4</del>&#x2F;A^3^<del>3</del></h5><p>7&#x3D;2+2+2+1</p>
+<p>…</p>
+<p><strong>注意事项</strong></p>
+<ol>
+<li>题中的n是台阶的阶数，应与要走的阶梯数区分。如n&#x3D;1时，应输出0，因为不需要走。</li>
+<li>重复元素排序需考虑重复情况</li>
+</ol>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">perm</span>(<span class="hljs-params">m,k</span>):<br>    <span class="hljs-string">&#x27;&#x27;&#x27;排列数函数&#x27;&#x27;&#x27;</span><br>    fact = <span class="hljs-number">1</span><br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m-k+<span class="hljs-number">1</span>,m+<span class="hljs-number">1</span>):<br>        fact *=j<br>    <span class="hljs-keyword">return</span>  fact<br><br>steep = n-<span class="hljs-number">1</span> <span class="hljs-comment">#步数</span><br>total=<span class="hljs-number">1</span><br><span class="hljs-keyword">if</span> n==<span class="hljs-number">1</span>:     <span class="hljs-comment">#不用走的情况</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-number">0</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>((steep//<span class="hljs-number">2</span>)+<span class="hljs-number">1</span>):<br>        <span class="hljs-keyword">if</span> i == <span class="hljs-number">0</span>:<br>            total = <span class="hljs-number">1</span><br>        <span class="hljs-keyword">else</span>:<br>            total = total +(perm(steep-i,i) / perm(i,i)) <span class="hljs-comment">#解决重复元素排序重复</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(total))<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -307,7 +322,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%97%A5%E5%B8%B8/" class="category-chain-item">日常</a>
+  <a href="/categories/%E9%A2%98%E7%9B%AE%E7%AC%94%E8%AE%B0/" class="category-chain-item">题目笔记</a>
   
   
 
@@ -327,20 +342,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>pic_text</div>
-      <div>http://example.com/2023/01/19/pic-text/</div>
+      <div>题解——pythonTip44超级楼梯</div>
+      <div>http://example.com/2023/01/21/题解——pythonTip44超级楼梯/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>Mrle</div>
+          <div>John Doe</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月19日</div>
+          <div>2023年1月21日</div>
         </div>
       
       
@@ -372,18 +387,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/21/%E9%A2%98%E8%A7%A3%E2%80%94%E2%80%94pythonTip44%E8%B6%85%E7%BA%A7%E6%A5%BC%E6%A2%AF/" title="题解——pythonTip44超级楼梯">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">题解——pythonTip44超级楼梯</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/01/18/%E9%80%92%E5%BD%92/" title="快速排序">
-                        <span class="hidden-mobile">快速排序</span>
+                      <a href="/2023/01/19/pic-text/" title="pic_text">
+                        <span class="hidden-mobile">pic_text</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
