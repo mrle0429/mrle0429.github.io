@@ -16,21 +16,24 @@
   <meta name="author" content="Mrle">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目描述： ‘’有一楼梯共n级，刚开始时你在第一级，若每次只能跨上一级或二级，要走上第n级，共有多少种走法？现在给你一个正整数n（0&lt;n&lt;40),请你输出不同的走法数。” 示例输入：n &#x3D; 2 输出：1  思路这题好熟悉，高中数学，就是排列组合了。用m个1步和k个2步走上台阶，可能的走法。 以需要走7步数为例吧：step 1  零个1：A^7^77&#x3D;1+1+1+1+">
+    <meta name="description" content="散列表散列表是一种数据结构，也叫Hash table. 在python中以字典实现。 散列表通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。散列表是数组的一种扩展。 举个例子商店中有许多商品，客户来买东西时，需要在一个本子中查找价格。商品很多，我们查找价格的时间就会增加，无论使用之前的简单查找 or 二分查找。 如果我想要快速的获取">
 <meta property="og:type" content="article">
-<meta property="og:title" content="题解——pythonTip44超级楼梯">
-<meta property="og:url" content="http://example.com/2023/01/21/%E9%A2%98%E8%A7%A3%E2%80%94%E2%80%94pythonTip44%E8%B6%85%E7%BA%A7%E6%A5%BC%E6%A2%AF/index.html">
+<meta property="og:title" content="散列表">
+<meta property="og:url" content="http://example.com/2023/02/01/a/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目描述： ‘’有一楼梯共n级，刚开始时你在第一级，若每次只能跨上一级或二级，要走上第n级，共有多少种走法？现在给你一个正整数n（0&lt;n&lt;40),请你输出不同的走法数。” 示例输入：n &#x3D; 2 输出：1  思路这题好熟悉，高中数学，就是排列组合了。用m个1步和k个2步走上台阶，可能的走法。 以需要走7步数为例吧：step 1  零个1：A^7^77&#x3D;1+1+1+1+">
+<meta property="og:description" content="散列表散列表是一种数据结构，也叫Hash table. 在python中以字典实现。 散列表通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。散列表是数组的一种扩展。 举个例子商店中有许多商品，客户来买东西时，需要在一个本子中查找价格。商品很多，我们查找价格的时间就会增加，无论使用之前的简单查找 or 二分查找。 如果我想要快速的获取">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-21T09:07:41.000Z">
-<meta property="article:modified_time" content="2023-01-22T12:42:36.919Z">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/fa0ffdca9bf61bb75780bc3ec124959.jpg">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/1d0a3eddf6ab1b9cefa9699d569bc7e.jpg">
+<meta property="article:published_time" content="2023-02-01T15:52:57.000Z">
+<meta property="article:modified_time" content="2023-02-01T16:54:26.154Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/fa0ffdca9bf61bb75780bc3ec124959.jpg">
   
   
   
-  <title>题解——pythonTip44超级楼梯 - Hexo</title>
+  <title>散列表 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="题解——pythonTip44超级楼梯"></span>
+            <span id="subtitle" data-typed-text="散列表"></span>
           
         </div>
 
@@ -212,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-21 17:07" pubdate>
-          2023年1月21日 下午
+        <time datetime="2023-02-01 23:52" pubdate>
+          2023年2月1日 晚上
         </time>
       </span>
     
@@ -224,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          670 字
+          716 字
         
       </span>
     
@@ -294,30 +297,38 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">题解——pythonTip44超级楼梯</h1>
+            <h1 style="display: none">散列表</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><blockquote>
-<p>‘’有一楼梯共n级，刚开始时你在第一级，若每次只能跨上一级或二级，要走上第n级，共有多少种走法？<br>现在给你一个正整数n（0&lt;n&lt;40),请你输出不同的走法数。”</p>
-<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>输入：n &#x3D; 2</p>
-<p>输出：1</p>
-</blockquote>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这题好熟悉，高中数学，就是排列组合了。用m个1步和k个2步走上台阶，可能的走法。</p>
-<h5 id="以需要走7步数为例吧："><a href="#以需要走7步数为例吧：" class="headerlink" title="以需要走7步数为例吧："></a>以需要走7步数为例吧：</h5><h5 id="step-1-零个1：A-7-7"><a href="#step-1-零个1：A-7-7" class="headerlink" title="step 1  零个1：A^7^7"></a>step 1  零个1：A^7^<del>7</del></h5><p>7&#x3D;1+1+1+1+1+1+1</p>
-<h5 id="step-2-一个2：A-1-6"><a href="#step-2-一个2：A-1-6" class="headerlink" title="step 2 一个2：A^1^6"></a>step 2 一个2：A^1^<del>6</del></h5><p>7&#x3D;2+1+1+1+1+1</p>
-<p>…</p>
-<h5 id="step-3-两个2：A-2-5-x2F-A-2-2-重复元素排序问题"><a href="#step-3-两个2：A-2-5-x2F-A-2-2-重复元素排序问题" class="headerlink" title="step 3 两个2：A^2^5&#x2F; A^2^2    (重复元素排序问题)"></a>step 3 两个2：A^2^<del>5</del>&#x2F; A^2^<del>2</del>    (重复元素排序问题)</h5><p>7&#x3D;2+2+1+1+1</p>
-<p>…</p>
-<h5 id="step4-三个2：A-3-4-x2F-A-3-3"><a href="#step4-三个2：A-3-4-x2F-A-3-3" class="headerlink" title="step4 三个2：A^3^4&#x2F;A^3^3"></a>step4 三个2：A^3^<del>4</del>&#x2F;A^3^<del>3</del></h5><p>7&#x3D;2+2+2+1</p>
-<p>…</p>
-<p><strong>注意事项</strong></p>
+                <h1 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h1><p>散列表是一种数据结构，也叫Hash table. 在python中以字典实现。</p>
+<p>散列表通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。散列表是数组的一种扩展。</p>
+<h2 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h2><p>商店中有许多商品，客户来买东西时，需要在一个本子中查找价格。商品很多，我们查找价格的时间就会增加，无论使用之前的简单查找 or 二分查找。</p>
+<p>如果我想要快速的获取商品的价格，我就需要一个数组来存放商品的价格，apple放在[0], milk放在[1]…以此类推。</p>
+<p>现在我想要知道apple的价格，我仅需要取出数组[0]的存储信息。</p>
+<p>这就是散列思想，商品的名称称为key，然后通过<strong>散列函数</strong>将商品名称与数组位置匹配。</p>
+<h1 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h1><p>给出自变量，散列函数返还一个数字(即数组索引位置)。这里的一些做法和高中数学定义的函数是相似的。</p>
 <ol>
-<li>题中的n是台阶的阶数，应与要走的阶梯数区分。如n&#x3D;1时，应输出0，因为不需要走。</li>
-<li>重复元素排序需考虑重复情况</li>
+<li>对于给定自变量，有且仅有一个函数值与之对应。例如，我每次输入apple得到的都应是0。</li>
+<li>对于同一函数值，可以有多个自变量与之对应。但是在列表函数中，将不同的输入映射到不同的数字是最好的结果。</li>
 </ol>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">perm</span>(<span class="hljs-params">m,k</span>):<br>    <span class="hljs-string">&#x27;&#x27;&#x27;排列数函数&#x27;&#x27;&#x27;</span><br>    fact = <span class="hljs-number">1</span><br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m-k+<span class="hljs-number">1</span>,m+<span class="hljs-number">1</span>):<br>        fact *=j<br>    <span class="hljs-keyword">return</span>  fact<br><br>steep = n-<span class="hljs-number">1</span> <span class="hljs-comment">#步数</span><br>total=<span class="hljs-number">1</span><br><span class="hljs-keyword">if</span> n==<span class="hljs-number">1</span>:     <span class="hljs-comment">#不用走的情况</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-number">0</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>((steep//<span class="hljs-number">2</span>)+<span class="hljs-number">1</span>):<br>        <span class="hljs-keyword">if</span> i == <span class="hljs-number">0</span>:<br>            total = <span class="hljs-number">1</span><br>        <span class="hljs-keyword">else</span>:<br>            total = total +(perm(steep-i,i) / perm(i,i)) <span class="hljs-comment">#解决重复元素排序重复</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(total))<br></code></pre></td></tr></table></figure>
+<p>对于第二条的最佳情况，我们无法避免这也被称为哈希冲突。</p>
+<h2 id="一些有意思的应用"><a href="#一些有意思的应用" class="headerlink" title="一些有意思的应用"></a>一些有意思的应用</h2><p>最近做网站用到的DNS解析，正式将网站地址映射到IP地址。上软广</p>
+<p>mrlepro.com      –&gt;  185.199.109.153</p>
+<h1 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h1><p>当不同输入映射到同一位置时候就出现了冲突。</p>
+<h2 id="链表法解决冲突"><a href="#链表法解决冲突" class="headerlink" title="链表法解决冲突"></a>链表法解决冲突</h2><p>如果两个键映射到了同一个位置，就在这个位置储存一个链表。<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/fa0ffdca9bf61bb75780bc3ec124959.jpg" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="fa0ffdca9bf61bb75780bc3ec124959"></p>
+<h1 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h1><p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/1d0a3eddf6ab1b9cefa9699d569bc7e.jpg" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="1d0a3eddf6ab1b9cefa9699d569bc7e"></p>
+<p>避免冲突的因素：</p>
+<ol>
+<li>较低的装填因子</li>
+<li>良好的散列函数</li>
+</ol>
+<h2 id="装填因子"><a href="#装填因子" class="headerlink" title="装填因子"></a>装填因子</h2><p>散列表中元素数 &#x2F; 位置总数</p>
+<p>经验而谈，当装填因子大于0.7时，扩大散列表长度降低装填因子。</p>
+<h2 id="良好的散列函数"><a href="#良好的散列函数" class="headerlink" title="良好的散列函数"></a>良好的散列函数</h2><p>MD5， SHA，CRC</p>
+<p>待补充</p>
+
                 
               </div>
             
@@ -335,7 +346,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E9%A2%98%E7%9B%AE%E7%AC%94%E8%AE%B0/" class="category-chain-item">题目笔记</a>
+  <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" class="category-chain-item">学习资料</a>
   
   
 
@@ -357,18 +368,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/01/a/" title="散列表">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">散列表</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/01/19/pic-text/" title="pic_text">
-                        <span class="hidden-mobile">pic_text</span>
+                      <a href="/2023/01/21/%E9%A2%98%E8%A7%A3%E2%80%94%E2%80%94pythonTip44%E8%B6%85%E7%BA%A7%E6%A5%BC%E6%A2%AF/" title="题解——pythonTip44超级楼梯">
+                        <span class="hidden-mobile">题解——pythonTip44超级楼梯</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
