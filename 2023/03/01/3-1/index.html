@@ -13,24 +13,24 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Mr.le">
+  <meta name="author" content="Mrle">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Prime numberIt is a basic problem for CS students. The part aim  to give more intersiting solution. NO.1According to Henry, he asks us to not print such as ‘for’,  ‘break’,’continue’. Something only p">
+    <meta name="description" content="Count DigitsNO.1This is a transfer int to str. This is not a math solution 123def count_digits1(x):    x&#x3D;str(x)    return len(x)  NO.2123456def count_digits2(x):    count &#x3D; 0    while x !&#x3D; 0:        x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="perfect number and prime number">
-<meta property="og:url" content="http://example.com/2023/02/28/2_28/index.html">
+<meta property="og:title" content="Count and Sum Digits">
+<meta property="og:url" content="http://example.com/2023/03/01/3-1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Prime numberIt is a basic problem for CS students. The part aim  to give more intersiting solution. NO.1According to Henry, he asks us to not print such as ‘for’,  ‘break’,’continue’. Something only p">
+<meta property="og:description" content="Count DigitsNO.1This is a transfer int to str. This is not a math solution 123def count_digits1(x):    x&#x3D;str(x)    return len(x)  NO.2123456def count_digits2(x):    count &#x3D; 0    while x !&#x3D; 0:        x">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-28T13:59:29.000Z">
-<meta property="article:modified_time" content="2023-03-01T13:52:25.718Z">
+<meta property="article:published_time" content="2023-03-01T13:55:26.000Z">
+<meta property="article:modified_time" content="2023-03-01T14:17:17.417Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>perfect number and prime number - Hexo</title>
+  <title>Count and Sum Digits - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="perfect number and prime number"></span>
+            <span id="subtitle" data-typed-text="Count and Sum Digits"></span>
           
         </div>
 
@@ -206,14 +206,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        Mr.le
+        Mrle
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-28 21:59" pubdate>
-          2023年2月28日 晚上
+        <time datetime="2023-03-01 21:55" pubdate>
+          2023年3月1日 晚上
         </time>
       </span>
     
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          453 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          10 分钟
+          4 分钟
         
       </span>
     
@@ -294,29 +294,23 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">perfect number and prime number</h1>
+            <h1 style="display: none">Count and Sum Digits</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Prime-number"><a href="#Prime-number" class="headerlink" title="Prime number"></a>Prime number</h1><p>It is a basic problem for CS students. The part aim  to give more intersiting solution.</p>
-<h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><p>According to Henry, he asks us to not print such as ‘for’,  ‘break’,’continue’. Something only python could be used. </p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_prime</span>(<span class="hljs-params">x</span>):<br>  <span class="hljs-keyword">if</span> x &lt;= <span class="hljs-number">1</span>:<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>  <span class="hljs-keyword">elif</span> x == <span class="hljs-number">2</span>:<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br>  <span class="hljs-keyword">elif</span> x % <span class="hljs-number">2</span> ==<span class="hljs-number">0</span>:<br>      <span class="hljs-keyword">return</span>  <span class="hljs-literal">False</span><br>  <span class="hljs-keyword">else</span>:<br>      i =<span class="hljs-number">3</span><br>      <span class="hljs-keyword">while</span> i * i &lt;= x:<br>          <span class="hljs-keyword">if</span> x % i == <span class="hljs-number">0</span>:<br>              <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>          i = i + <span class="hljs-number">2</span><br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
+                <h1 id="Count-Digits"><a href="#Count-Digits" class="headerlink" title="Count Digits"></a>Count Digits</h1><h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><p>This is a transfer int to str. This is not a math solution</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_digits1</span>(<span class="hljs-params">x</span>):<br>    x=<span class="hljs-built_in">str</span>(x)<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(x)<br></code></pre></td></tr></table></figure>
 
-<p>This is a code only use ‘if’ and ‘while’. Maybe i need to change ‘Ture’ or ‘False’ to ‘1’ and ‘0’.</p>
-<p>About the prime, as we as all kown, 1 is not a prime as the prime defination. All even number except 2 is not prime, because they could be int division by 2. So i only to search odd number. </p>
-<p>Let x divise i ,i always be an even, if there no x % i&#x3D;0</p>
-<p>so, x must be a prime.</p>
-<p>For the condition of while. i only need to while to sqrt{x}. Those factors always show in double. Such as 28&#x3D;4*7 it has a factor smaller than sqrt{x}, at the same the another is greater than sqrt{x}. So i only to identify a aspect between smaller and greater.</p>
-<h1 id="Perfect-number"><a href="#Perfect-number" class="headerlink" title="Perfect number"></a>Perfect number</h1><h2 id="NO-1-1"><a href="#NO-1-1" class="headerlink" title="NO.1"></a>NO.1</h2><p>Perfect number is a positive integer whose sum of its proper divisiors is equal to one.</p>
-<p>Example 1+2+3&#x3D;6. The 6 is a perfect number.</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_perfect</span>(<span class="hljs-params">x</span>):<br>    <span class="hljs-built_in">sum</span> = <span class="hljs-number">1</span><br>    i = <span class="hljs-number">2</span><br>    <span class="hljs-keyword">while</span> i &lt; x:<br>        <span class="hljs-keyword">if</span> x % i == <span class="hljs-number">0</span>:<br>            <span class="hljs-built_in">sum</span> = <span class="hljs-built_in">sum</span> + i<br>        i = i + <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">sum</span> == x:<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br></code></pre></td></tr></table></figure>
+<h2 id="NO-2"><a href="#NO-2" class="headerlink" title="NO.2"></a>NO.2</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_digits2</span>(<span class="hljs-params">x</span>):<br>    count = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> x != <span class="hljs-number">0</span>:<br>        x = x // <span class="hljs-number">10</span><br>        count = count +<span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> count<br></code></pre></td></tr></table></figure>
 
+<h2 id="NO-3"><a href="#NO-3" class="headerlink" title="NO.3"></a>NO.3</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_digits3</span>(<span class="hljs-params">n</span>):   <span class="hljs-comment">#Recursion</span><br>	<span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">10</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> (<span class="hljs-number">1</span> + count_digits3(n //<span class="hljs-number">10</span>))<br></code></pre></td></tr></table></figure>
 
+<p>This is about Recursion. </p>
+<h1 id="Sum-Digits"><a href="#Sum-Digits" class="headerlink" title="Sum Digits"></a>Sum Digits</h1><h2 id="NO-1-1"><a href="#NO-1-1" class="headerlink" title="NO.1"></a>NO.1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_digit1</span>(<span class="hljs-params">n</span>):<br>    <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">10</span>:<br>        <span class="hljs-keyword">return</span> n<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> (n%<span class="hljs-number">10</span> + sum_digit1(n//<span class="hljs-number">10</span>))<br></code></pre></td></tr></table></figure>
 
+<h2 id="NO-2-1"><a href="#NO-2-1" class="headerlink" title="NO.2"></a>NO.2</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs pyt">def sum_digit2(n):<br>    sum=1<br>    while n != 0:<br>        sum = sum * (n%10)<br>        n = n // 10<br>    return sum<br></code></pre></td></tr></table></figure>
 
-
-<p>未完待续</p>
 
                 
               </div>
@@ -357,18 +351,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/01/3-1/" title="Count and Sum Digits">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Count and Sum Digits</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/07/BFS/" title="BFS">
-                        <span class="hidden-mobile">BFS</span>
+                      <a href="/2023/02/28/2_28/" title="perfect number and prime number">
+                        <span class="hidden-mobile">perfect number and prime number</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
