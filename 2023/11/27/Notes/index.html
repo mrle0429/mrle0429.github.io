@@ -13,13 +13,13 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="刘乐">
+  <meta name="author" content="Mrle">
   <meta name="keywords" content="">
   
     <meta name="description" content="进程(Processes)组成部分 程序代码(Text): 这是程序的实际可执行代码，也称为文本段。程序代码包含程序的指令集合，它定义了程序的逻辑和执行流程。这部分通常是只读的，因为它存储程序的源代码或二进制可执行文件，并且在程序的执行过程中不会被修改。 当前活动（Current Activity）：这包括了程序的当前状态，包括程序计数器（Program Counter）和处理器寄存器（Proce">
 <meta property="og:type" content="article">
-<meta property="og:title" content="操作系统Notes">
-<meta property="og:url" content="http://example.com/2023/11/28/Notes/index.html">
+<meta property="og:title" content="OS Notes">
+<meta property="og:url" content="http://example.com/2023/11/27/Notes/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="进程(Processes)组成部分 程序代码(Text): 这是程序的实际可执行代码，也称为文本段。程序代码包含程序的指令集合，它定义了程序的逻辑和执行流程。这部分通常是只读的，因为它存储程序的源代码或二进制可执行文件，并且在程序的执行过程中不会被修改。 当前活动（Current Activity）：这包括了程序的当前状态，包括程序计数器（Program Counter）和处理器寄存器（Proce">
 <meta property="og:locale" content="zh_CN">
@@ -27,15 +27,15 @@
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123220827489.png">
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123221558256.png">
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123224117942.png">
-<meta property="article:published_time" content="2023-11-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-01T01:57:45.590Z">
+<meta property="article:published_time" content="2023-11-27T03:16:16.144Z">
+<meta property="article:modified_time" content="2023-12-01T07:03:57.200Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123220230748.png">
   
   
   
-  <title>操作系统Notes - Hexo</title>
+  <title>OS Notes - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="操作系统Notes"></span>
+            <span id="subtitle" data-typed-text="OS Notes"></span>
           
         </div>
 
@@ -211,14 +211,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        刘乐
+        Mrle
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-28 00:00" pubdate>
-          2023年11月28日 凌晨
+        <time datetime="2023-11-27 11:16" pubdate>
+          2023年11月27日 上午
         </time>
       </span>
     
@@ -229,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          28k 字
+          34k 字
         
       </span>
     
@@ -240,7 +240,7 @@
         
         
         
-          237 分钟
+          285 分钟
         
       </span>
     
@@ -299,7 +299,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">操作系统Notes</h1>
+            <h1 style="display: none">OS Notes</h1>
             
             
               <div class="markdown-body">
@@ -1385,7 +1385,7 @@
 <li>inverted page table(倒页表)</li>
 </ul>
 <h5 id="分层页"><a href="#分层页" class="headerlink" title="分层页"></a>分层页</h5><h5 id="倒页表"><a href="#倒页表" class="headerlink" title="倒页表"></a>倒页表</h5><h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><p>文件管理是操作系统中的一个关键方面，涉及对计算机上存储的数据进行组织和控制。当一个进程需要存储超出其即时运行时间的信息时，它利用文件管理系统来存储和检索数据。</p>
-<ol>
+<h2 id="进程在地址空间中储存信息面临的问题："><a href="#进程在地址空间中储存信息面临的问题：" class="headerlink" title="进程在地址空间中储存信息面临的问题："></a>进程在地址空间中储存信息面临的问题：</h2><ol>
 <li>易失性(Volatility)</li>
 </ol>
 <ul>
@@ -1401,8 +1401,7 @@
 <p><strong>文件系统</strong>通过提供一个持久且较大的存储空间</p>
 </li>
 </ol>
-<p>解决：创建文件储存进程的信息</p>
-<ol>
+<h2 id="解决：创建文件储存进程的信息"><a href="#解决：创建文件储存进程的信息" class="headerlink" title="解决：创建文件储存进程的信息"></a>解决：创建文件储存进程的信息</h2><ol>
 <li><strong>创建文件：</strong></li>
 </ol>
 <ul>
@@ -1420,6 +1419,336 @@
 <ul>
 <li>除了对整个文件的基本操作外，文件内的个别数据项也可以被操作。这包括读取（read）、写入（write）、更新（update）、插入（insert）、删除（delete）等操作。这些操作允许进程以单元的方式操作文件内的数据，从而满足不同的信息存储和检索需求。</li>
 </ul>
+<h2 id="数据层次结构-Data-Hierarchy"><a href="#数据层次结构-Data-Hierarchy" class="headerlink" title="数据层次结构(Data Hierarchy)"></a>数据层次结构(Data Hierarchy)</h2><ol>
+<li><strong>最低层级：位 (Bits)</strong><ul>
+<li>位是信息的最基本单元，表示数据的最小单元，可以是0或1。</li>
+</ul>
+</li>
+<li><strong>中等层级：固定长度的位模式</strong><ul>
+<li><strong>字节（Byte）：</strong> 通常由8个位组成，是计算机中常见的存储单元。</li>
+<li><strong>字（Word）：</strong> 字的长度取决于计算机体系结构，可以是8、16、32或64位。</li>
+<li><strong>字符（Character）：</strong> 将字节、字或字组映射到语义符号（如ASCII码、Unicode等）的表示方式。</li>
+<li><strong>字段（Field）：</strong> 字符的组合，通常表示一个特定的数据项。</li>
+<li><strong>记录（Record）：</strong> 一组字段的集合，表示一个完整的数据项。</li>
+<li><strong>文件（File）：</strong> 一组相关记录的集合，通常代表某种数据的完整集合。</li>
+</ul>
+</li>
+<li><strong>最高层级：文件系统或数据库</strong><ul>
+<li><strong>文件系统：</strong> 用于组织和管理文件的系统，提供了文件和目录的层次结构，允许用户和程序访问和操作数据。</li>
+<li><strong>数据库：</strong> 一组相互关联的数据表，通过数据表之间的关系来组织和存储数据，提供了更高级别的数据管理和检索功能。</li>
+</ul>
+</li>
+</ol>
+<h3 id="Volume"><a href="#Volume" class="headerlink" title="Volume"></a>Volume</h3><ul>
+<li><p>卷是一个包含文件系统的单元，这个单元通常是一个辅助储存系统。硬盘驱动器，SSD.</p>
+</li>
+<li><p><strong>物理卷：</strong> 实际的硬件存储设备，如硬盘驱动器。物理卷是数据存储的物理实体。</p>
+</li>
+<li><p><strong>逻辑卷：</strong> 是在物理卷上创建的文件系统或数据集的逻辑表示。逻辑卷通过文件系统的管理，将物理存储划分成可管理的单元，使用户和应用程序能够方便地访问和使用存储。</p>
+</li>
+</ul>
+<h3 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h3><p>文件是存储在计算机系统中的一组数据，可以包含文本、图像、程序代码等。</p>
+<p>Record &amp; Block 是数据的基本单元。记录可以包含各种类型的信息例如，在数据库中，记录可以是一个数据表中的一行。</p>
+<ul>
+<li><strong>物理记录：</strong> 是最小的可以从或写入硬件存储设备的信息单元。这是硬件层面的定义，表示实际的存储单位。</li>
+<li><strong>逻辑记录：</strong> 是在软件层面上定义的数据单元，通常包含一定数量的物理记录。逻辑记录是按照应用程序的需要进行定义的，使得处理数据更加方便和高效。</li>
+<li>Block: Record 通常被组织成 Block. 文件系统通常以块为单位来读取和写入数据，这有助于提高效率，减少对存储设备的访问次数。</li>
+</ul>
+<h4 id="Example-in-Unix-amp-Windows"><a href="#Example-in-Unix-amp-Windows" class="headerlink" title="Example in Unix &amp; Windows"></a>Example in Unix &amp; Windows</h4><ul>
+<li>Unix 和 Windows 文件实际上是字节的序列，在物理上分组成块。</li>
+<li>字节被视为逻辑记录，而块则是物理记录。</li>
+</ul>
+<h4 id="文件特性"><a href="#文件特性" class="headerlink" title="文件特性"></a>文件特性</h4><p><strong>位置</strong></p>
+<p>文件储存在物理储存设备或文件系统的逻辑结构中。</p>
+<ul>
+<li><strong>物理位置：</strong> 文件实际存储在硬盘、固态硬盘等物理存储设备上。</li>
+<li><strong>逻辑结构：</strong> 文件系统提供了一个逻辑结构，用户和应用程序通过这个结构访问文件，而不必关心文件在物理设备上的确切位置。</li>
+</ul>
+<p><strong>大小与类型</strong></p>
+<p><strong>可访问性</strong></p>
+<ul>
+<li><p>文件的可访问性涉及对数据施加的访问限制。</p>
+</li>
+<li><p><strong>Owner Information（所有者信息）：</strong> 文件通常有一个所有者，该所有者是创建或拥有文件的用户。这有助于确定文件的控制和权限。</p>
+</li>
+<li><p>Read &#x2F; Write &#x2F; Execute Status（读&#x2F;写&#x2F;执行状态）：</p>
+<p> 文件系统通过这些状态来确定用户或进程对文件的访问权限。</p>
+<ul>
+<li><strong>读取（Read）：</strong> 用户或进程有权读取文件的内容。</li>
+<li><strong>写入（Write）：</strong> 用户或进程有权修改文件的内容。</li>
+<li><strong>执行（Execute）：</strong> 仅适用于可执行文件，允许用户或进程执行文件中的程序。</li>
+</ul>
+</li>
+</ul>
+<p><strong>设备独立性</strong></p>
+<p><strong>恢复或备份功能</strong></p>
+<p><strong>可选的加密功能</strong></p>
+<h4 id="目录-Directories"><a href="#目录-Directories" class="headerlink" title="目录(Directories)"></a>目录(Directories)</h4><p>为了组织和快速定位文件，文件系统使用目录：</p>
+<ol>
+<li><p><strong>目录的定义：</strong></p>
+<ul>
+<li>目录是特殊的文件，其中包含其他文件的名称和位置信息。</li>
+</ul>
+</li>
+<li><p><strong>目录项（Directory Entries）:</strong></p>
+<ul>
+<li>目录中的每个文件都由目录项表示，目录项包含诸如文件名、位置（物理块地址或在文件系统中的逻辑位置）、大小和类型、访问、修改和创建时间等信息字段。</li>
+</ul>
+</li>
+<li><p><strong>目录结构：</strong></p>
+<ul>
+<li><p>单层目录（Single-level or Flat File System）:</p>
+<ul>
+<li>这是最简单的文件系统组织形式，所有文件都存储在一个目录中。</li>
+<li>不存在两个文件可以具有相同的名称。</li>
+<li>文件系统必须对目录内容执行线性搜索，以定位每个文件，这可能导致性能不佳。</li>
+</ul>
+</li>
+<li><p>分层目录(Hierarchical FS):</p>
+<ul>
+<li><p>根目录(Root Directory) 作为文件结构的起点，位于储存设备上。</p>
+</li>
+<li><p>嵌套结构</p>
+<p>目录可以包含文件和其他目录，形成嵌套的结构。这意味着目录可以包含子目录，而子目录本身也可以包含文件或更多的子目录，从而形成一个层次结构。</p>
+</li>
+</ul>
+</li>
+<li><p>父目录和子目录</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="绝对路径与相对路径"><a href="#绝对路径与相对路径" class="headerlink" title="绝对路径与相对路径"></a>绝对路径与相对路径</h4><p>在同一目录下不能有两个文件具有相同的名称。</p>
+<p><strong>绝对路径：</strong></p>
+<ul>
+<li>绝对路径是文件名包括从根目录开始的完整路径。这样的路径提供了文件在整个文件系统中的确切位置。</li>
+<li>在Unix系统中，例如：<code>/etc/modules/file.txt</code> 是一个绝对路径，其中 <code>/</code> 表示根目录。</li>
+<li>在Windows系统中，例如：<code>C:\users\admin\file.txt</code> 是一个绝对路径，其中 <code>C:\</code> 是根目录。</li>
+</ul>
+<p><strong>绝对路径：</strong></p>
+<ul>
+<li>绝对路径是文件名包括从根目录开始的完整路径。这样的路径提供了文件在整个文件系统中的确切位置。</li>
+<li>在Unix系统中，例如：<code>/etc/modules/file.txt</code> 是一个绝对路径，其中 <code>/</code> 表示根目录。</li>
+<li>在Windows系统中，例如：<code>C:\users\admin\file.txt</code> 是一个绝对路径，其中 <code>C:\</code> 是根目录。</li>
+</ul>
+<h4 id="链接-Link"><a href="#链接-Link" class="headerlink" title="链接(Link)"></a>链接(Link)</h4><ol>
+<li><strong>链接的作用：</strong><ul>
+<li>链接允许在文件系统中建立引用，指向其他目录或文件，促进了数据共享和访问。</li>
+</ul>
+</li>
+<li><strong>链接的类型：</strong><ul>
+<li><strong>软链接（Soft Link）：</strong> 也称为符号链接，包含文件的路径名，即逻辑名称。软链接创建一个指向目标文件或目录的符号链接，允许在文件系统中创建一个别名，而不是实际的副本。</li>
+<li><strong>硬链接（Hard Link）：</strong> 包含文件在存储设备上的物理位置，通常是一个块号。硬链接创建一个指向文件数据块的额外链接，多个链接指向同一份实际数据。</li>
+</ul>
+</li>
+<li><strong>链接与目录结构：</strong><ul>
+<li>链接使我们能够将分层结构转化为：<ul>
+<li><strong>非循环结构（Acyclical Structures）：</strong> 允许目录具有两个不同的父目录。</li>
+<li><strong>循环结构（Cyclical Structures）：</strong> 允许目录形成环，即一个目录可能是另一个目录的父目录，同时也可能是该目录的子目录。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>链接中包含的内容：</strong><ul>
+<li><strong>软链接：</strong> 包含文件的逻辑路径名。</li>
+<li><strong>硬链接：</strong> 包含文件在存储设备上的物理位置，通常是块号。</li>
+</ul>
+</li>
+</ol>
+<h3 id="元数据-Metadata"><a href="#元数据-Metadata" class="headerlink" title="元数据(Metadata)"></a>元数据(Metadata)</h3><p>元数据是指文件系统本身的信息，它使得文件系统能够正常运作并保护其完整性。与用户数据不同，元数据是关于数据的数据</p>
+<ol>
+<li><strong>文件和目录的元数据：</strong><ul>
+<li>文件名</li>
+<li>文件大小</li>
+<li>文件类型</li>
+<li>文件创建时间、最后访问时间、最后修改时间</li>
+<li>文件权限和所有者信息</li>
+<li>文件所在的物理块地址或逻辑位置</li>
+</ul>
+</li>
+<li><strong>文件系统的元数据：</strong><ul>
+<li>文件系统的结构信息，如目录的组织方式，目录和文件的关系等。</li>
+<li>存储空间的管理信息，包括空闲块和已分配块的跟踪。</li>
+</ul>
+</li>
+</ol>
+<h3 id="超级块-Superblock"><a href="#超级块-Superblock" class="headerlink" title="超级块(Superblock)"></a>超级块(Superblock)</h3><p>文件系统创建超级块来存储关键的元数据.</p>
+<p>超级块通常包含以下信息：</p>
+<ol>
+<li><strong>文件系统类型的唯一标识符：</strong><ul>
+<li>用于确定文件系统的类型，例如EXT4、NTFS等。</li>
+</ul>
+</li>
+<li><strong>根目录的位置：</strong><ul>
+<li>指示文件系统中根目录的位置，从而使系统能够准确地开始检索文件和目录。</li>
+</ul>
+</li>
+<li><strong>文件系统中块的数量：</strong><ul>
+<li>描述整个文件系统的大小，以块为单位。</li>
+</ul>
+</li>
+<li><strong>辅助设备上可用空闲块的位置：</strong><ul>
+<li>记录在文件系统中哪些块是可用的，以便在需要时分配给新文件或扩展现有文件。</li>
+</ul>
+</li>
+<li><strong>健全性检查状态、上次修改时间等：</strong><ul>
+<li>用于确保超级块的完整性和文件系统的一致性。这包括上次修改超级块的时间戳以及其他状态信息。</li>
+</ul>
+</li>
+</ol>
+<h1 id="保护与安全"><a href="#保护与安全" class="headerlink" title="保护与安全"></a>保护与安全</h1><h2 id="保护"><a href="#保护" class="headerlink" title="保护"></a>保护</h2><p>Protection involves controlling the access of programs,processes, or users to the resources defined by a computer system. These resources include filed, memory segments(内存段), CPU.</p>
+<ul>
+<li>保护是实现计算机系统安全性的必要条件</li>
+</ul>
+<p><strong>保护目标</strong></p>
+<ul>
+<li><p><strong>Preventing Mischievous&#x2F;Intentional Violation of Access</strong></p>
+<p>区分资源的授权使用与非授权使用</p>
+</li>
+<li><p><strong>Ensuring Consistency with OS Policies (Reliability)</strong></p>
+<p>子系统之间接口的错误检测。子系统是操作系统中执行特定功能的组件。通过检测接口上的错误，系统可以防止问题从一个子系统传播到另一个子系统。</p>
+</li>
+</ul>
+<h3 id="计算机系统中保护的形式化模型"><a href="#计算机系统中保护的形式化模型" class="headerlink" title="计算机系统中保护的形式化模型"></a><strong>计算机系统中保护的形式化模型</strong></h3><ol>
+<li><p>对象(Objects):</p>
+<ul>
+<li><p>对象是需要访问控制的实体</p>
+<p>hardware: CPU, memory segments, printers.<br>software: files, semaphores.</p>
+</li>
+</ul>
+</li>
+<li><p>主体(Subjects):</p>
+<p>主体是访问对象的实体，可以是进程（processes）、用户等。主体是系统中的活动实体，它们需要执行操作并访问对象。</p>
+</li>
+<li><p>规则(Rules):</p>
+<p>规则定义了主体如何访问对象的方式。例如，对于<strong>CPU</strong>，规则可以涉及执行指令；对于<strong>内存</strong>，规则可能包括读取或写入；而对于<strong>文件</strong>，规则可能包括读取、写入或执行等操作。</p>
+</li>
+</ol>
+<h3 id="保护的原则"><a href="#保护的原则" class="headerlink" title="保护的原则"></a>保护的原则</h3><p><strong>仅允许进程访问经过授权的资源：</strong></p>
+<ul>
+<li>这个原则确保一个进程只能访问它被明确授权的资源。</li>
+</ul>
+<p><strong>仅允许进程访问其当前任务所需的资源：需要知道原则（或最小特权原则）：</strong></p>
+<ul>
+<li>这个原则表明一个进程只能访问它当前任务所需的资源，以限制由于故障进程导致的潜在损害。</li>
+</ul>
+<h3 id="保护域-Domain-of-Protection"><a href="#保护域-Domain-of-Protection" class="headerlink" title="保护域(Domain of Protection)"></a>保护域(Domain of Protection)</h3><p>保护域指定了一个进程可以访问的资源。在计算机系统中，这是一种用于限定进程访问权限的概念。</p>
+<p><code>&lt;object-name, right-set&gt;</code><br>其中:</p>
+<ul>
+<li><code>object-name</code> 表示资源的名称，例如文件名或其他系统对象的标识。</li>
+<li><code>right-set</code> 是一组权限或操作集合，表示了进程对这个资源所具有的操作权限。这可以包括读、写、执行等操作。</li>
+</ul>
+<p>例如，形式化定义可以表示为 <code>D = &lt;file F, &#123;read, write&#125;&gt;</code>，这表示保护域 <code>D</code> 中的任何进程都可以对文件 <code>F</code> 进行读取和写入的操作。</p>
+<h3 id="OS-保护"><a href="#OS-保护" class="headerlink" title="OS 保护"></a>OS 保护</h3><p>OS保护指的是执行管理系统资源使用规则的机制。这些规则由管理员、用户等设定，用于指导系统中各个组件对资源的使用。</p>
+<p>一般性的机制更为可取，因为不同地方或不同时期的规则可能会发生变化。这意味着系统设计时应尽量采用通用的、不易受到特定规则变动影响的保护机制。</p>
+<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><p><strong>恶意安全威胁：</strong></p>
+<ul>
+<li>未经授权读取数据、信息窃取，或者流量分析（属于被动威胁(passive threats)，影响数据的保密性）。</li>
+<li>未经授权破坏、篡改或伪造数据（属于主动威胁(active threats)，影响数据的完整性或真实性）。</li>
+<li>阻止系统的合法使用（属于主动威胁，影响系统的可用性）。</li>
+</ul>
+<p><strong>意外安全威胁:</strong></p>
+<ul>
+<li>人为错误，例如误删除文件或配置错误。</li>
+<li>硬件或软件错误，例如操作系统故障或应用程序错误。</li>
+<li>自然灾害，例如火灾、水灾等不可预测的自然事件。</li>
+</ul>
+<h3 id="攻击分类"><a href="#攻击分类" class="headerlink" title="攻击分类"></a><strong>攻击分类</strong></h3><ul>
+<li><p>强制系统调用(伪造攻击 fabrication attack)</p>
+<ul>
+<li>尝试非法的系统调用，或者使用非法参数进行合法系统调用.</li>
+</ul>
+</li>
+<li><p>Examining memory information(机密性攻击 confidentiality attack) </p>
+<ul>
+<li>一些系统在分配内存之前未清除相应空间，这可能导致机密信息泄漏。攻击者可能通过检查未清除的内存信息来获取敏感数据</li>
+</ul>
+</li>
+<li><p>Denial of service(availability attack)</p>
+<ul>
+<li>拒绝服务攻击旨在通过合法但是不断闲置的指令过载计算机，使其无法执行有用的任务。这种攻击旨在削弱系统的可用性，使其难以提供正常服务。</li>
+</ul>
+</li>
+</ul>
+<h3 id="用户认证"><a href="#用户认证" class="headerlink" title="用户认证"></a>用户认证</h3><ul>
+<li>User authentication is the first line of security</li>
+<li>如果没有通过认证进入系统，许多攻击不可能发生</li>
+</ul>
+<p>认证方式</p>
+<ul>
+<li>user knowledge (user identifier and password); most common</li>
+<li>user possession (key or smart card)</li>
+<li>user attributes (biometrics)</li>
+</ul>
+<p><strong>密码</strong></p>
+<ol>
+<li><p><strong>密码作为能力（密钥）：</strong></p>
+<ul>
+<li>将密码视为一种能力或密钥。在计算机安全术语中，密码通常是用于验证用户身份的机制，相当于一种访问权限。</li>
+</ul>
+</li>
+<li><p><strong>密码的潜在脆弱性：</strong></p>
+<ul>
+<li>密码可能面临以下潜在脆弱性：<ul>
+<li><strong>被猜测：</strong> 攻击者可能通过尝试不同的密码组合来猜测用户的密码。</li>
+<li><strong>被暴露或嗅探：</strong> 密码在传输或存储过程中可能被暴露或被嗅探到，导致泄露。</li>
+<li><strong>非法传输：</strong> 攻击者可能通过非法手段传输密码，例如中间人攻击（Man-in-the-Middle）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>安全的密码应该：</strong></p>
+<ul>
+<li><p>强大：</p>
+<p> 强密码具有足够的复杂性，使得通过暴力破解攻击变得更加困难。强密码的特征包括：</p>
+<ul>
+<li>长度足够，以避免暴力破解攻击。</li>
+<li>不常见或明显，即不与自然语言相关，以避免攻击者使用字典攻击。</li>
+</ul>
+</li>
+<li><p><strong>定期更改：</strong> 定期更改密码可以降低密码被非法使用或拦截的可能性</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>*<em>密码强度</em></p>
+<ol>
+<li><strong>长度：</strong><ul>
+<li>密码长度对密码强度有显著影响。具体而言，对于长度为 n 字节的密码，可能的不同密码组合数为 2^(8n)。</li>
+<li>因此，增加密码长度会显著提高密码的强度，因为攻击者需要尝试更多的可能组合。</li>
+</ul>
+</li>
+<li><strong>频率：</strong><ul>
+<li>密码的强度还受到其在使用中的频率影响。如果密码很少被使用，攻击者在尝试猜测时会面临更大的不确定性，这使密码更为强大。</li>
+</ul>
+</li>
+<li><strong>熵：</strong><ul>
+<li>熵是对密码强度的一种严格的度量。它衡量了密码中包含的信息的不确定性。</li>
+<li>如果密码中包含常见词语，攻击者可以使用字典攻击，只需检查几千个常见密码，而不必尝试所有可能的组合。</li>
+</ul>
+</li>
+</ol>
+<p><strong>密码保护措施</strong></p>
+<ol>
+<li><strong>限制登录次数&#x2F;频率：</strong><ul>
+<li>通过限制用户登录的次数或频率，系统可以减少暴力破解攻击的风险。例如，可以实施登录失败的计数和锁定机制，以防止攻击者通过尝试多个密码来猜测正确的密码。</li>
+</ul>
+</li>
+<li><strong>对密码文件进行访问控制：</strong><ul>
+<li>限制对存储密码的文件的访问是一种基本的安全措施。然而，如果入侵者通过某种漏洞访问密码文件，这种措施就不足以提供完整的保护。</li>
+</ul>
+</li>
+<li><strong>加密密码文件：</strong><ul>
+<li>通过对密码文件进行加密，即存储加密后的密码散列（例如使用哈希函数 f(p)），可以增加密码的安全性。即使攻击者能够访问密码文件，也很难还原出原始密码。</li>
+<li>但是，如果使用公共的哈希函数，攻击者仍然可能使用加密字典攻击来破解密码。</li>
+</ul>
+</li>
+<li><strong>使用盐值（Salting）：</strong><ul>
+<li>为了防止加密字典攻击，可以引入盐值，即在原始密码前添加一些随机字符，再进行加密。这使得相同密码在加密后的形式也是不同的，即使密码相同，由于盐值的不同，最终的哈希值也不同。</li>
+<li>盐值的使用有效地增加了攻击者进行搜索的空间，提高了破解密码的难度。</li>
+</ul>
+</li>
+</ol>
 
                 
               </div>
