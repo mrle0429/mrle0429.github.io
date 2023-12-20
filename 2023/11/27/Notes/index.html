@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          39k 字
+          40k 字
         
       </span>
     
@@ -243,7 +243,7 @@
         
         
         
-          325 分钟
+          332 分钟
         
       </span>
     
@@ -958,33 +958,33 @@
 <li>需要注意的是，存储单元本身并不负责生成它所使用的地址。</li>
 </ul>
 <p><strong>多道程序设计操作系统中存储的作用：</strong></p>
+<p>Memory is central to the multiprogramming OS, since a process must be in memory to execute.</p>
 <ul>
 <li>在多道程序设计中，多个进程同时加载到内存中，操作系统必须管理它们的执行。</li>
 <li>为了执行进程，它必须存在于内存中。存储单元存储了进程运行所需的程序指令和数据。</li>
 </ul>
 <p><strong>指令执行循环：</strong></p>
 <ol>
-<li><strong>加载指令：</strong> 中央处理单元（CPU）通过从内存加载程序指令来启动指令执行循环。加载的指令的地址由程序计数器（PC）寄存器的内容决定，该寄存器跟踪下一条要执行的指令。</li>
-<li><strong>解码指令：</strong> 一旦加载，CPU对指令进行解码。解码涉及解释指令并确定其需要执行的操作。</li>
+<li><strong>加载指令：</strong> CPU通过从内存加载程序指令来启动指令执行循环。加载的指令的地址由程序计数器（PC）寄存器的内容决定，该寄存器跟踪下一条要执行的指令。</li>
+<li><strong>解码指令(decoded)：</strong> 一旦加载，CPU对指令进行解码。解码涉及解释指令并确定其需要执行的操作。</li>
 <li><strong>内存操作：</strong> 指令的执行可能涉及从内存中额外加载或存储数据。这反映了程序执行的动态性，其中在进程过程中经常需要从内存获取数据，并将其存回内存。</li>
-<li><strong>进程终止：</strong> 最终，正在执行的进程将终止。当这发生时，它在内存中占用的空间被声明为空闲，允许操作系统加载和执行其他进程。</li>
+<li><strong>进程终止(terminate)：</strong> 最终，正在执行的进程将终止。当这发生时，它在内存中占用的空间被声明为空闲，允许操作系统加载和执行其他进程。</li>
 </ol>
 <h2 id="地址绑定"><a href="#地址绑定" class="headerlink" title="地址绑定"></a>地址绑定</h2><ul>
-<li>一个程序通常以二进制可执行文件的形式存储在磁盘上。</li>
+<li>一个程序通常以二进制可执行文件的形式存储在磁盘(disk)上。</li>
 <li>为了执行该程序，它必须被加载，即被引入到内存中，放置在进程地址空间的代码段中。</li>
 <li>在具有虚拟内存的系统中，进程（或其部分）在执行期间可以在内存和磁盘之间移动（交换）。</li>
 </ul>
 <p><strong>大多数系统允许用户进程在内存单元的任何空闲位置驻留：</strong></p>
 <ul>
 <li>因此，进程的第一个物理地址不一定是0。</li>
-<li>由于这个原因，需要一种地址绑定机制，使程序中使用的地址与正确的物理地址相关联。</li>
+<li>由于这个原因，需要一种地址绑定机制(address binding mechanism)，使程序中使用的地址与正确的物理地址相关联。</li>
 </ul>
 <p>在这个背景下，地址绑定的目的是确保程序中使用的地址能够正确地映射到物理内存中的位置。因为程序可能在执行过程中从磁盘加载到内存，地址绑定机制必须能够动态地调整这些地址，以便它们正确地指向正在执行的程序的位置。这有助于确保程序在执行过程中能够正确地访问其代码和数据。</p>
 <p><strong>地址绑定时机</strong></p>
 <p><strong>1. 编译时（较早的系统）:</strong></p>
 <ul>
-<li>如果进程的内存位置在编译时是已知的，编译器可以生成程序可执行文件中的绝对代码。</li>
-<li>在这种情况下，程序中的地址引用也是物理地址。</li>
+<li>如果进程的内存位置在编译时是已知的，编译器可以生成程序可执行文件中的绝对代码(absoulute code)_。在这种情况下，程序中的地址引用也是物理地址。</li>
 <li>但是，如果进程位置发生变化，就需要重新编译程序（使用新地址）。</li>
 </ul>
 <p><strong>2. 载入时（较早的系统）:</strong></p>
@@ -1000,8 +1000,7 @@
 </ul>
 <p><em>Example</em></p>
 <p>使用了”Base and limit registers”（基址寄存器和限制寄存器）来管理进程的地址空间.</p>
-<p><strong>基址寄存器和限制寄存器:</strong></p>
-<ul>
+<h2 id="基址寄存器和限制寄存器"><a href="#基址寄存器和限制寄存器" class="headerlink" title="基址寄存器和限制寄存器:"></a><strong>基址寄存器和限制寄存器:</strong></h2><ul>
 <li><strong>基址寄存器（Base Register）：</strong> 它存储了一个进程可以访问的最小物理地址。也就是说，当一个进程要访问内存时，其地址将与基址相加，从而得到实际的物理地址。</li>
 <li><strong>限制寄存器（Limit Register）：</strong> 它存储了进程地址空间的大小。通过这个限制，系统可以确保进程只能访问其地址空间内的有效范围。</li>
 </ul>
@@ -1018,16 +1017,20 @@
 </ul>
 <p><strong>逻辑地址与物理地址空间:</strong></p>
 <ul>
-<li><strong>逻辑地址（Logical Address）:</strong> 由CPU处理，通常对应于进程的地址空间中的位置。</li>
-<li>例如，一个32位处理器处理32位长的地址，进程的地址空间范围通常在0到2^32 - 1之间。</li>
-</ul>
-<p><strong>在编译时和载入时地址绑定中的逻辑和物理地址:</strong></p>
+<li><p><strong>逻辑地址（Logical Address）:</strong> 由CPU处理，通常对应于进程的地址空间中的位置。</p>
+</li>
+<li><p>例如，一个32位处理器处理32位长的地址，进程的地址空间范围通常在0到2^32 - 1之间。</p>
+</li>
+<li><p><strong>在编译时和载入时地址绑定中的逻辑和物理地址:</strong></p>
 <ul>
 <li>在编译时和载入时地址绑定时，逻辑地址和物理地址是相同的。</li>
 </ul>
-<p><strong>在运行时地址绑定（现代系统）中的逻辑和物理地址:</strong></p>
+</li>
+<li><p><strong>在运行时地址绑定（现代系统）中的逻辑和物理地址:</strong></p>
 <ul>
-<li>在运行时地址绑定时，逻辑地址和物理地址可能会不同。</li>
+<li>在运行时地址绑定时，逻辑地址和物理地址不同。</li>
+</ul>
+</li>
 </ul>
 <p><strong>使用基址和限制寄存器的系统示例:</strong></p>
 <ul>
@@ -1038,11 +1041,10 @@
 <li>假设基址寄存器的值是B，逻辑地址为L，那么物理地址就是 B + L。</li>
 <li>如果逻辑地址超出了限制寄存器指定的范围，就可能会触发错误</li>
 </ul>
-<p><strong>内存管理的重要性:</strong></p>
-<ul>
+<h2 id="内存管理-MM-的重要性"><a href="#内存管理-MM-的重要性" class="headerlink" title="内存管理(MM)的重要性:"></a><strong>内存管理(MM)的重要性:</strong></h2><ul>
 <li>内存管理在计算机系统中是至关重要的。</li>
-<li>理想情况下，我们希望拥有无限大且速度极快的非易失性内存。</li>
-<li>然而，在实际的计算机中，通常存在内存层次结构。</li>
+<li>理想情况下，我们希望拥有无限大且速度极快的非易失性内存。(infinitely large and infinitely fast non-volatile memory)</li>
+<li>然而，在实际的计算机中，通常存在内存层次结构(memory hierarchy).</li>
 </ul>
 <p><strong>内存层次结构:</strong></p>
 <ul>
@@ -1055,9 +1057,9 @@
 <li><p>内存管理器:</p>
 <p> 操作系统的组件，负责以下任务：</p>
 <ol>
-<li>跟踪哪些内存部分正在使用，哪些未被使用。</li>
-<li>在进程需要时分配内存，当进程完成时释放内存。</li>
-<li>在主存储器无法容纳所有进程时，在主存储器和磁盘之间进行交换管理。</li>
+<li>跟踪哪些内存部分正在使用，哪些未被使用. Keep track of which parts of memory are in use and which parts are not.</li>
+<li>在进程需要时分配内存，当进程完成时释放内存。Allocates memory to processes when they need it and deallocate it when they are done.</li>
+<li>在主存储器无法容纳所有进程时，在主存储器和磁盘之间进行交换管理。Manages swapping between main memory and disk when the main memory cannot hold all processes.</li>
 </ol>
 </li>
 </ul>
@@ -1069,8 +1071,7 @@
 </ul>
 </li>
 </ul>
-<p><em>单道程序设计（Monoprogramming）</em></p>
-<p><strong>特点:</strong></p>
+<h3 id="单道程序设计（Monoprogramming）"><a href="#单道程序设计（Monoprogramming）" class="headerlink" title="单道程序设计（Monoprogramming）"></a><em>单道程序设计（Monoprogramming）</em></h3><p><strong>特点:</strong></p>
 <ul>
 <li><strong>非常简单:</strong> 一次只有一个用户进程在内存中（包括操作系统进程时可能为两个）。</li>
 <li><strong>内存管理仍然存在:</strong> 即使只有一个进程，内存管理仍然需要决定进程的数据将存储在何处。</li>
@@ -1083,14 +1084,21 @@
 <li><strong>分区存储:</strong> 将内存划分为不同的区域，例如代码区、数据区等，以便存储用户程序的不同部分。</li>
 <li><strong>堆栈结构:</strong> 使用堆栈来管理函数调用和局部变量，使得程序的执行具有明显的结构。</li>
 </ol>
-<p><em><strong>多道程序设计（Multiprogramming）:</strong></em></p>
-<p><strong>特点：</strong></p>
+<h3 id="多道程序设计（Multiprogramming）"><a href="#多道程序设计（Multiprogramming）" class="headerlink" title="多道程序设计（Multiprogramming）:"></a><em><strong>多道程序设计（Multiprogramming）:</strong></em></h3><p><strong>特点：</strong></p>
 <ul>
-<li>旨在同时为多个用户提供交互式服务。</li>
+<li><p>旨在同时为多个用户提供交互式服务。Provide interactive services to seveal users simultaneously.</p>
+<ul>
 <li>允许一次在内存中运行多个进程。</li>
-<li>提供保护、运行时绑定和交换（使用分页&#x2F;分段等技术，稍后会详细说明）。</li>
-<li>目标是尽可能使处理器一直繁忙。</li>
-<li>当进程执行I&#x2F;O操作时，会阻塞该进程，而运行不执行I&#x2F;O操作的进程，从而提高CPU利用率。</li>
+<li>提供保护、运行时绑定和交换（使用分页&#x2F;分段等技术，稍后会详细说明）。protection, run-time binding and swapping</li>
+</ul>
+</li>
+<li><p>目标是尽可能使处理器一直繁忙。</p>
+<ul>
+<li>Execute and not execute according to process state(I&#x2F;O or not).</li>
+</ul>
+</li>
+<li><p>Muiltiprogramming increases CPU utilisation.</p>
+</li>
 </ul>
 <p><strong>多道程序设计和性能:</strong></p>
 <ul>
@@ -1100,9 +1108,9 @@
 </ul>
 <p><strong>CPU利用率的计算:</strong></p>
 <ul>
-<li>CPU利用率 &#x3D; 1 - p^n，即1减去所有n个进程都等待I&#x2F;O的概率。</li>
+<li>CPU利用率 &#x3D; 1 - p^n^，即1减去所有n个进程都等待I&#x2F;O的概率。</li>
 </ul>
-<p><strong>多道程序设计的效果:</strong></p>
+<p><strong>多道程序设计 Performance:</strong></p>
 <ul>
 <li>多道程序设计提高了CPU的利用率，因为在一个进程等待I&#x2F;O的时候，其他进程仍然可以在CPU上执行。</li>
 <li>通过保持处理器忙碌，系统可以更有效地利用计算资源。</li>
@@ -1145,30 +1153,29 @@
 </ul>
 <p><strong>固定分区的优缺点:</strong></p>
 <ul>
-<li><strong>优势:</strong> 在批处理系统上实现简单且有效。</li>
+<li><strong>优势:</strong> 在批处理系统上实现简单且有效。Simple implementation and effective on batch system.</li>
 <li>劣势:<ul>
-<li>内部碎片化问题：由于分区大小固定，某个进程未使用的空间将会丢失。</li>
-<li>多输入队列可能导致性能大幅下降，因为大分区可能为空，但小分区可能队列已满。</li>
-<li>不考虑动态行为。</li>
+<li>内部碎片化问题：由于分区大小固定，某个进程未使用的空间将会丢失。Internal fragmentation problem.</li>
+<li>多输入队列可能导致性能大幅下降，因为大分区可能为空，但小分区可能队列已满。Loss of performance.</li>
+<li>不考虑动态行为。Does not account for dynamic behaviour.</li>
 </ul>
 </li>
 </ul>
 <p><strong>可变分区:</strong></p>
 <ul>
-<li>优势:<ul>
-<li>可变分区允许更大的适应性。</li>
+<li>优势: 可变分区允许更大的适应性。adaptability<ul>
 <li>系统保留一个指示内存空闲部分的表。</li>
 <li>进程的大小得到考虑，如果有足够的可用连续空间，则被分配。</li>
 <li>分区的数量、位置和大小根据系统中运行的进程动态变化。</li>
 </ul>
 </li>
 <li>缺点:<ul>
-<li>外部碎片化问题：完成的进程可能会留下许多内存间隙。</li>
-<li>对于新进程可能没有足够的自由连续内存，尽管碎片总量很大。这个问题可以通过压缩来解决。</li>
+<li>外部碎片化问题：完成的进程可能会留下许多内存间隙。External fragmentation problem</li>
+<li>对于新进程可能没有足够的自由连续内存，尽管碎片总量很大。这个问题可以通过压缩(compaction)来解决。</li>
 </ul>
 </li>
 </ul>
-<h3 id="分页技术"><a href="#分页技术" class="headerlink" title="分页技术:"></a><strong>分页技术:</strong></h3><p><strong>基本策略:</strong></p>
+<h3 id="分页技术-Paging"><a href="#分页技术-Paging" class="headerlink" title="分页技术 (Paging):"></a><strong>分页技术 (Paging):</strong></h3><p><strong>基本策略:</strong></p>
 <ul>
 <li>物理内存被划分为小而相等的固定大小块（称为帧）。</li>
 <li>逻辑内存（即进程的地址空间）也被划分为与帧相同大小的块（称为页）。</li>
@@ -1177,11 +1184,11 @@
 <p><strong>加载程序:</strong></p>
 <ul>
 <li>如果有足够的空闲帧，程序可以加载。</li>
-<li>也可以只加载执行所需的几页（虚拟内存，关于这个后面会讲）。</li>
+<li>也可以只加载执行所需的几页（虚拟内存）。</li>
 </ul>
 <p><strong>分页技术的特点:</strong></p>
 <ul>
-<li><p>碎片化:</p>
+<li><p>碎片化 (Fragmentation):</p>
 <ul>
 <li>内部碎片：仅为进程的最后一页的一小部分。</li>
 <li>外部碎片：没有（不需要压缩）。</li>
@@ -1192,7 +1199,7 @@
 <li>页号和页内偏移。</li>
 </ul>
 </li>
-<li><p>页的大小通常是2^n（例如，512字节-16 MB）；如果逻辑地址空间的大小是2^m，则：</p>
+<li><p>页的大小通常是2^n^（例如，512字节-16 MB）；如果逻辑地址空间的大小是2^m^，则：</p>
 <ul>
 <li>m - n位给出页号。</li>
 <li>n位给出页内偏移。</li>
@@ -1202,7 +1209,7 @@
 <p><strong>分页硬件:</strong></p>
 <p><strong>小型页表:</strong></p>
 <ul>
-<li>如果页表较小（例如，256个条目），可以使用专用寄存器来实现。</li>
+<li>如果页表较小（例如，256个条目），可以使用专用寄存器来实现。 dedicated register</li>
 </ul>
 <p><strong>分页硬件优化:</strong></p>
 <ul>
@@ -1214,7 +1221,7 @@
 <ul>
 <li>TLB是一个关联高速内存，将一个键（标签）与一个值关联。</li>
 <li>当提供一个键时，它会同时与所有键进行比较。</li>
-<li>需要替换策略（当TLB满时会发生什么？）。</li>
+<li>需要替换策）。</li>
 <li>TLB的大小通常在64到1024个值之间。</li>
 </ul>
 </li>
@@ -1223,18 +1230,18 @@
 <ul>
 <li>使用带有TLB的分页系统的性能分析可以通过<strong>命中比率</strong>完成，即页面号在TLB中找到的时间比例。</li>
 <li>有效内存访问时间（Te）的计算公式：<ul>
-<li>Te &#x3D; p × (Tt + Ta) + (1 − p) × (Tt + 2Ta)</li>
+<li>T<del>e</del> &#x3D; p × (T<del>t</del> + T<del>a</del>) + (1 − p) × (T<del>t</del> + 2T<del>a</del>)</li>
 <li>p：命中概率（例如，如果命中比率为80%，则p &#x3D; 0.8）</li>
-<li>Tt：TLB访问时间</li>
-<li>Ta：内存访问时间</li>
+<li>T<del>t</del>：TLB访问时间</li>
+<li>T<del>a</del>：内存访问时间</li>
 </ul>
 </li>
-<li>时间节省可能高达90%，但TLB成本较高。</li>
+<li>TLB成本较高。</li>
 </ul>
 </li>
 </ul>
 <p><strong>总结:</strong> 分页技术通过将物理内存和逻辑内存划分为等大小的块来提供一种有效的内存管理方法。这可以减小内存碎片化，使程序更容易加载和运行。逻辑地址的划分和转换通过硬件支持，从而使得分页技术能够以较低的开销实现。</p>
-<h3 id="分段技术"><a href="#分段技术" class="headerlink" title="分段技术"></a>分段技术</h3><p><strong>基本策略:</strong></p>
+<h3 id="分段技术（Segmentation"><a href="#分段技术（Segmentation" class="headerlink" title="分段技术（Segmentation)"></a>分段技术（Segmentation)</h3><p><strong>基本策略:</strong></p>
 <ul>
 <li>逻辑内存被划分为若干段，每个段的长度可能不同。</li>
 <li>现在，逻辑地址由段号和段内偏移组成。</li>
@@ -1268,7 +1275,7 @@
 </ul>
 <p><strong>分页分段的优势:</strong></p>
 <ul>
-<li>减少外部碎片。</li>
+<li>减少外部碎片。Reduces external fragmentation</li>
 <li>可用多个地址空间，指令可以具有较小的地址字段（不同段可以具有不同的地址空间大小）。</li>
 <li>使用虚拟内存时（进程的一部分可以交换到磁盘上）：<ul>
 <li>区分访问冲突和页面错误（页面不在内存中）。</li>
@@ -1279,7 +1286,7 @@
 <p><strong>分页分段的劣势:</strong></p>
 <ul>
 <li>更为复杂。</li>
-<li>每个段需要一个页面表。</li>
+<li>每个段需要一个页面表。A page table is needed per segment.</li>
 </ul>
 <p>外部碎片指的是分配给进程的内存空间中存在的、但由于空间分布不连续而不能被有效利用的未使用的小块内存。简而言之，外部碎片是内存中一些零散而无法合并的未使用空间。</p>
 <p>在分配内存时，如果系统将可用内存分成多个不相邻的块，即使总内存足够，但由于这些块之间的隔离，可能导致一些小的、无法利用的空闲空间。这就是外部碎片的概念。</p>
