@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123221558256.png">
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123224117942.png">
 <meta property="article:published_time" content="2023-11-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-20T16:00:00.000Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="learning materials">
 <meta name="twitter:card" content="summary_large_image">
@@ -243,7 +243,7 @@
         
         
         
-          332 分钟
+          334 分钟
         
       </span>
     
@@ -1292,68 +1292,77 @@
 <p>在分配内存时，如果系统将可用内存分成多个不相邻的块，即使总内存足够，但由于这些块之间的隔离，可能导致一些小的、无法利用的空闲空间。这就是外部碎片的概念。</p>
 <p>外部碎片可以导致系统难以找到足够大的内存块以满足某个进程的内存需求，即使系统的总体可用内存足够。</p>
 <p><strong>总结:</strong> 分段技术将逻辑内存划分为不同长度的段，对程序员可见。每个段都有自己的基地址和限制，与保护相关。虽然分段技术在内部没有碎片，但在外部可能存在碎片，这需要由程序员来管理。分段技术对于特定类型的应用程序和编程模型可能更为适用。</p>
-<h2 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h2><p><strong>概述:</strong></p>
+<h1 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h1><p><strong>概述:</strong></p>
 <ul>
 <li>虚拟内存是由系统硬件和软件支持的一种假象，即一个进程具有一个庞大且线性的可用内存空间（比主内存单元大得多）。</li>
-<li>使用虚拟内存，主内存可以被视为磁盘的高速缓存。</li>
+<li>使用虚拟内存，主内存可以被视为磁盘的高速缓存(cache)。</li>
 <li>在虚拟内存的上下文中，逻辑地址也被称为虚拟地址。</li>
 </ul>
 <p><strong>实际程序和虚拟内存:</strong></p>
 <ul>
 <li><p>实际程序通常可以分为两部分：</p>
 <ol>
-<li>经常需要的部分。</li>
-<li>很少或从不需要的部分：</li>
+<li><p>经常需要的部分。</p>
+</li>
+<li><p>很少或从不需要的部分：</p>
+<ul>
+<li><p>处理异常错误条件的代码。</p>
+</li>
+<li><p>处理很少使用的选项和功能的代码。</p>
+</li>
+<li><p>分配超过严格需求的内存的代码（数组、表等）。</p>
+</li>
+</ul>
+</li>
 </ol>
-<ul>
-<li>处理异常错误条件的代码。</li>
-<li>处理很少使用的选项和功能的代码。</li>
-<li>分配超过严格需求的内存的代码（数组、表等）。</li>
-</ul>
 </li>
-<li><p>程序内的内存引用往往是聚集的（引用局部性原理）。</p>
+<li><p>程序内的内存引用往往是聚集的（引用局部性原理）。Memory references within a program tend to be clustered.</p>
 </li>
 </ul>
-<p><strong>虚拟内存的优势:</strong></p>
-<ul>
+<h2 id="虚拟内存的优势"><a href="#虚拟内存的优势" class="headerlink" title="虚拟内存的优势:"></a><strong>虚拟内存的优势:</strong></h2><ul>
 <li>VM通过将进程的一部分放置在主内存中，一部分放置在磁盘上，以实现更大的地址空间，从而提供了一种吸引人的方案。</li>
-<li>VM的核心是延迟加载（Demand Paging）。</li>
+<li>VM的核心是延迟加载。</li>
 </ul>
-<p><strong>1. 超越物理内存限制:</strong></p>
+<p><strong>1. 超越物理内存限制:</strong> (Programs are not limited by the physical memory space )</p>
 <ul>
 <li>程序不受物理内存空间的限制。</li>
-<li>可以根据虚拟地址空间的允许范围，使程序变得更大：<ul>
-<li>1970年代：32位虚拟地址空间。</li>
-<li>2000年代：64位虚拟地址空间。</li>
+<li>可以根据虚拟地址空间的允许范围，使程序变得更大：</li>
+<li>Save funding</li>
 </ul>
-</li>
-<li>在这两个时期，这么多的实际内存空间将花费数百万欧元。</li>
-</ul>
-<p><strong>2. 更好的多道程序设计:</strong></p>
+<p><strong>2. 更好的多道程序设计(Better multiprogramming):</strong></p>
 <ul>
-<li>在任何给定时间内，可以在内存中维护更多的进程。</li>
-<li>更有可能其中一个进程处于准备状态（记住CPU利用率公式）。</li>
+<li>可以同时执行更多进程。</li>
+<li>进程可能处于ready状态（CPU利用率: 1 - p^n^）。</li>
 </ul>
 <p><strong>3. 减少I&#x2F;O需求:</strong></p>
 <ul>
 <li>加载程序或交换程序时需要的I&#x2F;O更少。</li>
-<li>增加了CPU利用率和整体系统吞吐量。</li>
+<li>increse CPU utilisation and throughput。</li>
 </ul>
-<p><strong>虚拟内存的特点:</strong></p>
-<ul>
-<li>虚拟内存通常通过<strong>按需分页（Demand Paging）</strong>实现：<ul>
-<li>当加载程序时，操作系统只将其中的一小部分页面（包括其起始点）放入主内存。</li>
-<li>随着需要，将进一步的页面加载到内存中，或者根据需要交换到磁盘上。</li>
+<h2 id="虚拟内存的特点"><a href="#虚拟内存的特点" class="headerlink" title="虚拟内存的特点:"></a><strong>虚拟内存的特点:</strong></h2><ul>
+<li>VM is Implemented by demand paging.<ul>
+<li>Only a few pages are bring into main memory.</li>
 </ul>
 </li>
-<li>在某一时刻在主内存中的进程部分称为<strong>驻留集</strong>。</li>
 </ul>
 <p><strong>虚拟内存的支持:</strong></p>
 <ul>
-<li>在硬件中支持虚拟内存的系统使用<strong>分页机制</strong>，当引用磁盘中的页面时生成页错误。</li>
-<li>在软件中，需要进行<strong>页面交换管理</strong>，由操作系统的算法支持。</li>
+<li><p>VM  system supported in hardware</p>
+<ul>
+<li>Paging mechanism.(generate page faults)</li>
 </ul>
-<h3 id="带有按需分页的页表"><a href="#带有按需分页的页表" class="headerlink" title="带有按需分页的页表:"></a><strong>带有按需分页的页表:</strong></h3><p><strong>对页表条目的添加:</strong></p>
+</li>
+<li><p>In software</p>
+<ul>
+<li>Page swapping management.</li>
+</ul>
+</li>
+<li><p>在硬件中支持虚拟内存的系统使用<strong>分页机制</strong>，当引用磁盘中的页面时生成页错误。</p>
+</li>
+<li><p>在软件中，需要进行<strong>页面交换管理</strong>，由操作系统的算法支持。</p>
+</li>
+</ul>
+<h2 id="带有按需分页的页表"><a href="#带有按需分页的页表" class="headerlink" title="带有按需分页的页表:"></a><strong>带有按需分页的页表:</strong></h2><p><strong>对页表条目的添加:</strong></p>
 <ul>
 <li><p>存在位（Present Bit）:</p>
 <p> 如果页面在主内存中，将该位设置为1。</p>
@@ -1379,15 +1388,14 @@
 <li>如果页面在内存中，页表中相应的条目包含<strong>帧号</strong>。</li>
 <li>如果页面在磁盘中，页表中相应的条目包含<strong>磁盘中的地址或指向表的索引</strong></li>
 </ul>
-<h3 id="缺页中断处理"><a href="#缺页中断处理" class="headerlink" title="缺页中断处理"></a>缺页中断处理</h3><p><strong>1. 服务缺页中断:</strong></p>
-<p>产生缺页中断时，系统需要执行以下主要步骤：</p>
+<h2 id="缺页中断处理"><a href="#缺页中断处理" class="headerlink" title="缺页中断处理"></a>缺页中断处理</h2><p>3 major steps:</p>
+<p><strong>1. 服务缺页中断(service the page-fault interrput):</strong></p>
 <ul>
 <li>陷入到操作系统（trap to the OS）。</li>
-<li>保存寄存器和进程状态。</li>
+<li>保存寄存器和进程状态(save registers and process state)。</li>
 <li>检查页面引用是否合法，并确定其在磁盘上的位置。</li>
 </ul>
-<p><strong>2. 读入缺失的页面:</strong></p>
-<p>如果发现页面缺失，系统需要进行以下步骤：</p>
+<p><strong>2. 读入缺失的页面 (read in the missing page):</strong></p>
 <ul>
 <li>从磁盘读入缺失的页面到一个空闲帧（free frame）。</li>
 <li>由于这是一个I&#x2F;O操作（较慢），另一个准备好的进程被分派到CPU。</li>
@@ -1400,16 +1408,15 @@
 <li>这时，进程可以切换到准备就绪状态。</li>
 <li>最终，进程再次被调度，从中断处恢复执行。</li>
 </ul>
-<p><strong>缺页和性能:</strong></p>
-<p><strong>为什么重要将缺页保持在最低限度:</strong></p>
+<h2 id="缺页和性能"><a href="#缺页和性能" class="headerlink" title="缺页和性能:"></a><strong>缺页和性能:</strong></h2><p><strong>将缺页保持在最低限度:</strong></p>
 <ul>
-<li>缺页中断会对系统性能产生重大影响，因此将缺页保持在最低限度是非常重要的。</li>
-<li>有效内存访问时间（Te）的计算方式为：<ul>
-<li>Te &#x3D; p x Tf + (1 - p) x Ta</li>
+<li>缺页中断会对系统性能产生重大影响</li>
+<li>有效内存访问时间（T<del>e</del>）的计算方式为：<ul>
+<li>T<del>e</del> &#x3D; p x T<del>f</del> + (1 - p) x T<del>a</del></li>
 <li>其中：<ul>
-<li>Tf: 缺页中断时间（处理缺页中断的时间）</li>
-<li>Ta: 内存访问时间</li>
-<li>p: 触发缺页的内存访问百分比</li>
+<li>T<del>f</del>: 缺页中断时间（处理缺页中断的时间）</li>
+<li>T<del>a</del>: 内存访问时间</li>
+<li>p: 页面错误的概率</li>
 </ul>
 </li>
 </ul>
@@ -1420,12 +1427,12 @@
 <li>缺页中断时间（Tf）通常比内存访问时间（Ta）高出数个数量级（例如，10毫秒与100纳秒）。</li>
 <li>因此，即使缺页的概率很低，也可能显著提高有效内存访问时间（Te）。</li>
 </ul>
-<h3 id="磁盘抖动和多道程序设计"><a href="#磁盘抖动和多道程序设计" class="headerlink" title="磁盘抖动和多道程序设计"></a>磁盘抖动和多道程序设计</h3><p><strong>磁盘抖动的问题:</strong></p>
+<h3 id="磁盘抖动-thrashing-和多道程序设计"><a href="#磁盘抖动-thrashing-和多道程序设计" class="headerlink" title="磁盘抖动(thrashing)和多道程序设计"></a>磁盘抖动(thrashing)和多道程序设计</h3><p><strong>磁盘抖动的问题:</strong></p>
 <ul>
 <li><strong>磁盘抖动（Thrashing）</strong> 是指系统花费大量时间在页面置换上而不是执行实际工作，导致系统性能急剧下降。</li>
 <li>磁盘抖动通常发生在系统试图维护过多进程时，导致它们的页面频繁地在内存和磁盘之间交换。</li>
 </ul>
-<p><strong>为避免磁盘抖动，需要采取负载控制措施:</strong></p>
+<p><strong>为避免磁盘抖动，需要采取负载控制措施(load control):</strong></p>
 <p>示例:</p>
 <ul>
 <li>只执行其驻留集足够大的进程。</li>
@@ -1436,7 +1443,7 @@
 <li>避免系统陷入磁盘抖动状态，提高系统性能。</li>
 <li>通过智能地选择执行的进程，以及动态调整多道程序设计的程度，系统可以更有效地利用资源，避免频繁的页面置换。</li>
 </ul>
-<h3 id="虚拟内存中的内存管理"><a href="#虚拟内存中的内存管理" class="headerlink" title="虚拟内存中的内存管理"></a>虚拟内存中的内存管理</h3><p>在具有虚拟内存的系统中，操作系统主要处理两个内存管理问题：</p>
+<h2 id="虚拟内存中的内存管理"><a href="#虚拟内存中的内存管理" class="headerlink" title="虚拟内存中的内存管理"></a>虚拟内存中的内存管理</h2><p>在具有虚拟内存的系统中，操作系统主要处理两个内存管理问题：</p>
 <p><strong>1. 替换策略 (Replacement Policy):</strong></p>
 <ul>
 <li>当发生页面错误并且没有空闲帧可将页面换入时，操作系统必须选择一个帧进行替换（交换到磁盘上），以便将新页面带入。</li>
@@ -1462,7 +1469,7 @@
 <p><strong>替换算法:</strong></p>
 <ol>
 <li>Optimal (最佳):<ul>
-<li>替换最长时间内不会被引用的页面。</li>
+<li>替换最长时间内不会被引用的页面。(Replaces the page that will not be referenced for the longest period of time)</li>
 <li>具有最小数量的页面错误，但不可能实现（需要未来事件的信息）。</li>
 <li>用作衡量其他算法的标准。</li>
 </ul>
@@ -1530,7 +1537,8 @@
 <li>hierarchical paging (分层页)</li>
 <li>inverted page table(倒页表)</li>
 </ul>
-<h5 id="分层页"><a href="#分层页" class="headerlink" title="分层页"></a>分层页</h5><h5 id="倒页表"><a href="#倒页表" class="headerlink" title="倒页表"></a>倒页表</h5><h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><p>文件管理是操作系统中的一个关键方面，涉及对计算机上存储的数据进行组织和控制。当一个进程需要存储超出其即时运行时间的信息时，它利用文件管理系统来存储和检索数据。</p>
+<h5 id="分层页"><a href="#分层页" class="headerlink" title="分层页"></a>分层页</h5><p>Drawback: the time to convert a virtual address into a physical one is longer</p>
+<h5 id="倒页表"><a href="#倒页表" class="headerlink" title="倒页表"></a>倒页表</h5><h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><p>文件管理是操作系统中的一个关键方面，涉及对计算机上存储的数据进行组织和控制。当一个进程需要存储超出其即时运行时间的信息时，它利用文件管理系统来存储和检索数据。</p>
 <h2 id="进程在地址空间中储存信息面临的问题："><a href="#进程在地址空间中储存信息面临的问题：" class="headerlink" title="进程在地址空间中储存信息面临的问题："></a>进程在地址空间中储存信息面临的问题：</h2><ol>
 <li>易失性(Volatility)</li>
 </ol>
