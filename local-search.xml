@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>COMP 2014J LEARNING PROCESS</title>
+    <link href="/2024/03/07/COMP-2014J-LEARNING-PROCESS/"/>
+    <url>/2024/03/07/COMP-2014J-LEARNING-PROCESS/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Lecture-0"><a href="#Lecture-0" class="headerlink" title="Lecture 0"></a>Lecture 0</h1><p>Lecture: David Lillis</p><p>2 Assignment (40%) and Written Final Exam(60%)</p><h1 id="Lecture-1"><a href="#Lecture-1" class="headerlink" title="Lecture 1"></a>Lecture 1</h1><h2 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h2><p>树是按层构造的数据结构，每个数据间的关系是父与子。-</p><ul><li>数据储存在Node中</li><li>每个节点有且仅有一个父节点（除root节点），可以有任意数量的子节点。</li></ul><p>术语</p><ul><li><p><strong>Root</strong> of tree: A     头节点，没有父节点 </p></li><li><p><strong>Parent</strong> of H: F</p></li><li><p><strong>Children</strong> of J : K, L</p></li><li><p><strong>Siblings</strong> of F: G   姊妹节点</p></li><li><p><strong>Internal</strong> Nodes: A, B, C, F, G, I, J  (至少有一个子节点)</p></li><li><p><strong>External</strong> Nodes: D, E, H, K, L (没有子节点)</p></li><li><p><strong>Ancestor</strong> of I: A, C, G, I  (自己也可以是自己的祖先)</p></li><li><p><strong>Descendant</strong> of I: I, J, K, L (自己也是自己的后代)</p></li><li><p><strong>Edge</strong>: (U,V) U 是 V 的父节点 </p><p>（A, B), (G, I), BUT (A, G), (F, C) 不是Edge.</p></li><li><p><strong>Path</strong>: 从上到下的有序路径</p><p>（A, C, G, I)</p></li><li><p><strong>Depth</strong> of a node: 该节点祖先的个数，不包括该节点。Depth(A) &#x3D; 0  Depth(G) &#x3D; 2</p></li><li><p><strong>Degree</strong> of a node: 该节点子节点的个数。degree(A) &#x3D; 2, degree(G) &#x3D; 1</p></li><li><p><strong>Height of a tree</strong>： 树的层数  height(T) &#x3D; 5.  最高的节点高度就是树的层数.</p></li><li><p><strong>Subtree of tree T rooted at node v</strong> : 子树</p></li></ul><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240307215642213.png" alt="image-20240307215642213" style="zoom: 25%;"><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p>最多允许有两个子节点，分为左子节点和右子节点，左节点在右节点之前。</p><p><strong>真二叉树</strong>(Proper Binary Tree): 节点的度为0或2</p><ul><li><p>通过将外部节点扩展为内部节点来实现树</p></li><li><p>只有内部节点存储数据，外部节点为空</p></li><li><p>关键操作</p><ul><li><code>expandExternal(p, e)</code>  创建两个新的空位置,并将它们作为p的左右子元素添加，并将元素e存储在p处。如果p不是外部的，则会发生错误。</li><li><code>remove(p)</code> 如果p的左子元素是外部的，则删除它和p并用右子元素替换p。如果右子节点是外部的，删除它和p并用左子节点替换它。如果两个子节点都在内部或p在外部，则会出错。</li></ul><p>如果一个节点的两个子节点都是内部节点，则无法删除。朴素的理解，删除后无法确定两个姊妹节点的关系。</p></li></ul><p>基于Link-Based实现：</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>工大环</title>
     <link href="/2024/02/23/%E5%B7%A5%E5%A4%A7%E7%8E%AF/"/>
     <url>/2024/02/23/%E5%B7%A5%E5%A4%A7%E7%8E%AF/</url>
