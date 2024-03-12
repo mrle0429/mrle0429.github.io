@@ -29,8 +29,9 @@
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308114417818.png">
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308121151399.png">
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308130244406.png">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240311090328888.png">
 <meta property="article:published_time" content="2024-03-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-08T05:17:30.451Z">
+<meta property="article:modified_time" content="2024-03-11T01:17:45.815Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240307215642213.png">
@@ -231,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.2k 字
+          3.4k 字
         
       </span>
     
@@ -242,7 +243,7 @@
         
         
         
-          27 分钟
+          29 分钟
         
       </span>
     
@@ -306,7 +307,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：5 分钟前
+                    本文最后更新于：1 天前
                   
                 
               </p>
@@ -452,6 +453,19 @@
 <li><strong>删除操作</strong>：删除操作的时间复杂度也与查找类似，平均情况下为 O(log n)。但同样，如果树的结构不平衡，最坏情况下可能达到 O(n)。</li>
 </ul>
 <p>Example:<br><embed src="./02c-Binary-Search-Tree-Example.pdf" width="100%" height="750" type="application/pdf"></p>
+<h1 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h1><h2 id="AVL-Trees-平衡二叉树"><a href="#AVL-Trees-平衡二叉树" class="headerlink" title="AVL Trees 平衡二叉树"></a>AVL Trees 平衡二叉树</h2><p>AVL：一种平衡二叉搜索树</p>
+<ol>
+<li><p>对于任意子节点，其子树的高度相差最多为1</p>
+</li>
+<li><p>对于任意子节点，其子树也为AVL</p>
+</li>
+<li><p>AVL的性能均为O(logN)</p>
+<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240311090328888.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240311090328888" style="zoom:33%;"></li>
+</ol>
+<p>AVL插入：和普通的二叉搜索树相同，但在插入后，需要检查是否仍然满足性质，若不满足，需通过<strong>trinode restructuring</strong>来维持树平衡。</p>
+<ul>
+<li>检查平衡：从新展开的节点开始向上搜索，比较每个节点子节点的高度，如果高度差大于1，则树不平衡。</li>
+</ul>
 
                 
               </div>
