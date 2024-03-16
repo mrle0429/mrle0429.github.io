@@ -30,8 +30,12 @@
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308121151399.png">
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308130244406.png">
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240311090328888.png">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314203954911.png">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314205130971.png">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314205211943.png">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314205531895.png">
 <meta property="article:published_time" content="2024-03-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-11T01:17:45.815Z">
+<meta property="article:modified_time" content="2024-03-16T15:49:33.888Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240307215642213.png">
@@ -232,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.4k 字
+          3.7k 字
         
       </span>
     
@@ -243,7 +247,7 @@
         
         
         
-          29 分钟
+          31 分钟
         
       </span>
     
@@ -307,7 +311,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 天前
+                    本文最后更新于：几秒前
                   
                 
               </p>
@@ -373,9 +377,8 @@
 </li>
 </ul>
 <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><embed src="./Trees-Exercises.pdf" width="100%" height="750" type="application/pdf">
-# Lecture 2 Tree Traversals and Binary Search Trees
 
-<h2 id="树的遍历和访问者模式"><a href="#树的遍历和访问者模式" class="headerlink" title="树的遍历和访问者模式"></a>树的遍历和访问者模式</h2><p>先序遍历：中，左，右   遍历后对于任意的节点都应满足这个顺序</p>
+<h1 id="Lecture-2-Tree-Traversals-and-Binary-Search-Trees"><a href="#Lecture-2-Tree-Traversals-and-Binary-Search-Trees" class="headerlink" title="Lecture 2 Tree Traversals and Binary Search Trees"></a>Lecture 2 Tree Traversals and Binary Search Trees</h1><h2 id="树的遍历和访问者模式"><a href="#树的遍历和访问者模式" class="headerlink" title="树的遍历和访问者模式"></a>树的遍历和访问者模式</h2><p>先序遍历：中，左，右   遍历后对于任意的节点都应满足这个顺序</p>
 <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308113222487.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240308113222487" style="zoom: 33%;">
 
 <p>实现：</p>
@@ -453,8 +456,7 @@
 <li><strong>删除操作</strong>：删除操作的时间复杂度也与查找类似，平均情况下为 O(log n)。但同样，如果树的结构不平衡，最坏情况下可能达到 O(n)。</li>
 </ul>
 <p>Example:<br><embed src="./02c-Binary-Search-Tree-Example.pdf" width="100%" height="750" type="application/pdf"></p>
-<h1 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h1><h2 id="AVL-Trees-平衡二叉树"><a href="#AVL-Trees-平衡二叉树" class="headerlink" title="AVL Trees 平衡二叉树"></a>AVL Trees 平衡二叉树</h2><p>AVL：一种平衡二叉搜索树</p>
-<ol>
+<h1 id="Lecture-3"><a href="#Lecture-3" class="headerlink" title="Lecture 3"></a>Lecture 3</h1><h2 id="AVL-Trees-平衡二叉树"><a href="#AVL-Trees-平衡二叉树" class="headerlink" title="AVL Trees 平衡二叉树"></a>AVL Trees 平衡二叉树</h2><h3 id="AVL：一种平衡二叉搜索树"><a href="#AVL：一种平衡二叉搜索树" class="headerlink" title="AVL：一种平衡二叉搜索树"></a>AVL：一种平衡二叉搜索树</h3><ol>
 <li><p>对于任意子节点，其子树的高度相差最多为1</p>
 </li>
 <li><p>对于任意子节点，其子树也为AVL</p>
@@ -462,10 +464,28 @@
 <li><p>AVL的性能均为O(logN)</p>
 <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240311090328888.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240311090328888" style="zoom:33%;"></li>
 </ol>
-<p>AVL插入：和普通的二叉搜索树相同，但在插入后，需要检查是否仍然满足性质，若不满足，需通过<strong>trinode restructuring</strong>来维持树平衡。</p>
+<h3 id="AVL插入："><a href="#AVL插入：" class="headerlink" title="AVL插入："></a>AVL插入：</h3><p>和普通的二叉搜索树相同，但在插入后，需要检查是否仍然满足性质，若不满足，需通过<strong>trinode restructuring</strong>来维持树平衡。</p>
 <ul>
-<li>检查平衡：从新展开的节点开始向上搜索，比较每个节点子节点的高度，如果高度差大于1，则树不平衡。</li>
+<li><p>检查平衡：从新展开的节点开始向上搜索，比较每个节点子节点的高度，如果高度差大于1，则树不平衡。</p>
+<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314203954911.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240314203954911" style="zoom:50%;"></li>
 </ul>
+<p>插入54之后，上图树不平衡。我们从54向上搜素，找到第一个不平衡的节点Z，然后设Z的子节点（高度更高的）为Y节点，然后将Y的子节点（高度更高的）设为X。执行<code>restructure(x)</code>对树重建。</p>
+<h3 id="Trinode-重组"><a href="#Trinode-重组" class="headerlink" title="Trinode 重组"></a>Trinode 重组</h3><p>设(a, b, c) 为 x, y, z 按从小到大顺序排列。执行旋转操作，另B成为中间的节点(即其他两个节点的父节点)</p>
+<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314205130971.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240314205130971" style="zoom:40%;">
+
+<p>单次旋转：</p>
+<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314205211943.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240314205211943" style="zoom:50%;">
+
+<p>双次旋转：</p>
+<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314205531895.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240314205531895" style="zoom:50%;">
+
+<h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p>被删除地节点节点成为空的外部节点。从根节点开始向下检查平衡。执行Trinode重组。</p>
+<h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><p>3&#x2F;16 上传源代码</p>
+<embed src="./WS1-Trees.pdf" width="100%" height="750" type="application/pdf">
+[src文件下载](https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/comp2014J/src.zip)
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// </span><br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
