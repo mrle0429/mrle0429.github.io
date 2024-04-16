@@ -19,7 +19,7 @@
     <meta name="description" content="Prime numberIt is a basic problem for CS students. The part aim  to give more intersiting solution. NO.1According to Henry, he asks us to not print such as ‘for’,  ‘break’,’continue’. Something only p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Perfect Number &amp; Prime Number">
-<meta property="og:url" content="http://example.com/2023/02/28/2_28/index.html">
+<meta property="og:url" content="http://example.com/2023/02/28/Perfect%20Number%20&%20Prime%20Number/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Prime numberIt is a basic problem for CS students. The part aim  to give more intersiting solution. NO.1According to Henry, he asks us to not print such as ‘for’,  ‘break’,’continue’. Something only p">
 <meta property="og:locale" content="zh_CN">
@@ -360,14 +360,31 @@
   
     <article id="comments" lazyload>
       
-  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTY4My8zNjE0NQ==">
-    <script type="text/javascript">
-      Fluid.utils.loadComments('#lv-container', function() {
-        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
-      });
-    </script>
-    <noscript>Please enable JavaScript to view the comments</noscript>
-  </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'mrle0429/mrle0429.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
     </article>

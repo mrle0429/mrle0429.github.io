@@ -16,24 +16,21 @@
   <meta name="author" content="Mrle">
   <meta name="keywords" content="">
   
-    <meta name="description" content="散列表散列表是一种数据结构，也叫Hash table. 在python中以字典实现。 散列表通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。散列表是数组的一种扩展。 举个例子商店中有许多商品，客户来买东西时，需要在一个本子中查找价格。商品很多，我们查找价格的时间就会增加，无论使用之前的简单查找 or 二分查找。 如果我想要快速的获取">
+    <meta name="description" content="Count DigitsNO.1This is a transfer int to str. This is not a math solution 123def count_digits1(x):    x&#x3D;str(x)    return len(x)  NO.2123456def count_digits2(x):    count &#x3D; 0    while x !&#x3D; 0:        x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="散列表">
-<meta property="og:url" content="http://example.com/2023/02/01/a/index.html">
+<meta property="og:title" content="Count and Sum Digits">
+<meta property="og:url" content="http://example.com/2023/03/01/Count%20and%20Sum%20Digits/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="散列表散列表是一种数据结构，也叫Hash table. 在python中以字典实现。 散列表通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。散列表是数组的一种扩展。 举个例子商店中有许多商品，客户来买东西时，需要在一个本子中查找价格。商品很多，我们查找价格的时间就会增加，无论使用之前的简单查找 or 二分查找。 如果我想要快速的获取">
+<meta property="og:description" content="Count DigitsNO.1This is a transfer int to str. This is not a math solution 123def count_digits1(x):    x&#x3D;str(x)    return len(x)  NO.2123456def count_digits2(x):    count &#x3D; 0    while x !&#x3D; 0:        x">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/fa0ffdca9bf61bb75780bc3ec124959.jpg">
-<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/1d0a3eddf6ab1b9cefa9699d569bc7e.jpg">
-<meta property="article:published_time" content="2023-02-01T15:52:57.000Z">
-<meta property="article:modified_time" content="2023-02-01T16:54:26.154Z">
+<meta property="article:published_time" content="2023-03-01T13:55:26.000Z">
+<meta property="article:modified_time" content="2023-03-29T02:37:22.453Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/fa0ffdca9bf61bb75780bc3ec124959.jpg">
   
   
   
-  <title>散列表 - Hexo</title>
+  <title>Count and Sum Digits - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="散列表"></span>
+            <span id="subtitle" data-typed-text="Count and Sum Digits"></span>
           
         </div>
 
@@ -215,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-01 23:52" pubdate>
-          2023年2月1日 晚上
+        <time datetime="2023-03-01 21:55" pubdate>
+          2023年3月1日 晚上
         </time>
       </span>
     
@@ -227,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          716 字
+          453 字
         
       </span>
     
@@ -238,7 +235,7 @@
         
         
         
-          8 分钟
+          5 分钟
         
       </span>
     
@@ -289,12 +286,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">散列表</h1>
+            <h1 style="display: none">Count and Sum Digits</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年2月2日 凌晨
+                    本文最后更新于：2023年3月29日 上午
                   
                 
               </p>
@@ -302,32 +299,18 @@
             
               <div class="markdown-body">
                 
-                <h1 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h1><p>散列表是一种数据结构，也叫Hash table. 在python中以字典实现。</p>
-<p>散列表通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。散列表是数组的一种扩展。</p>
-<h2 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h2><p>商店中有许多商品，客户来买东西时，需要在一个本子中查找价格。商品很多，我们查找价格的时间就会增加，无论使用之前的简单查找 or 二分查找。</p>
-<p>如果我想要快速的获取商品的价格，我就需要一个数组来存放商品的价格，apple放在[0], milk放在[1]…以此类推。</p>
-<p>现在我想要知道apple的价格，我仅需要取出数组[0]的存储信息。</p>
-<p>这就是散列思想，商品的名称称为key，然后通过<strong>散列函数</strong>将商品名称与数组位置匹配。</p>
-<h1 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h1><p>给出自变量，散列函数返还一个数字(即数组索引位置)。这里的一些做法和高中数学定义的函数是相似的。</p>
-<ol>
-<li>对于给定自变量，有且仅有一个函数值与之对应。例如，我每次输入apple得到的都应是0。</li>
-<li>对于同一函数值，可以有多个自变量与之对应。但是在列表函数中，将不同的输入映射到不同的数字是最好的结果。</li>
-</ol>
-<p>对于第二条的最佳情况，我们无法避免这也被称为哈希冲突。</p>
-<h2 id="一些有意思的应用"><a href="#一些有意思的应用" class="headerlink" title="一些有意思的应用"></a>一些有意思的应用</h2><p>最近做网站用到的DNS解析，正式将网站地址映射到IP地址。上软广</p>
-<p>mrlepro.com      –&gt;  185.199.109.153</p>
-<h1 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h1><p>当不同输入映射到同一位置时候就出现了冲突。</p>
-<h2 id="链表法解决冲突"><a href="#链表法解决冲突" class="headerlink" title="链表法解决冲突"></a>链表法解决冲突</h2><p>如果两个键映射到了同一个位置，就在这个位置储存一个链表。<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/fa0ffdca9bf61bb75780bc3ec124959.jpg" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="fa0ffdca9bf61bb75780bc3ec124959"></p>
-<h1 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h1><p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/1d0a3eddf6ab1b9cefa9699d569bc7e.jpg" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="1d0a3eddf6ab1b9cefa9699d569bc7e"></p>
-<p>避免冲突的因素：</p>
-<ol>
-<li>较低的装填因子</li>
-<li>良好的散列函数</li>
-</ol>
-<h2 id="装填因子"><a href="#装填因子" class="headerlink" title="装填因子"></a>装填因子</h2><p>散列表中元素数 &#x2F; 位置总数</p>
-<p>经验而谈，当装填因子大于0.7时，扩大散列表长度降低装填因子。</p>
-<h2 id="良好的散列函数"><a href="#良好的散列函数" class="headerlink" title="良好的散列函数"></a>良好的散列函数</h2><p>MD5， SHA，CRC</p>
-<p>待补充</p>
+                <h1 id="Count-Digits"><a href="#Count-Digits" class="headerlink" title="Count Digits"></a>Count Digits</h1><h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><p>This is a transfer int to str. This is not a math solution</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_digits1</span>(<span class="hljs-params">x</span>):<br>    x=<span class="hljs-built_in">str</span>(x)<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(x)<br></code></pre></td></tr></table></figure>
+
+<h2 id="NO-2"><a href="#NO-2" class="headerlink" title="NO.2"></a>NO.2</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_digits2</span>(<span class="hljs-params">x</span>):<br>    count = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> x != <span class="hljs-number">0</span>:<br>        x = x // <span class="hljs-number">10</span><br>        count = count +<span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> count<br></code></pre></td></tr></table></figure>
+
+<h2 id="NO-3"><a href="#NO-3" class="headerlink" title="NO.3"></a>NO.3</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_digits3</span>(<span class="hljs-params">n</span>):   <span class="hljs-comment">#Recursion</span><br>	<span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">10</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> (<span class="hljs-number">1</span> + count_digits3(n //<span class="hljs-number">10</span>))<br></code></pre></td></tr></table></figure>
+
+<p>This is about Recursion. </p>
+<h1 id="Sum-Digits"><a href="#Sum-Digits" class="headerlink" title="Sum Digits"></a>Sum Digits</h1><h2 id="NO-1-1"><a href="#NO-1-1" class="headerlink" title="NO.1"></a>NO.1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_digit1</span>(<span class="hljs-params">n</span>):<br>    <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">10</span>:<br>        <span class="hljs-keyword">return</span> n<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> (n%<span class="hljs-number">10</span> + sum_digit1(n//<span class="hljs-number">10</span>))<br></code></pre></td></tr></table></figure>
+
+<h2 id="NO-2-1"><a href="#NO-2-1" class="headerlink" title="NO.2"></a>NO.2</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs pyt">def sum_digit2(n):<br>    sum=1<br>    while n != 0:<br>        sum = sum * (n%10)<br>        n = n // 10<br>    return sum<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -346,7 +329,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" class="category-chain-item">学习资料</a>
+  <a href="/categories/1005J/" class="category-chain-item">1005J</a>
   
   
 
@@ -371,14 +354,31 @@
   
     <article id="comments" lazyload>
       
-  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTY4My8zNjE0NQ==">
-    <script type="text/javascript">
-      Fluid.utils.loadComments('#lv-container', function() {
-        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
-      });
-    </script>
-    <noscript>Please enable JavaScript to view the comments</noscript>
-  </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'mrle0429/mrle0429.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
     </article>
