@@ -151,7 +151,7 @@
           
             <li class="nav-item">
               <a class="nav-link" href="/marathon/">
-                
+                <i class="iconfont icon-trophy-fill"></i>
                 <span>Marathon</span>
               </a>
             </li>
@@ -175,8 +175,8 @@
           
             <li class="nav-item">
               <a class="nav-link" href="/posts/">
-                <i class="iconfont icon-home-fill"></i>
-                <span>文章页</span>
+                <i class="iconfont icon-book"></i>
+                <span>文章</span>
               </a>
             </li>
           
@@ -355,13 +355,13 @@
 
 
 
-<div id="echarts1883" style="width: 100%;height:420px;margin: 0 auto"></div>
+<div id="echarts3937" style="width: 100%;height:420px;margin: 0 auto"></div>
 <script src="https://unpkg.com/echarts@5.6.0/dist/echarts.min.js"></script>
 <script>
-  if (window.eChartecharts1883ResizeHandler) {
-    window.removeEventListener("resize", eChartecharts1883ResizeHandler);
+  if (window.eChartecharts3937ResizeHandler) {
+    window.removeEventListener("resize", eChartecharts3937ResizeHandler);
   }
-  var optionecharts1883 = {
+  var optionecharts3937 = {
   "title": { "text": "全马净成绩（越低越好）" },
   "tooltip": {
     "trigger": "axis",
@@ -469,12 +469,12 @@
 ]
 };
   if (window.echarts !== undefined) {
-    var eChartecharts1883 = echarts.init(document.getElementById('echarts1883'));
-    eChartecharts1883.setOption(optionecharts1883);
-    var eChartecharts1883ResizeHandler = function() {
-      eChartecharts1883.resize();
+    var eChartecharts3937 = echarts.init(document.getElementById('echarts3937'));
+    eChartecharts3937.setOption(optionecharts3937);
+    var eChartecharts3937ResizeHandler = function() {
+      eChartecharts3937.resize();
     };
-    window.addEventListener("resize", eChartecharts1883ResizeHandler);
+    window.addEventListener("resize", eChartecharts3937ResizeHandler);
   }
 </script>
 
