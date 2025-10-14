@@ -1,0 +1,737 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/le.png">
+  <link rel="icon" href="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/le.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mrle">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="图 图由节点和边构成。在计科中，一个图就是一些顶点的集合。  图G是一个有序二元组(V,E)，其中V称为顶集(Vertices Set)，E称为边集(Edges set)，E与V不相交。它们亦可写成V(G)和E(G)。其中，顶集的元素被称为顶点(Vertex)，边集的元素被称为边(edge)。  广度优先搜索（BFS）一种用于图的查找算法 通常用于解决：  从A出发，有前往B的路径吗 从A出发，前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BFS">
+<meta property="og:url" content="http://example.com/2023/02/07/BFS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="图 图由节点和边构成。在计科中，一个图就是一些顶点的集合。  图G是一个有序二元组(V,E)，其中V称为顶集(Vertices Set)，E称为边集(Edges set)，E与V不相交。它们亦可写成V(G)和E(G)。其中，顶集的元素被称为顶点(Vertex)，边集的元素被称为边(edge)。  广度优先搜索（BFS）一种用于图的查找算法 通常用于解决：  从A出发，有前往B的路径吗 从A出发，前">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/%E5%9B%BE">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/0e07f6a37e6405e5b887ebc90692d33.jpg">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/63f9ec0fd3f22351fb5d681c3b90ae9.jpg">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/7b760fd6267b24e4f66daed12fe608d.jpg">
+<meta property="article:published_time" content="2023-02-07T02:20:31.000Z">
+<meta property="article:modified_time" content="2025-10-14T13:30:33.095Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/%E5%9B%BE">
+  
+  
+  
+  <title>BFS - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":90,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21977573,"cnzz":null,"leancloud":{"app_id":"Zzk99gbfhUnSGIi3aVZorgkY-gzGzoHsz","app_key":"CHbdsGXBjsh9AtkfWokVzpbd","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21977573.js');
+      }
+    </script>
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mrle&#39;s Blog !</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/marathon/">
+                <i class="iconfont icon-trophy-fill"></i>
+                <span>Marathon</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/">
+                <i class="iconfont icon-book"></i>
+                <span>文章</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/%E8%83%8C%E6%99%AF%281%29.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="BFS"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-07 10:20" pubdate>
+          2023年2月7日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 分钟
+        
+      </span>
+    
+
+    
+    
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">BFS</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年10月14日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/%E5%9B%BE" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="图源网络"></p>
+<p>图由节点和边构成。在计科中，一个图就是一些顶点的集合。</p>
+<blockquote>
+<p>图G是一个有序二元组(V,E)，其中V称为顶集(Vertices Set)，E称为边集(Edges set)，E与V不相交。它们亦可写成V(G)和E(G)。其中，顶集的元素被称为顶点(Vertex)，边集的元素被称为边(edge)。</p>
+</blockquote>
+<h1 id="广度优先搜索（BFS）"><a href="#广度优先搜索（BFS）" class="headerlink" title="广度优先搜索（BFS）"></a>广度优先搜索（BFS）</h1><p>一种用于图的查找算法</p>
+<p>通常用于解决：</p>
+<ol>
+<li>从A出发，有前往B的路径吗</li>
+<li>从A出发，前往B的哪条路径最短</li>
+</ol>
+<h2 id="运行时间"><a href="#运行时间" class="headerlink" title="运行时间"></a>运行时间</h2><p>O(V+E)    </p>
+<p>V为顶点数   E为边数</p>
+<h2 id="是否存在路径的问题"><a href="#是否存在路径的问题" class="headerlink" title="是否存在路径的问题"></a>是否存在路径的问题</h2><p>假设需要寻找能解决编程问腿的大佬一名，首先在自己的朋友圈中查找。<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/0e07f6a37e6405e5b887ebc90692d33.jpg" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="我的朋友圈"></p>
+<p>依次检查，他们三个是否会编程：</p>
+<ul>
+<li><input disabled type="checkbox"> Chuck</li>
+<li><input disabled type="checkbox"> Andy</li>
+<li><input disabled type="checkbox"> Bobbie</li>
+</ul>
+<p>假设他们都不会编程，那就要检查他们的朋友，是否有精通编程的。<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/63f9ec0fd3f22351fb5d681c3b90ae9.jpg" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="朋友的朋友圈"></p>
+<p>检查名单中的人时，如果他不会编程，就将他的朋友加入名单，等待检查。</p>
+<ul>
+<li><input checked disabled type="checkbox"> Chuck                                                                             若Chuck 会编程，任务完成                                                 </li>
+<li><input disabled type="checkbox"> Andy                                                                                若Chuck不会，将Chuck的所有朋友加入清单</li>
+<li><input disabled type="checkbox"> Bobbie</li>
+</ul>
+<p>————————————————————</p>
+<ul>
+<li><input disabled type="checkbox"> Andy</li>
+<li><input disabled type="checkbox"> Bobbie</li>
+<li><input disabled type="checkbox"> sean</li>
+<li><input disabled type="checkbox"> Zhang</li>
+</ul>
+<p>重复过程，直到找出会编程的人。类似于上述算法搜遍我的人际网，直到找出会编程的人。即广度优先搜索算法。</p>
+<h2 id="最短路径问题"><a href="#最短路径问题" class="headerlink" title="最短路径问题"></a>最短路径问题</h2><p>寻找离我关系最近的朋友。先寻找我的朋友，在寻找我朋友的朋友。广度优先搜索正是这样的过程。</p>
+<p>正因如此，广度优先搜索不仅查找从A到B的路径，也是在寻找最短路径。</p>
+<p>我们始终按添加顺序的检查清单上的人，这样才能实现广度优先搜索。实现这样目的的数据结构——队列</p>
+<h2 id="实现图"><a href="#实现图" class="headerlink" title="实现图"></a>实现图</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-comment">#先用散列表来实现图-字典</span><br>graph = &#123;&#125;<br>graph[<span class="hljs-string">&quot;me&quot;</span>] = [<span class="hljs-string">&quot;Ahuck&quot;</span>, <span class="hljs-string">&quot;Andy&quot;</span>, <span class="hljs-string">&quot;Bobbie&quot;</span>]<br>graph[<span class="hljs-string">&quot;Chuck&quot;</span>] = [<span class="hljs-string">&quot;sean&quot;</span>, <span class="hljs-string">&quot;Zhang&quot;</span>]<br>graph[<span class="hljs-string">&quot;Andy&quot;</span>] = [<span class="hljs-string">&quot;sean&quot;</span>, <span class="hljs-string">&quot;David&quot;</span>]<br>graph[<span class="hljs-string">&quot;Bobbie&quot;</span>] = [<span class="hljs-string">&quot;Alex&quot;</span>]<br><span class="hljs-comment">#以上就可以表示上面画的关系网了</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="实现算法"><a href="#实现算法" class="headerlink" title="实现算法"></a>实现算法</h2><p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/7b760fd6267b24e4f66daed12fe608d.jpg" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="算法实现"></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> deque <span class="hljs-comment">#python中使用deque创建队列</span><br>search_list = deque()<br>search_list += graph[<span class="hljs-string">&quot;me&quot;</span>]   <span class="hljs-comment">#将我的朋友加入队列</span><br>searched = []<span class="hljs-comment">#已经被查过的人</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">he_is_programmer</span>(<span class="hljs-params">name</span>):<br>    <span class="hljs-string">&#x27;&#x27;&#x27;检查他会不会编程&#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">while</span> search_list:<span class="hljs-comment">#只要队列不空</span><br>    examined = search_list.popleft()<span class="hljs-comment">#取出队列的第一个人</span><br>    <span class="hljs-keyword">if</span> examined <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> searched:<br>        <span class="hljs-keyword">if</span> he_is_programmer(examined):<br>        	<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;he is programmer&quot;</span>)   <span class="hljs-comment">#会编程</span><br>        	<span class="hljs-keyword">return</span> true<br>    	<span class="hljs-keyword">else</span>:<br>        	search_list += graph[examined]<span class="hljs-comment">#不会编程</span><br>            seaeched.append(examined)<br><span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>   <span class="hljs-comment">#执行至此，没有人会编程</span><br></code></pre></td></tr></table></figure>
+
+<p>算法将一直运行，直到：</p>
+<ul>
+<li><input disabled type="checkbox"> 找到一位会编程的</li>
+<li><input disabled type="checkbox"> 队列为空</li>
+</ul>
+<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><blockquote>
+<p>队列是一种特殊的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BA%BF%E6%80%A7%E8%A1%A8?fromModule=lemma_inlink">线性表</a>，特殊之处在于它只允许在表的前端（front）进行删除操作，而在表的后端（rear）进行插入操作，和栈一样，队列是一种操作受限制的线性表。进行插入操作的端称为队尾，进行删除操作的端称为队头。队列中没有元素时，称为空队列。</p>
+<p>队列的数据元素又称为队列元素。在队列中插入一个队列元素称为入队，从队列中删除一个队列元素称为出队。因为队列只允许在一端插入，在另一端删除，所以只有最早进入队列的元素才能最先从队列中删除，故队列又称为先进先出（FIFO—first in first out）<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BA%BF%E6%80%A7%E8%A1%A8?fromModule=lemma_inlink">线性表</a>。 [1] </p>
+</blockquote>
+<p>公交车排队一样，排在前面的先上车。</p>
+<p>在查找过程中，先加入的人先出队接受检查。</p>
+<p>队列是先进先出（FIFO）</p>
+<p>栈是后进后先出(LIFO)</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'mrle0429/mrle0429.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      京ICP备2025137218号-1
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

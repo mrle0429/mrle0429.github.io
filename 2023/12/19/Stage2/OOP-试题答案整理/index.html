@@ -1,0 +1,999 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/le.png">
+  <link rel="icon" href="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/le.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mrle">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="What is the biggest difference between object-oriented programming and procedural programming? Compare how data is accessed by functions in procedural programs and by methods in object-oriented progra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OOP writing exam 试题答案整理">
+<meta property="og:url" content="http://example.com/2023/12/19/Stage2/OOP-%E8%AF%95%E9%A2%98%E7%AD%94%E6%A1%88%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="What is the biggest difference between object-oriented programming and procedural programming? Compare how data is accessed by functions in procedural programs and by methods in object-oriented progra">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231219152840199.png">
+<meta property="article:published_time" content="2023-12-19T07:29:47.772Z">
+<meta property="article:modified_time" content="2024-10-25T06:00:43.435Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231219152840199.png">
+  
+  
+  
+  <title>OOP writing exam 试题答案整理 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":90,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21977573,"cnzz":null,"leancloud":{"app_id":"Zzk99gbfhUnSGIi3aVZorgkY-gzGzoHsz","app_key":"CHbdsGXBjsh9AtkfWokVzpbd","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21977573.js');
+      }
+    </script>
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mrle&#39;s Blog !</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/marathon/">
+                <i class="iconfont icon-trophy-fill"></i>
+                <span>Marathon</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/">
+                <i class="iconfont icon-book"></i>
+                <span>文章</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/%E8%83%8C%E6%99%AF%281%29.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="OOP writing exam 试题答案整理"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-19 15:29" pubdate>
+          2023年12月19日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          15k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          152 分钟
+        
+      </span>
+    
+
+    
+    
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">OOP writing exam 试题答案整理</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2024年10月25日 下午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p><em>What is the biggest difference between object-oriented programming and procedural programming? Compare how data is accessed by functions in procedural programs and by methods in object-oriented programs. What effect does this have on the number of parameters required for methods?</em> (2022 Resit a) (2021 Resit Q1 3)</p>
+<ul>
+<li><p><strong>Lecture 01</strong></p>
+<p>The biggest difference is that we structure our programming using classes and objects instead of function.</p>
+<p>Procedural Programming use global data to functions and data is often passed between functions as parameters. OOP store data together methods, methods are used to operate data, data is accessed by a object. </p>
+<p>OOP methods don’t need require as many parameters because they can have access to data in object’s internal state.</p>
+</li>
+</ul>
+<hr>
+<p><em>What format is Java code compiled into? Explain the purpose of the Java Virtual Machine (JVM) in executing Java code. How does this make Java programs portable between different architectures and operation systems? (2020 Final Q1 h)</em></p>
+<ul>
+<li><p><strong>Lecture 01 P8</strong></p>
+<p>Java bytecode.</p>
+<p>JVM can interpret and execute the bytecode.</p>
+<p>It will work an any system with a JVM installed.</p>
+</li>
+</ul>
+<hr>
+<p><em>Is Java a compiled or interpreted programming language? How does this process work? What are the benefits of this approach? (2021 Resit Q2 b)</em> (2021 Final Q1 b)</p>
+<ul>
+<li><p><strong>Lecture 01 P8</strong></p>
+<p>Java is both compiled and interpreted.</p>
+<p>The text we write is compiled into bytecode. An interpreter called JVM can execute the bytecode.</p>
+<p>It makes Java almost as fast as compiled languages.</p>
+</li>
+</ul>
+<hr>
+<p><em>Does Java use static or dynamic typing? Does Python use static or dynamic typing? What is the difference between the two? What are the benefits of static typing? (2021 Resit Q1 a)</em> (2021 Final Q1 a)</p>
+<ul>
+<li><p><strong>Lecture 02</strong></p>
+<p>Java is static, Python is dynamic. </p>
+<p>In Static language, the type of variables are know before compile. We can’t change the type of variable we are using. In dynamic language, the type of variables are determined at runtime. </p>
+<p>Find our mistakes more easily.</p>
+</li>
+</ul>
+<hr>
+<p><em>Explain the difference between an expression and a statement. Name and explain the use of one of the statements in Java you have learned, give an example showing the statement being used. Can a piece of code be both a statement and an expression? Give an example.</em> (2022 Resit b) (2021 Resit Q1 e)</p>
+<ul>
+<li><p><strong>Lecture 02 P42</strong></p>
+<p>A statement is a piece of code that does something. An expression is a piece of code that can be calculated<br>to give us a result. <code>int number;</code> It be used to declare a int named number. Yes. <code>int number = 5;</code></p>
+</li>
+</ul>
+<hr>
+<p><em>What are the main differences between arrays in Java and Lists in Python? How can we find the size of an array in Java (Include an example of finding the size)? Give an example of declaring and constructing an array to remember 10 int values. (2021 Resit Q1 d)</em> (2021 Final Q1 d)</p>
+<ul>
+<li><p><strong>Lecture 02 P56</strong></p>
+<p>Arrays in Java have a fixed size and all values in a array must be the same type. Lists in Python have a flexible size and cloud have different type of values.</p>
+<p>Using <code>arrayName.length</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">numbers</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">10</span>];<br><span class="hljs-type">int</span> <span class="hljs-variable">length</span> <span class="hljs-operator">=</span> number.length;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p><em>Java has many rules about what names we can use for classes, methods and variables (known as identifiers). In addition to this programmers should also follow a number of conventions for identifiers. For each of the following, list the conventions (not the rules) that you should follow:  (2021 Final Q1 c) (2020 Final Q1 e) (2020 Resit Q1 d)</em></p>
+<p><em>(i) All identifiers (ii) Class identifiers (iii) Variable identifiers (iv) Constant identifiers</em></p>
+<ul>
+<li><strong>Lecture 02 P29</strong></li>
+</ul>
+<p>​     All identifiers: can contain letters,digits and underscore. cannot start with a digit,         cannot contain spaces, they are case sensitive.</p>
+<p>​     Class identifiers: start with an uppercase letter, more than one word use camel case.</p>
+<p>​     Variable identifiers: start with a lowercase letter, more than one word use camel case.</p>
+<p>​     Constant identifiers: use all uppercase letter, separate words with underscores (‘__’)</p>
+<hr>
+<p><em>Given the variables listed below, calculate the type of data that would be returned as the result of each of the following expressions? Explain each of your answers. • An int named i  (2020 Final Q1 a) (2020 Resit Q1 a)</em></p>
+<p>• A long named l </p>
+<p>• A short named s </p>
+<p>• A String named t </p>
+<p>• A float named f </p>
+<p>• A double named d </p>
+<p>(i) i + d     (ii) l - i * s     (iii) i &#x2F; s     (iv) l + i + t    (v) s &lt; i</p>
+<ul>
+<li><p><strong>Lecture 02 P11</strong></p>
+<p>i. <code>i + d</code></p>
+<ul>
+<li>result is a <code>double</code></li>
+<li>Explanation: The <code>int</code> would be implicitly promoted a <code>double</code> for the addition operation.</li>
+</ul>
+<p>ii. <code>l -i *s</code></p>
+<ul>
+<li>result is a <code>long</code> </li>
+<li>Explanation: <code>i * s</code> is a <code>short</code>, and <code>l - short</code> is a <code>long</code></li>
+</ul>
+<p>iii. <code>i/s</code></p>
+<ul>
+<li>result is a <code>short</code></li>
+<li>implicitly promoted</li>
+</ul>
+<p>iv: <code>l + i + t</code></p>
+<ul>
+<li>result: String</li>
+<li>it is String operators. Numbers will automatically be converted to string</li>
+</ul>
+<p>v. <code>s &lt; i</code></p>
+<ul>
+<li>result: boolean</li>
+<li>Belongs to the comparison operator</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><em>What is the implicit parameter? Given the following example of comparing two date objects (birthday and today), which is the implicit parameter?</em> (2022 Resit c) (2021 Resit Q2 d) (2020 Final Q1 c) (2020 Resit Q1 c)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">today.sameDate(birthday);<br></code></pre></td></tr></table></figure>
+
+<p><em>Rewrite the following method to show the implicit parameter in the code using the keyword this:</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">summate</span> <span class="hljs-params">(<span class="hljs-type">int</span> a )</span> &#123;<br>	count = count + a;<br>	<span class="hljs-keyword">if</span> ( count &gt; <span class="hljs-number">28</span>) &#123;<br>		<span class="hljs-keyword">return</span> sum () ;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>Lecture 03 P39</strong></p>
+<p>The object we use to call method is know as implicit parameter. In example, <code>today</code> is implicit parameter.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">summate</span> <span class="hljs-params">(<span class="hljs-type">int</span> a )</span> &#123;<br>	<span class="hljs-built_in">this</span>.count = <span class="hljs-built_in">this</span>.count + a;<br>	<span class="hljs-keyword">if</span> ( <span class="hljs-built_in">this</span>.count &gt; <span class="hljs-number">28</span>) &#123;<br>		<span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.sum () ;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p><em>Explain the difference between the two examples below. What is the output in each example? (2021 Final Q1 e)</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-number">120</span>;<br><span class="hljs-type">int</span> <span class="hljs-variable">y</span> <span class="hljs-operator">=</span> x;<br>y++;<br>System.out.println(x + <span class="hljs-string">&quot; &quot;</span> + y);<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Date</span> <span class="hljs-variable">today</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2019</span>);<br><span class="hljs-type">Date</span> <span class="hljs-variable">tomorrow</span> <span class="hljs-operator">=</span> today;<br>tomorrow.incrementDay();<br>System.out.println(today.getDay() + <span class="hljs-string">&quot; &quot;</span> + tomorrow.getDay());<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>Lecture 3 P47</strong></p>
+<p>First one is primitive variables, they are stored directly in memory. The value of 120 is stored in the variable x. The value of x is then copied into y. When y is incremented, only the value of y changes. So output is <code>120 121</code></p>
+<p>Second one is object variables. When <code>tomorrow</code> is assigned the value of <code>today</code> both references point to the same<code>Date</code> object. So when <code>tomorrow</code> is incrementDay, the today also is changed. Output is <code>2 2</code></p>
+</li>
+</ul>
+<hr>
+<p><em>Explain in your own words the OOP concept cohesion. Describe high and low cohesion. Which is considered good? Why? (2022 Resit d) (2020 Resit Q1 h)</em> </p>
+<ul>
+<li><p><strong>Lecture 04 P34</strong></p>
+<p>Cohesion in programming is about how much the elements of a component belong together. It measures the strength of relationship between method in class. High cohesion is better. High cohesion is related to robustness, reliability, reusability, easy to understand AND maintain. But low cohesion is not.</p>
+</li>
+</ul>
+<hr>
+<p><em>Explain the difference between the following pieces of code (Assuming s is a String variable). Will they always return the same result? Why? (2022 Resit e) (2020 Final Q1 b)</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">s == <span class="hljs-string">&quot; Hello &quot;</span>;       s.equals (<span class="hljs-string">&quot;Hello&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>Lecture  05 P40</strong></p>
+<p><code>==</code> compare the memory address of two string. <code>equals</code> is a method of String be used to compare 2 string whether same.</p>
+</li>
+</ul>
+<p>​	No. <code>==</code> not always worked, when dynamically create String.</p>
+<hr>
+<p><em>Explain the concept of a ‘black box’ in programming. How does encapsulation allow us to achieve this concept in Java? (2020 Final Q1 d )</em></p>
+<ul>
+<li><p><strong>Lecture 06 P18</strong></p>
+<p>Black box is a system which can know what it can do but not need to know how it work. Such as A car, we know how to drive it, but don’t know why.</p>
+<p>Encapsulation is achieved through the use of access modifiers to restrict access to class member, such as public private.</p>
+</li>
+</ul>
+<hr>
+<p><em>What effect does the keyword final have on a variable? Explain the difference between a final primitive variable and a final object variable. (2022 Resit Q2 a) (2021 Resit Q2 b)</em> </p>
+<ul>
+<li><p><strong>Lecture 06 P38</strong></p>
+<p>Final variables can be assigned only once, it would never change. Final primitive variable and final object variable couldn’t be changed after initialization. But final object variable could be modified. Such as A final ArrayList could add element.</p>
+</li>
+</ul>
+<hr>
+<p><em>What is encapsulation? Why is it useful in Object-Oriented Programming? How do we implement encapsulation in Java? (2021 Resit Q2 a)</em> (2021 Final Q2 a) (2020 Resit Q1 j)</p>
+<ul>
+<li><p><strong>Lecture 06 P17</strong></p>
+<p>Encapsulation is the combination 2 ideas: 1. Grouping together of instance variable and methods into classes. 2. Ability to restrict access to some of the objects components.</p>
+<p>It provides a way to protect internal of object. Easy to maintain and test.</p>
+<p>Encapsulation is achieved through the use of access modifiers to restrict access to class member, such as public private. If other class need to access variables always call getter and setter.</p>
+</li>
+</ul>
+<hr>
+<p><em>What is the function of the keyword final in Java? What effect does it have on a variable? What effect does it have on a method? What effect does it have on a class? (2020 Resit Q1 b)</em></p>
+<ul>
+<li><p><strong>Lecture 06 P38 &amp; Lecture 08 P63</strong></p>
+<p>Final is used in declaration variable, method or class is “final” and cannot be changed. </p>
+<p>Final variables can be assigned only once, it would never change.</p>
+<p>Final class is one that cannot be extended. </p>
+<p>Final method cannot be overridden by subclasses. It means when class is extended, the final methods cannot be overridden.</p>
+</li>
+</ul>
+<hr>
+<p><em>What is the function of the keyword static in Java? What effect does it have on a variable? What effect does it have on a method? Give an example of using the static method hello in the class Mess. The signature of the method is hello(int n, String s) (2021 Fina Q2 b)</em></p>
+<ul>
+<li><p><strong>Lecture 06 P32</strong></p>
+<p>static in Java is used in declaration class variable and class method.</p>
+<p>Class variable share a single value over all object, only created in memory once. </p>
+<p>Class method not connected to objects, cannot use instance variables. It allows other to use this method without create object.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Mess</span> &#123;<br>    pubilc <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Mess.hello(<span class="hljs-number">2</span>,<span class="hljs-string">&quot;you&quot;</span>);<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">hello</span><span class="hljs-params">(<span class="hljs-type">int</span> n, String s)</span> &#123;<br>        System.out.println(n + s);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p><em>Describe how Interfaces can be used to enable code reuse in Java. Describe in detail how an interface would be defined and implemented to make reusable code. (2022 Resit Q2 b) (2021 Resit Q2 c)</em>  (2021 Final Q2 c) (2020 Final Q1 f)</p>
+<ul>
+<li><p><strong>Lecture 07 P16</strong></p>
+<p>Interface is a list of action an object can do. Its methods focus on behave like an “X”. An interface specifier what an object can do not how.</p>
+<p>Defined an interface and implemented.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">InterfaceName</span> &#123;<br>    pubilc <span class="hljs-keyword">void</span> requiredMethod<br>&#125;<br><br>Public <span class="hljs-keyword">class</span> <span class="hljs-title class_">className</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">InterfaceName</span> &#123;<br>    <br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p><em>Explain the idea of polymorphism in your own words. You should illustrate using an example with some code showing its use. (2021 Final Q2 e)</em></p>
+<ul>
+<li><p>Polymorphism means that we can store object in different type, and when executing methods each object may execute different versions of the same method according to their type.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>    <span class="hljs-keyword">return</span> a + b;<br>&#125;<br><br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">add</span><span class="hljs-params">(String a, String B)</span> &#123;<br>    <span class="hljs-keyword">return</span> a + b<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p><em>What is an immutable object? What changes must we make to a class to make its objects immutable? (2021 Final Q2 d)</em></p>
+<ul>
+<li><p><strong>Lecture 08 P69</strong></p>
+<p>An object is considered immutable if its state cannot change after it is constructed.</p>
+<p>All instance variables and class variables are declared as final and private. Setter methods are not provided. Subclasses are not allowed to override, usually this is done by declaring the class as final. Instance variables that refer to objects cannot be changed.</p>
+</li>
+</ul>
+<hr>
+<p><em>Explain the phrase “prefer composition over inheritance” in your own words. How is this achieved in a Java class? Give one benefit and one drawback of choosing to create a class using composition instead of inheritance. (2022 Resit Q2 c)</em> (2021 Resit Q2 e)</p>
+<ul>
+<li><p><strong>Lecture 08 P77</strong></p>
+<p>It means whenever possible you should define classes using composition instead of inheritance. It is a general rule of good design.</p>
+<p>Composition can be achieved by creating objects of other classes within a class and using them to provided desired function.</p>
+<p>Benefit: More code reuse.</p>
+<p>Drawback: Implementing many forwarding methods. We need to add many forwarding methods, getter and setter.</p>
+</li>
+</ul>
+<hr>
+<p><em>Given the following two examples of nested classes (a and b). Explain the difference between the two examples. Write the code required to create an object based on the nested class for each example.(2021 Final Q3 b)</em></p>
+<p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231219152840199.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20231219152840199"></p>
+<ul>
+<li><p><strong>Lecture 09 P25</strong></p>
+<p>Static nested class is not connect to an instance of the outer class and so it cannot access the instance variables of the outer class. They can be constructed without an instance of the outer class.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// a</span><br>C.object = <span class="hljs-keyword">new</span> <span class="hljs-title class_">C</span>();<br>C.<span class="hljs-type">D</span> <span class="hljs-variable">nestedObject</span> <span class="hljs-operator">=</span> object.<span class="hljs-keyword">new</span> <span class="hljs-title class_">D</span>();<br><br><span class="hljs-comment">// b</span><br>E.<span class="hljs-type">F</span> <span class="hljs-variable">nestedObject</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">E</span>.F();<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p><em>What is a lambda function? When can we use a lambda function in Java? Define a lambda function to implement the Calculator interface defined below. The lambda function should calculate the product of these numbers multiplied by 2 (i.e a ∗ b ∗ 2). What parts of the syntax of a lambda function are optional? (2022 Resit Q2 d) (2021 Resit Q3 a) (2021 Final Q3 a)</em>  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Calculator</span> &#123;<br>	<span class="hljs-type">int</span> <span class="hljs-title function_">performCalculation</span> <span class="hljs-params">(<span class="hljs-type">int</span> a , <span class="hljs-type">int</span> b )</span> ;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>Lecture 09 P28</strong></p>
+<p>Lambda is a simple way to represent anonymous inner classes. They could be used when interface require a single method.</p>
+<p><code>Calculator lam = (a,b) -&gt; &#123;a * b *2&#125;</code></p>
+<p><strong>Variable type</strong>, <strong>round brackets</strong> when only a single parameter, <strong>curly braces</strong> when only a single statement are optional.</p>
+</li>
+</ul>
+<hr>
+<p><em>Explain the concept of inversion of control. What is required in our code to make this work? Why is this necessary when we are programming a graphical user interface? (2022 Resit Q2 e)</em> (2020 Final Q1 g)</p>
+<ul>
+<li><p><strong>Lecture 10 P9</strong></p>
+<p>It give control to framework, the framework will decide the code will be executed.</p>
+<p>We must implement specific methods, typically in classes that have extended a class in the framework.</p>
+<p>That’s because we can not know when our code should be executed.</p>
+</li>
+</ul>
+<hr>
+<p><em>What is a callback method? List the steps we must complete to cause a message to be printed on the screen whenever the user clicks the mouse.(2021 Resit Q3 b)</em></p>
+<ul>
+<li><p><strong>Lecture 10 P46</strong></p>
+<p>A callback method is a method that we implement knowing that it will be called whenever a particular event happens.</p>
+<ol>
+<li>Implement the <code>MouseListen</code> interface.</li>
+<li>Define the code to print on screen and the listener to call when the mouse is clicked.</li>
+<li>Draw the window again by calling the repaint method.</li>
+</ol>
+</li>
+</ul>
+<hr>
+<p><em>What is a Stack Trace? Explain the order that a stack trace is printed in and why. (2022 Resit Q3 a)</em> (2021 Resit Q3 e) (2020 Final Q1 i)</p>
+<ul>
+<li><p><strong>Lecture 11 P14</strong></p>
+<p>When an exception happens, a stack trace tells us what frames were on the stack at exact moment that the exception happened.</p>
+<p>The order of stack trace is stack frames are removed, due to the principle of stack LIFO.</p>
+</li>
+</ul>
+<hr>
+<p><em>What is the difference between the information in a text file and a data file? Give an example of both storing the integer value 123. What would happen if I try to use readLine from a BufferedReader to read information from a data file containing integer values? (2022 Resit Q3 b) (2020 Resit Q1 i)</em> </p>
+<ul>
+<li><p><strong>Lecture 12 P11</strong></p>
+<p>Text file are used only to store text information, this data is represented using ASCll codes. Easy to understand. Data file contain only data in binary. Difficult to understand.<br>Text: 123</p>
+<p>Data: 1111011</p>
+<p><code>readLine</code> can result in loss of procession or unexpected characters.</p>
+</li>
+</ul>
+<hr>
+<p><em>Describe the difference between traditional testing and unit testing. How do we know when we have enough code coverage in our testing? (2022  Resit Q3 c)</em> (2021 Resit Q3 c) (2021 Final Q3 c) (2020 Resit Q1 f)</p>
+<ul>
+<li><p>**Lecture 13 P5 **</p>
+<p>Traditional testing means running the program and seeing the result. Unit testing is testing each component of the system individually.</p>
+<p>Code coverage is measured by tools and expressed as a percentage of the total code.</p>
+</li>
+</ul>
+<hr>
+<p><em>What is code coverage? With respect to code coverage, explain each of the following coverage criteria: (2020 Final Q1 j)</em></p>
+<p><em>• Function coverage</em> </p>
+<p><em>• Statement coverage</em> </p>
+<p><em>• Branch coverage</em> </p>
+<p><em>• Condition coverage</em></p>
+<ul>
+<li><p><strong>Lecture 13 P49</strong></p>
+<p>Code coverage is a measurement of the code that has been tested.</p>
+<ul>
+<li>Function coverage: Has each function in the application been called by test?</li>
+<li>Statement coverage: Has each statement in the application been called by test?</li>
+<li>Branch coverage: Has each branch of each control structure been executed by the test?</li>
+<li>Condition coverage: Has each Boolean sub-expression evaluated both to true and false?</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><em>What is the purpose of code documentation (e.g. Javadoc)? Write a suitable javadoc comment for the following method. Parameters, return types and exceptions should be specified correctly (you can list yourself as the author). (2022 Resit Q3 d)</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">converToInteger</span><span class="hljs-params">(String s)</span> &#123;<br>    <span class="hljs-keyword">if</span>(s == <span class="hljs-literal">null</span> || s.length() == <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalArgumentException</span>(<span class="hljs-string">&quot;Input is not valid!&quot;</span>);<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span><span class="hljs-number">0</span>; i &lt; s.length(); i++) &#123;<br>        <span class="hljs-keyword">if</span>(s.charAt(i) &lt; <span class="hljs-string">&#x27;0&#x27;</span> || s.charAt(i) &gt; <span class="hljs-string">&#x27;9&#x27;</span>) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">NumberFormatException</span>(<span class="hljs-string">&quot;Input is not a number!&quot;</span>);<br>        &#125;<br>        result = result * <span class="hljs-number">10</span> + (s.charAt(i) - <span class="hljs-string">&#x27;0&#x27;</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p><strong>Lecture 14 P5</strong></p>
+<p>Code Documentation is for explaining what code does, it is useful for others to use our code without having to read the code.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Convert a string to an integer.</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> s The String to be converted to an integer.</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> The integer value represented by the string.</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@throws</span> IllegalArgumentException If the input string is null or empty.</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@throws</span> NumberFormatException If the input string is not a valid number string.</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@author</span> Le Liu</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p><em>Explain how generics improves type checking in the compiler. Give an example of a situation where an error would not be detected without generics. (2022 Resit Q3 e)</em> (2021 Final Q3 d)</p>
+<ul>
+<li><p>**Lecture 15 **</p>
+<p>Generic allows for writing code that can work with variety of data type while proving strong type checking at compile time. If a parameter is not correct, the compiler will show an error.</p>
+<p>Given a stack only for storing int. If we push a element not be int, error will show until we pop() it. We can’t find error when push it.</p>
+</li>
+</ul>
+<hr>
+<p><em>When does Java know what type a generic object will be using? Give an example of the code required to construct an object based on the generic class named GC. The object should use integer values for the parameters type. The class has a constructor that takes no parameters. (2021 Final Q3 e) (2020 Resit Q1 g)</em></p>
+<ul>
+<li><p><strong>Lecture 15</strong></p>
+<p>During compile-time.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">GC&lt;Integer&gt; g = <span class="hljs-keyword">new</span> <span class="hljs-title class_">GC</span>&lt;&gt;();<br>g.setvalue(<span class="hljs-number">5</span>);<br></code></pre></td></tr></table></figure></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Stage2/" class="category-chain-item">Stage2</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'mrle0429/mrle0429.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      京ICP备2025137218号-1
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

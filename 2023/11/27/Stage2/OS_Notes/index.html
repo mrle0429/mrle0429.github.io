@@ -1,0 +1,2279 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/le.png">
+  <link rel="icon" href="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/le.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mrle">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Intro to OS计算机系统组成部分 Hardware (CPU memory) Operating System Application programs Users  操作系统的作用 Interface between user and hardware Control interaction between user and programs provide a controlled a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OS Notes">
+<meta property="og:url" content="http://example.com/2023/11/27/Stage2/OS_Notes/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Intro to OS计算机系统组成部分 Hardware (CPU memory) Operating System Application programs Users  操作系统的作用 Interface between user and hardware Control interaction between user and programs provide a controlled a">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231219175551971.png">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231219190231734.png">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123220230748.png">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123220827489.png">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123221558256.png">
+<meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123224117942.png">
+<meta property="article:published_time" content="2023-11-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-20T16:00:00.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231219175551971.png">
+  
+  
+  
+  <title>OS Notes - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":90,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21977573,"cnzz":null,"leancloud":{"app_id":"Zzk99gbfhUnSGIi3aVZorgkY-gzGzoHsz","app_key":"CHbdsGXBjsh9AtkfWokVzpbd","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21977573.js');
+      }
+    </script>
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mrle&#39;s Blog !</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/marathon/">
+                <i class="iconfont icon-trophy-fill"></i>
+                <span>Marathon</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/">
+                <i class="iconfont icon-book"></i>
+                <span>文章</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/%E8%83%8C%E6%99%AF%281%29.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="OS Notes"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-11-27 00:00" pubdate>
+          2023年11月27日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          40k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          401 分钟
+        
+      </span>
+    
+
+    
+    
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">OS Notes</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年12月21日 凌晨
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Intro-to-OS"><a href="#Intro-to-OS" class="headerlink" title="Intro to OS"></a>Intro to OS</h1><h2 id="计算机系统组成部分"><a href="#计算机系统组成部分" class="headerlink" title="计算机系统组成部分"></a>计算机系统组成部分</h2><ul>
+<li>Hardware (CPU memory)</li>
+<li>Operating System</li>
+<li>Application programs</li>
+<li>Users</li>
+</ul>
+<h2 id="操作系统的作用"><a href="#操作系统的作用" class="headerlink" title="操作系统的作用"></a>操作系统的作用</h2><ul>
+<li>Interface between user and hardware</li>
+<li>Control interaction between user and programs</li>
+<li>provide a controlled and efficient environment for the programs</li>
+<li>mange the whole resource of system</li>
+</ul>
+<h2 id="OS-的两个基本功能"><a href="#OS-的两个基本功能" class="headerlink" title="OS 的两个基本功能"></a>OS 的两个基本功能</h2><ul>
+<li>managing the hardware resources</li>
+<li>extending the hardware functionality</li>
+</ul>
+<h2 id="操作系统组成部分"><a href="#操作系统组成部分" class="headerlink" title="操作系统组成部分"></a>操作系统组成部分</h2><ul>
+<li>Process Manager</li>
+<li>Main-Memory Management</li>
+<li>File Management</li>
+<li>I&#x2F;O System Management</li>
+<li>Secondary-Storage Management</li>
+<li>Networking</li>
+<li>Protection System</li>
+<li>Command-Interpreter System</li>
+</ul>
+<h2 id="操作系统的目标"><a href="#操作系统的目标" class="headerlink" title="操作系统的目标"></a>操作系统的目标</h2><ul>
+<li>Efficient</li>
+<li>Interactive</li>
+<li>Robust</li>
+<li>Secure</li>
+<li>Scalable</li>
+<li>Portable</li>
+</ul>
+<h2 id="OS-组织结构"><a href="#OS-组织结构" class="headerlink" title="OS 组织结构"></a>OS 组织结构</h2><h3 id="Monolithic-structure"><a href="#Monolithic-structure" class="headerlink" title="Monolithic structure"></a>Monolithic structure</h3><p>所有组件都在同一个内核中，他们之间可以直接交互，所有很高效。但是由于他的非结构化，导致不易理解，修改和维护。容易受到攻击。Susceptible to damage from errant or malicious code.</p>
+<h3 id="Layered-Structure"><a href="#Layered-Structure" class="headerlink" title="Layered Structure"></a>Layered Structure</h3><p>组件被分层。 Designing the system as a number of modules  gives the system structure and consistency. 允许调试，修改和再利用。进程的请求需要经过很多层，导致效率低下。</p>
+<h3 id="Microkernel-Structure"><a href="#Microkernel-Structure" class="headerlink" title="Microkernel Structure"></a>Microkernel Structure</h3><ul>
+<li>advantages: more security, stability, modularity, flexibility, portability, debuggability, and maintainability</li>
+<li>disadvantages: lower performance, increased complexity, and limited functionality</li>
+</ul>
+<h2 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h2><p>良好的硬件特性可以简化操作系统的设计。</p>
+<h3 id="双元操作模式：Kernel-mode-and-user-mode"><a href="#双元操作模式：Kernel-mode-and-user-mode" class="headerlink" title="双元操作模式：Kernel mode and user mode."></a><strong>双元操作模式</strong>：Kernel mode and user mode.</h3><p><strong>kernel mode</strong>: access to all the CPU instruction set  also called monitor&#x2F;system&#x2F;privileged mode </p>
+<p><strong>user mode</strong>: access restricted to a subset of the  instruction set</p>
+<p>The mode is indicated by a <strong>status bit</strong> in a protected processor register.</p>
+<p><strong>保护指令</strong>阻止用户直接接触I&#x2F;O，内存管理，执行CPU暂停。</p>
+<h3 id="System-call"><a href="#System-call" class="headerlink" title="System call"></a>System call</h3><p>user希望调用特权命令。</p>
+<p><strong>陷阱指令</strong>跳转至内核处理陷阱。Using call parameters to determine which system routine to run.</p>
+<p>Then hardware must implement caller’s parameters verification. Return to user-mode when call finished. </p>
+<h3 id="Exception-hardware-initiated-interrupt"><a href="#Exception-hardware-initiated-interrupt" class="headerlink" title="Exception(hardware-initiated interrupt)"></a>Exception(hardware-initiated interrupt)</h3><p>异常是错误或特定情况自动触发的，不是故意的。</p>
+<p>常见的异常：</p>
+<ul>
+<li>内存超出用户访问空间</li>
+<li>overflow, underflow</li>
+<li>trace traps</li>
+<li>非法使用特权指令</li>
+<li>paging fault</li>
+</ul>
+<p><strong>中断向量</strong>解决OS需求</p>
+<h3 id="Memory-Protection"><a href="#Memory-Protection" class="headerlink" title="Memory Protection"></a>Memory Protection</h3><p>内存保护机制必须被保护</p>
+<p><strong>base and limit registers</strong> is simple scheme.</p>
+<p><em><strong>base ≤ address &lt; base + limit</strong></em></p>
+<h3 id="I-x2F-O-Control"><a href="#I-x2F-O-Control" class="headerlink" title="I&#x2F;O Control"></a>I&#x2F;O Control</h3><p>所有的I&#x2F;O 指令都是特权指令。</p>
+<ul>
+<li>I&#x2F;O start: handled by system calls</li>
+<li>I&#x2F;O completion and I&#x2F;O events: handled by interrupts</li>
+</ul>
+<p><strong>Interrupts</strong> are the basis for asynchronous I&#x2F;O&#x2F;</p>
+<h3 id="CPU-Protection"><a href="#CPU-Protection" class="headerlink" title="CPU Protection"></a>CPU Protection</h3><p>Ensure that OS always maintains control. A user program might get stuck into an infinite loop and never return control to OS.</p>
+<p><strong>Timer</strong>: it generates an interrupt after a fixed or variable amount of execution time.</p>
+<h1 id="进程-Processes"><a href="#进程-Processes" class="headerlink" title="进程(Processes)"></a>进程(Processes)</h1><p>每个进程在自己的地址空间运行。两个不同进程中的相同地址被储存在不同地址的内存位置。</p>
+<h2 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h2><ol>
+<li><strong>程序代码(Text)</strong>: 这是程序的实际可执行代码，也称为文本段。程序代码包含程序的指令集合，它定义了程序的逻辑和执行流程。这部分通常是只读的，因为它存储程序的源代码或二进制可执行文件，并且在程序的执行过程中不会被修改。</li>
+<li>当前活动（Current Activity）：这包括了程序的当前状态，包括<strong>程序计数器（Program Counter）</strong>和<strong>处理器寄存器（Processor Registers）</strong>。程序计数器是一个特殊的寄存器，它存储了当前执行的指令位置，用于跟踪程序的执行进度。处理器寄存器用于存储各种临时数据和控制信息，以支持程序的执行。</li>
+<li><strong>栈（Stack）</strong>：栈是一个用于存储临时数据的数据结构。它通常包含函数调用的返回地址、局部变量、函数参数和其他临时数据。栈的管理是通过栈指针（Stack Pointer）来完成的，它指向栈的当前顶部。</li>
+<li><strong>数据段（Data Section</strong>）：数据段用于存储全局变量和静态变量，这些变量在程序的整个执行期间都可以访问。数据段存储在进程的内存中，允许多个函数或代码模块之间共享数据。</li>
+<li><strong>堆（Heap）</strong>：堆是用于存储在程序运行时动态分配的内存的一部分。堆的大小可以根据程序的需求动态增加或减小。通常，动态分配的内存用于存储数据结构、对象、字符串和其他需要在运行时动态创建和释放的数据。</li>
+</ol>
+<h2 id="进程状态（Process-States）"><a href="#进程状态（Process-States）" class="headerlink" title="进程状态（Process States）"></a>进程状态（Process States）</h2><p>进程状态（Process States）是指一个进程在其执行期间可能处于的不同状态</p>
+<ol>
+<li>新建（New）：当一个进程被创建时，它处于新建状态。在这个阶段，操作系统正在为进程分配资源，设置进程控制块（Process Control Block，PCB），并为进程初始化所需的数据结构。一旦所有准备工作完成，进程就会进入就绪状态等待执行。</li>
+<li>运行（Running）：运行状态表示进程正在执行其指令，使用CPU来执行任务。在任何给定的时间，通常只有一个进程能够处于运行状态，因为只有一个CPU核心可供进程执行。进程可以在运行状态中执行，直到它完成了其任务或者被操作系统暂停。</li>
+<li>等待（Waiting）：等待状态表明进程在等待某些事件或条件发生，以便继续执行。这些事件可以包括等待I&#x2F;O操作完成、等待用户输入、等待信号或等待其他进程的通知。当进程处于等待状态时，它不占用CPU时间，并暂停执行，直到所需事件发生。</li>
+<li>就绪（Ready）：就绪状态表示进程已经准备好执行，但还没有被分配到CPU执行。通常，多个就绪进程等待CPU时间片，等待操作系统的调度器将它们分配给CPU。在多任务操作系统中，就绪状态的进程可能在队列中等待执行。</li>
+<li>终止（Terminated）：终止状态表明进程已经完成了它的任务并退出执行。在这个状态下，操作系统会清理并释放进程占用的资源，包括内存、文件句柄和其他资源。终止状态是进程的最终状态。</li>
+</ol>
+<h2 id="进程控制块（Process-Control-Block，PCB）"><a href="#进程控制块（Process-Control-Block，PCB）" class="headerlink" title="进程控制块（Process Control Block，PCB）"></a>进程控制块（Process Control Block，PCB）</h2><p>进程控制块（Process Control Block，PCB）是操作系统中的一个关键数据结构，用于存储与每个进程相关的信息。</p>
+<ol>
+<li>进程状态（Process State）：PCB 包含了一个字段，用于指示进程的状态，例如运行中（Running）、等待中（Waiting）、就绪（Ready）等。这有助于操作系统跟踪进程的当前状态，以确定是否可以分配CPU时间。</li>
+<li>程序计数器（Program Counter，PC）：PCB 中存储了程序计数器的值，它指示了进程下一条要执行的指令的位置。这允许操作系统在进程切换时恢复执行。</li>
+<li>CPU 寄存器：PCB 中通常包含了所有CPU寄存器的内容，这些寄存器包括通用寄存器、堆栈指针、帧指针等。这有助于保存进程的CPU状态，以便在切换进程时进行恢复。</li>
+<li>CPU 调度信息：PCB 包含了与 CPU 调度相关的信息，例如优先级、调度队列指针等。这些信息有助于操作系统选择下一个要执行的进程。</li>
+<li>进程号（Process Number，PID）：每个进程都有一个唯一的进程号，它在 PCB 中存储，用于标识特定的进程。PID 是操作系统用来管理和识别进程的重要标识。</li>
+<li>内存管理信息：PCB 中可能包括了内存分配和管理相关的信息，包括进程的内存地址空间范围、页表、段表等。这有助于操作系统有效地管理进程的内存需求。</li>
+<li>记账信息（Accounting Information）：PCB 中可能包含有关进程的计算信息，如已使用的CPU时间、自启动以来的经过的时钟时间、时间限制等。</li>
+<li>I&#x2F;O 状态信息：PCB 可能包括有关进程的I&#x2F;O设备分配情况，以及已打开文件的列表等信息。</li>
+</ol>
+<h2 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h2><p>进程切换是操作系统中的一个关键概念，它涉及保存和加载进程的状态以便在多任务系统中有效切换不同的进程。</p>
+<ol>
+<li>进程状态保存和加载：当操作系统需要切换到不同的进程时，它会使用进程控制块（PCB）中存储的信息来保存当前正在执行进程的状态，包括程序计数器（PC）、寄存器内容等。然后，操作系统会加载下一个要执行的进程的状态，以继续执行。这个过程称为<strong>上下文切换（Context Switch）</strong>。</li>
+<li>上下文切换的开销：上下文切换过程中，系统不会执行实际的工作，而是花费时间来保存和加载进程状态。这被称为上下文切换的开销，它是系统的一个负担。减少上下文切换的开销对于提高系统性能非常重要。</li>
+<li>快速上下文切换：为了减小上下文切换的开销，操作系统需要设计快速的上下文切换机制。这通常涉及硬件和操作系统内核的优化，以确保尽可能快速地切换进程。快速上下文切换对于实现实时响应和高性能的系统至关重要。</li>
+<li>切换频率的权衡：操作系统需要权衡进程切换的频率。如果切换得太频繁，会增加系统开销，降低性能。如果切换得太少，系统可能会变得不够交互式，不能满足用户需求。因此，操作系统需要根据不同的任务和需求来管理进程切换的频率。</li>
+</ol>
+<h2 id="进程创建（Process-Creation）："><a href="#进程创建（Process-Creation）：" class="headerlink" title="进程创建（Process Creation）："></a>进程创建（Process Creation）：</h2><p>进程的创建是指在计算机系统中启动新进程的过程。进程可以通过以下两种主要事件来创建：</p>
+<ol>
+<li>系统引导（System Boot）：当计算机系统启动时，通常会创建一些初始化进程，这些进程在系统启动时开始运行，为后续操作系统的正常运行提供基础。</li>
+<li>执行进程创建系统调用（Process Creation System Call）：在运行的进程内，可以通过执行进程创建系统调用（例如fork()在Unix&#x2F;Linux系统中）来启动新的进程。这个新的进程是由调用进程创建并拥有自己的地址空间和资源。</li>
+</ol>
+<h2 id="进程终止（Process-Termination）："><a href="#进程终止（Process-Termination）：" class="headerlink" title="进程终止（Process Termination）："></a>进程终止（Process Termination）：</h2><p>进程的终止是指进程执行完毕或在某些条件下被终止的过程。进程可以以以下不同条件终止：</p>
+<ol>
+<li>自愿终止（Voluntary Termination）：这种终止是由进程自身决定的，通常发生在进程完成了其任务或者遇到错误时。例如，进程正常退出时（例如，通过调用exit()函数），或者在出现错误情况下终止时。</li>
+<li>非自愿终止（Involuntary Termination）：这种终止是由外部因素引起的，通常是由其他进程或系统错误引起的。例如，当一个进程发生严重错误（如访问非法内存）时，操作系统可以终止它。另一个例子是另一个进程（例如管理员或父进程）可以终止一个子进程。</li>
+<li>从任何状态终止：自愿终止通常发生在运行状态下，但非自愿终止可以发生在任何进程状态下。一个进程可能在就绪、等待或运行状态下被非自愿终止。</li>
+</ol>
+<h2 id="子进程-Child-Process"><a href="#子进程-Child-Process" class="headerlink" title="子进程( Child Process )"></a>子进程( Child Process )</h2><p>进程可以创建新的子进程，形成一个层次结构的进程关系，通常称为进程树（Process Tree）。在这个关系中，创建新进程的进程被称为父进程，而新创建的进程被称为子进程。进程树的组织方式使得操作系统能够有效地管理和控制进程，同时保持层次结构的完整性。</p>
+<ol>
+<li>父进程的影响：在某些操作系统中，当父进程终止时，它的所有子进程也会被终止。这是一种父子进程之间的强耦合关系。如果子进程需要继续运行，它可能需要被重新分配给另一个父进程。</li>
+<li>孤儿进程（Orphan Process）：当一个父进程终止，但它的子进程仍在运行时，这些子进程被称为孤儿进程。通常，孤儿进程会被重新分配给init进程或其他父进程，以确保它们能够继续运行。</li>
+<li>僵尸进程（Zombie Process）：当一个子进程终止，但其父进程没有正确地回收子进程的资源和状态信息时，子进程可能会成为僵尸进程。僵尸进程仍占用系统资源，但不再执行任何任务。它们应该被父进程正确回收，否则它们可能会在系统中积累。</li>
+<li>回收僵尸进程(reaped) ：操作系统和父进程需要正确地回收僵尸进程，以释放系统资源。如果父进程没有回收僵尸进程，通常是因为操作系统或父进程存在问题。</li>
+</ol>
+<h3 id="在Unix中的例子"><a href="#在Unix中的例子" class="headerlink" title="在Unix中的例子"></a>在Unix中的例子</h3><ol>
+<li>创建子进程：在Unix操作系统中，可以使用<code>fork()</code>系统调用来创建一个新的子进程。这个子进程是父进程的副本，几乎接收父进程的所有内容。</li>
+<li>复制父进程的地址空间和 PCB：在实质上，<code>fork()</code>系统调用会复制父进程的地址空间和进程控制块（PCB）。这包括父进程的代码、数据、堆、栈以及与父进程相关的进程信息。</li>
+<li>子进程拥有新的PID：虽然子进程是父进程的副本，但它必须拥有自己独立的进程标识号（PID）。这是因为每个进程在系统中必须具有唯一的PID。</li>
+<li>PCB的复制：尽管子进程拥有新的PID，但它会继承父进程的PCB的副本。这包括了进程状态、程序计数器（PC）等信息。因此，子进程会从<code>fork()</code>系统调用之后的位置开始执行，从父进程的状态中继承执行。</li>
+<li><strong>返回值：<code>fork()</code>系统调用返回一个整数值。对于父进程，它会返回新创建子进程的PID。对于子进程，返回值为0，用于区分子进程和父进程。</strong></li>
+</ol>
+<h2 id="进程通信-Interprocess-Communication-IPC"><a href="#进程通信-Interprocess-Communication-IPC" class="headerlink" title="进程通信(Interprocess Communication (IPC))"></a>进程通信(Interprocess Communication (IPC))</h2><h3 id="独立进程（Independent-Processes）："><a href="#独立进程（Independent-Processes）：" class="headerlink" title="独立进程（Independent Processes）："></a>独立进程（Independent Processes）：</h3><p>独立进程是指那些在系统中既不会影响其他进程，也不会受其他进程影响的进程。这些进程之间不能共享系统状态或数据，它们在运行时彼此独立，没有交互。例如，位于不同非网络连接计算机上运行的进程就是独立进程的示例。</p>
+<p>特点：</p>
+<ul>
+<li>**决定性行为 (Deterministic behavior)<strong>：独立进程的行为是确定性的，只取决于其输入状态，因此结果是</strong>可复现的 (Reproducible)**。</li>
+<li>可以停止和重新启动：独立进程可以在不引起问题的情况下停止和重新启动。</li>
+</ul>
+<h3 id="合作进程（Cooperative-Processes）："><a href="#合作进程（Cooperative-Processes）：" class="headerlink" title="合作进程（Cooperative Processes）："></a>合作进程（Cooperative Processes）：</h3><p>合作进程是那些在某种程度上共享信息或资源的进程，它们的执行可能会互相影响。这些进程可以共享数据、状态或资源，它们之间有某种形式的交互。例如，共享同一个文件系统的进程就是合作进程的示例。</p>
+<p>特点：</p>
+<ul>
+<li>**非确定性行为(Nondeterministic)**：合作进程的行为通常是非确定性的，因为多种因素可能会影响结果，导致结果难以复现。</li>
+<li>测试和调试困难：由于非确定性行为，测试和调试合作进程通常更加复杂和困难。</li>
+<li>容易出现竞态条件(race conditions)：合作进程容易受到竞态条件的影响，也就是进程的结果可能取决于其他进程事件的顺序或时间。</li>
+</ul>
+<h3 id="多个并发协同活动存在的原因："><a href="#多个并发协同活动存在的原因：" class="headerlink" title="多个并发协同活动存在的原因："></a>多个并发协同活动存在的原因：</h3><p>在操作系统中，有多个并发活动需要同时进行，例如用户任务、系统任务、输入&#x2F;输出操作等。这些活动可能需要共享资源、信息或数据，并且需要协同工作以实现系统的有效运行。</p>
+<h3 id="为什么不应该为每一个并发活动定义一个单独的进程："><a href="#为什么不应该为每一个并发活动定义一个单独的进程：" class="headerlink" title="为什么不应该为每一个并发活动定义一个单独的进程："></a>为什么不应该为每一个并发活动定义一个单独的进程：</h3><p>虽然可以为每一个并发活动定义一个单独的进程，但这样做会带来一些问题和不便。下面是其中一些问题：</p>
+<ol>
+<li><strong>进程效率问题</strong>：创建新的进程是一项开销较大的操作，因为需要分配新的进程结构和资源。如果为每一个并发活动都创建一个新的进程，会导致资源的浪费和系统性能下降。</li>
+<li><strong>进程不直接共享内存</strong>：每个进程都运行在自己独立的地址空间中，不直接共享内存。这意味着如果并发活动需要访问和操作相同的数据，通常需要通过慢速的操作系统通信机制来进行通信，这会导致效率低下。</li>
+</ol>
+<h2 id="在操作系统中的进程"><a href="#在操作系统中的进程" class="headerlink" title="在操作系统中的进程"></a>在操作系统中的进程</h2><p>在操作系统中，每个进程都运行在其自己的独立地址空间中，这是非常重要的特性，被称为进程隔离。这意味着同一个地址在两个不同的进程中会被存储在内存中的两个不同位置，而不会互相干扰。</p>
+<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h2 id="引入线程的原因"><a href="#引入线程的原因" class="headerlink" title="引入线程的原因"></a>引入线程的原因</h2><p>考虑一个运行文件服务器的进程。偶尔，这个文件服务器进程需要等待硬盘响应。在这段等待时间内，该进程将被阻塞，无法响应新的请求。</p>
+<p>为了加速将来的操作，该进程将在其内存中保持最近文件的缓存。在这种情况下，一个好的想法是同时运行第二个并发文件服务器来工作，而不是等待。</p>
+<p>然而，通过创建两个独立的进程来实现并发并不是一种高效的方法。这是因为它们必须在相同的地址空间中运行，以有效地共享公共缓存。</p>
+<p>解决上述问题的方法是引入线程的概念。线程是进程内的轻量级并发执行单元，它们在同一个进程内运行，并可以有效地共享相同的地址空间和资源。</p>
+<p>在这种情况下，可以在同一个进程内创建多个线程，其中一个线程可以等待硬盘响应，而另一个线程可以继续工作并处理其他请求，例如维护缓存。这使得进程内的多个线程能够并发执行，而不需要为每个线程创建独立的进程。这提高了系统的性能和资源利用率。</p>
+<p>因此，线程的引入允许在同一个进程内创建多个并发执行的实体，提高了处理并发任务的效率和响应能力。线程通常被用于多任务操作系统和应用程序中，以实现更好的并发性和资源共享。</p>
+<h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><p>现代操作系统通常同时支持进程和线程，这被称为多线程操作系统（multi-threaded OS）。</p>
+<ul>
+<li><strong>进程（Process）</strong>：进程定义了一个独立的地址空间，以及一些通用的进程属性，如文件句柄、打开的文件、代码段等。进程是操作系统中的一个独立执行单元，每个进程都有自己的资源和状态，通常是程序的一个实例。</li>
+<li><strong>线程（Thread）</strong>：线程定义了在进程内的单一顺序执行流。线程共享相同的进程地址空间和资源，但每个线程可以独立运行，并具有自己的栈和寄存器状态。线程是进程的一个子部分，多个线程可以在同一个进程内并发执行。</li>
+</ul>
+<p>属于同一进程的线程共享几乎所有与该进程相关的资源：</p>
+<ul>
+<li><ul>
+<li>地址空间（代码和数据）</li>
+<li>全局变量</li>
+<li>权限</li>
+<li>打开的文件</li>
+<li>计时器</li>
+<li>信号</li>
+<li>信号量</li>
+<li>计费信息</li>
+</ul>
+</li>
+<li>然而，线程之间不共享以下内容：<ul>
+<li>寄存器集，特别是程序计数器（PC）、堆栈指针（SP）、中断向量</li>
+<li>堆栈</li>
+<li>状态</li>
+<li>子线程</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程的特点"><a href="#线程的特点" class="headerlink" title="线程的特点"></a>线程的特点</h2><ul>
+<li>线程不能独立存在，它们始终属于一个进程，一个进程至少包含一个线程。</li>
+<li>线程的创建相对便宜，因为不需要分配新的进程控制块（PCB）或创建新的地址空间。</li>
+<li>线程可以通过进程的全局变量或共享内存以及简单的原语有效地相互通信。这增加了并发性，即使在单处理器系统中也很有用。</li>
+<li>线程可以静态或动态创建，而且如果一个线程需要操作系统提供的服务（系统调用），它会代表所属的进程执行相应的操作。</li>
+</ul>
+<h2 id="线程的实现方式"><a href="#线程的实现方式" class="headerlink" title="线程的实现方式"></a>线程的实现方式</h2><h3 id="用户空间线程（many-to-one模型）："><a href="#用户空间线程（many-to-one模型）：" class="headerlink" title="用户空间线程（many-to-one模型）："></a>用户空间线程（many-to-one模型）：</h3><p>在用户空间线程模型中，线程管理和调度完全在用户级别进行，而不涉及操作系统内核。在这种模型中，多个用户级线程共享同一个内核线程，也就是说，多个用户级线程运行在一个进程内，但它们只有一个内核线程来执行。</p>
+<ul>
+<li>在用户空间线程模型中，操作系统内核调度的是进程，而不知道线程的存在。</li>
+<li>每个进程维护一个线程表（thread table），进程自己决定在其运行时运行哪个线程。</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>单线程的操作系统可以模拟多线程。</li>
+<li>线程调度由运行时库（run-time library）控制，没有系统调用的开销。</li>
+<li>可移植性：可以实现独立于操作系统的用户空间线程库。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>如果一个用户级线程阻塞（例如，等待I&#x2F;O），则整个进程都会阻塞，因为内核线程没有被释放。</li>
+<li>不能充分利用多核处理器的并行性，因为内核线程数量有限。</li>
+</ul>
+<h3 id="内核空间线程（内核线程，one-to-one模型）："><a href="#内核空间线程（内核线程，one-to-one模型）：" class="headerlink" title="内核空间线程（内核线程，one-to-one模型）："></a>内核空间线程（内核线程，one-to-one模型）：</h3><p>在内核空间线程模型中，每个用户级线程都有一个对应的内核线程。这意味着每个用户级线程都由内核管理和调度，因此更为独立。</p>
+<ul>
+<li>在内核空间线程模型中，操作系统内核调度的是线程，线程是最小的调度单位。</li>
+<li>操作系统维护系统范围的线程表，类似于进程表。</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>可以更好地管理线程，各线程之间独立。</li>
+<li>提供更好的互动性。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>线程的创建和切换开销较大，因为需要内核的干预。</li>
+<li>管理多个内核线程可能会导致更复杂的调度和资源管理。</li>
+</ul>
+<h3 id="混合模型（many-to-many模型）："><a href="#混合模型（many-to-many模型）：" class="headerlink" title="混合模型（many-to-many模型）："></a>混合模型（many-to-many模型）：</h3><p>混合模型结合了用户空间线程和内核空间线程的优点。在这种模型中，多个用户级线程可以映射到多个内核线程，以实现更好的并发性和性能。这种模型允许用户级线程在不阻塞整个进程的情况下等待I&#x2F;O等操作。</p>
+<h1 id="进程同步（Process-Synchronization）"><a href="#进程同步（Process-Synchronization）" class="headerlink" title="进程同步（Process Synchronization）"></a>进程同步（Process Synchronization）</h1><h2 id="并发执行"><a href="#并发执行" class="headerlink" title="并发执行"></a>并发执行</h2><p>并发执行表示两个或更多进程或线程同时执行，它们可以共享资源并相互影响彼此的执行。</p>
+<h2 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h2><p>它们在执行过程中不会被其他操作中断或分割为多个步骤。这确保了在执行原子操作时，操作的开始和结束都是不可分割的，不会发生在中间的中断或干扰。原子操作通常用于确保数据的一致性和避免竞争条件。</p>
+<h2 id="互斥与临界区"><a href="#互斥与临界区" class="headerlink" title="互斥与临界区"></a>互斥与临界区</h2><p>“Milk Problem” 是一个经典的示例，用来说明并发编程中的竞争条件和进程同步的概念。在这个问题中，有两个合租者共享一台冰箱，并希望冰箱中最多只有一瓶牛奶。</p>
+<p>以下是这个问题的解释：</p>
+<ol>
+<li><strong>临界区（Critical Section）</strong>：在这个问题中，临界区是一组操作，包括检查冰箱、去购物、将牛奶放入冰箱等。这些操作都涉及到共享资源（冰箱）的访问和修改。</li>
+<li><strong>互斥（Mutual Exclusion）</strong>：为了解决这个问题，只能允许一个合租者（Flatmate A 或 Flatmate B）在任何时刻执行临界区的操作。这就是互斥的含义，它确保只有一个合租者可以操作冰箱，以防止多个合租者同时将牛奶放入冰箱，导致问题出现。</li>
+</ol>
+<p> 重要概念</p>
+<ul>
+<li><strong>同步（Synchronization）</strong>：确保不同进程（或线程）之间进行适当的合作，依赖于原子操作，以避免竞争条件和数据不一致。</li>
+<li><strong>互斥（Mutual Exclusion，ME）</strong>：确保在任何时刻只有一个进程可以持有或修改共享资源。互斥实现了操作的原子性。</li>
+<li><strong>临界区（Critical Section，CS）</strong>：程序中的代码部分，其中对共享资源进行操作。互斥在临界区中的应用，要求对临界区的访问进行进程的串行化，以确保操作的原子性和正确性。</li>
+</ul>
+<h3 id="锁定"><a href="#锁定" class="headerlink" title="锁定"></a>锁定</h3><p>在并发编程中，实现临界区内的互斥性——锁定是一种方式，用于防止其他进程或线程在关键资源上执行某些操作，从而确保在任何给定时间只有一个进程或线程可以进入关键区域。</p>
+<p>下面是关于锁定的规则：</p>
+<ol>
+<li><strong>进入临界区前必须锁定</strong>：在进入临界区之前，进程或线程必须先获取锁。只有当锁可用时，才能进入临界区。</li>
+<li><strong>离开临界区时必须解锁</strong>：在完成对临界区的操作后，进程或线程必须释放锁，以便其他进程或线程可以获得它并进入临界区。</li>
+<li><strong>尝试进入已锁定的临界区时必须等待</strong>：如果临界区已被其他进程或线程锁定，那么尝试进入该区域的进程或线程必须等待，直到锁被释放为止。</li>
+</ol>
+<h3 id="真正解决临界区问题的要求"><a href="#真正解决临界区问题的要求" class="headerlink" title="真正解决临界区问题的要求"></a>真正解决临界区问题的要求</h3><ol>
+<li><strong>互斥性（Mutual Exclusion）</strong>：在任何给定时刻，至多只能有一个进程在临界区内执行。这确保了临界区的互斥性，防止多个进程同时访问或修改共享资源，从而避免竞争条件。</li>
+<li><strong>有界等待（Bounded Waiting）</strong>：没有进程会无限期地等待进入临界区。这意味着如果一个进程尝试进入它的临界区，它最终会成功，而不会被无限期地推迟。这有助于防止死锁和饥饿（starvation）的情况。</li>
+<li><strong>进展性（Progress）</strong>：一个在临界区外执行的进程不能阻止另一个进程进入它的临界区。如果多个进程同时尝试进入临界区，那么必须有机制来确保其中一个进程最终能够进入，而不是无限期地等待。此外，进程不能永远停留在临界区内，必须能够进入和离开。</li>
+</ol>
+<h3 id="互斥机制的理想特点"><a href="#互斥机制的理想特点" class="headerlink" title="互斥机制的理想特点"></a>互斥机制的理想特点</h3><ol>
+<li><strong>简单（Simple）</strong>：互斥性机制应该是简单的，易于理解和使用。它们的使用不应该过于复杂，而是通过直接标记（例如，加锁和解锁）临界区来使用。</li>
+<li><strong>高效（Efficient）</strong>：互斥性机制应该是高效的，不会占用过多的系统资源。这意味着它们不应该使用忙等待（busy-waiting）来浪费CPU资源，而且进入和离开临界区的开销应该尽可能小，以确保性能。</li>
+<li><strong>可扩展（Scalable）</strong>：互斥性机制应该能够扩展到多个线程或进程共享临界区的情况。它们不应受到线程数量的限制，而应该能够适应不同规模的并发。</li>
+</ol>
+<h3 id="三种基本的互斥机制"><a href="#三种基本的互斥机制" class="headerlink" title="三种基本的互斥机制"></a>三种基本的互斥机制</h3><ol>
+<li><strong>信号量（Semaphores）</strong>：信号量是一种低级机制，用于管理资源的访问。虽然它们可以实现互斥性，但它们相对难以使用，需要更复杂的编程。</li>
+<li><strong>监视器（Monitors）</strong>：监视器是一种更高级的机制，通常需要高级编程语言支持。它们提供了更高层次的抽象，使并发编程更容易，同时实现了互斥性。</li>
+<li><strong>消息传递（Messages）</strong>：消息传递是一种不依赖共享内存的互斥性机制。它使用进程间通信（IPC）消息而不是共享内存来实现同步。</li>
+</ol>
+<h4 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h4><p>信号量通常是一个受保护的整数变量，与一个等待进程队列相关联。它支持两种原子操作：P（等待）和V（释放）。</p>
+<ul>
+<li><strong>信号量变量 S</strong>：信号量是一个整数变量，它具有初始值，该值表示可以同时进入临界区的进程数量。</li>
+<li>**等待操作 P(S)**：P操作用于尝试减少信号量S的值。如果S的值大于零，那么它将减少S的值，允许进程进入临界区。如果S的值为零，那么该进程将被阻塞，并加入等待队列。</li>
+<li>**释放操作 V(S)**：V操作用于增加信号量S的值。如果有等待的进程，它将允许其中一个进程继续执行（从等待队列中取出一个），否则它将增加S的值。</li>
+</ul>
+<p>实例</p>
+<p>生产者&#x2F;消费者问题（Producer&#x2F;Consumer Problem）是一种常见的同步问题，通常用于描述多个进程或线程之间如何协同工作以生产和消耗资源。这个问题通常包括两种类型的进程：</p>
+<ol>
+<li><strong>生产者（Producer）</strong>：生产者进程负责创建资源的实例。它生成资源并将其放入一个共享的缓冲区（或队列）中。</li>
+<li><strong>消费者（Consumer）</strong>：消费者进程负责使用资源的实例。它从共享的缓冲区中取出资源并执行相应的操作。</li>
+</ol>
+<p>约束</p>
+<ol>
+<li><strong>消费者必须等待生产者</strong>：如果缓冲区为空，消费者必须等待，直到生产者将资源放入缓冲区。</li>
+<li><strong>生产者必须等待消费者</strong>：如果缓冲区已满，生产者必须等待，直到消费者从缓冲区中取出资源。</li>
+</ol>
+<p>cppCopy code</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 声明信号量 </span><br><span class="hljs-type">int</span> N = buffer_size; <br><span class="hljs-function">semaphore <span class="hljs-title">S</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-literal">NULL</span>)</span></span>; <span class="hljs-comment">// 用于保护对缓冲区的访问 </span><br><span class="hljs-function">semaphore <span class="hljs-title">full_s</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-literal">NULL</span>)</span></span>; <span class="hljs-comment">// 用于跟踪已填充的缓冲区槽位 </span><br><span class="hljs-function">semaphore <span class="hljs-title">empty_s</span><span class="hljs-params">(N, <span class="hljs-literal">NULL</span>)</span></span>; <span class="hljs-comment">// 用于跟踪空缓冲区槽位 </span><br><br><span class="hljs-comment">// 生产者代码 </span><br><span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;    <br>    msg = <span class="hljs-built_in">produce</span>();    <br>    <span class="hljs-built_in">P</span>(empty_s); <span class="hljs-comment">// 等待空槽位    </span><br>    <span class="hljs-built_in">P</span>(S); <span class="hljs-comment">// 进入临界区    </span><br>    <span class="hljs-built_in">put_msg</span>(msg);    <br>    <span class="hljs-built_in">V</span>(S); <span class="hljs-comment">// 离开临界区    </span><br>    <span class="hljs-built_in">V</span>(full_s); <span class="hljs-comment">// 增加已填充的槽位计数 &#125; </span><br>    <br>    <span class="hljs-comment">// 消费者代码 </span><br>    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;    <br>        <span class="hljs-built_in">P</span>(full_s); <span class="hljs-comment">// 等待已填充的槽位  </span><br>        <span class="hljs-built_in">P</span>(S);<span class="hljs-comment">// 进入临界区    </span><br>        msg = <span class="hljs-built_in">get_msg</span>();    <br>        <span class="hljs-built_in">V</span>(S); <span class="hljs-comment">// 离开临界区    </span><br>        <span class="hljs-built_in">V</span>(empty_s); <span class="hljs-comment">// 增加空槽位计数</span><br>        <span class="hljs-built_in">consume_msg</span>(msg); <br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="监视器"><a href="#监视器" class="headerlink" title="监视器"></a>监视器</h4><p>监视器包括变量、过程（方法）以及条件变量。它们通常在一种特殊的结构内组织，用于管理并发访问共享资源。</p>
+<p><strong>监视器规则</strong>：</p>
+<ul>
+<li>只允许一个进程在监视器内部活动，这确保了互斥访问共享资源。</li>
+<li>互斥访问内部数据是由编译器来保证的，这意味着程序员不必显式编写互斥锁来保护监视器内部的数据。</li>
+</ul>
+<p><strong>调用监视器过程</strong>：</p>
+<ul>
+<li>进程可以随时调用监视器内的过程来访问共享资源。当一个进程调用监视器过程时，它将进入监视器并获取互斥访问权限。</li>
+</ul>
+<p><strong>不能直接访问内部数据</strong>：</p>
+<ul>
+<li>进程不能直接访问监视器内部的数据（如 <code>i</code>），而必须使用监视器内部的过程来访问或修改这些数据。这样可以确保数据的一致性和互斥性。</li>
+</ul>
+<p>在监视器（Monitors）中，互斥性（Mutual Exclusion）通常是通过内部条件变量（Condition Variables）来实现的。条件变量是一种用于在多个进程或线程之间进行等待和通知的机制。下面是关于监视器中的条件变量以及与之关联的等待（Wait）和通知（Signal）操作的解释：</p>
+<ol>
+<li><strong>等待（Wait）操作：</strong> 等待操作是在监视器内部的条件变量上执行的。它通常在监视器发现某个进程无法继续执行时被调用。等待操作会导致调用它的进程被阻塞，并等待在条件变量上。这个操作的目的是将进程暂时挂起，以便其他进程可以获得进入监视器的权限。一旦进程调用等待操作，它就会被阻塞，直到其他进程发出通知（Signal）操作来唤醒它。</li>
+<li><strong>通知（Signal）操作：</strong> 通知操作用于唤醒等待在条件变量上的一个或多个进程。通知操作会让一个被等待的进程继续执行。值得注意的是，一旦调用通知操作，执行通知操作的进程必须立即退出监视器，以确保互斥性。这是因为通知操作的目的是唤醒等待的进程，而不是让执行通知的进程继续在监视器内执行，以避免竞争条件。</li>
+</ol>
+<p>生产者和消费者问题</p>
+<p>生产者负责将消息放入缓冲区，而消费者负责从缓冲区中移除消息。</p>
+<p>这个监视器需要两个条件和一些内部数据来跟踪缓冲区的状态：</p>
+<ol>
+<li><code>count</code>：一个整数变量，用于跟踪当前缓冲区中的消息数量。</li>
+<li><code>full_s</code> 和 <code>empty_s</code>：两个条件变量，用于通知生产者和消费者关于缓冲区状态的信息。<code>full_s</code> 用于指示缓冲区已满，<code>empty_s</code> 用于指示缓冲区为空。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp">monitor pr_co&#123;<br>    <span class="hljs-type">int</span> count;<br>    condition full_s,empty_s;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">put</span><span class="hljs-params">(msg)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(count == N)<br>            <span class="hljs-built_in">wait</span>(empty_s);<br>        <span class="hljs-built_in">put_msg</span>(msg);<br>        count++;<br>        <span class="hljs-keyword">if</span>(count == <span class="hljs-number">1</span>)<br>            <span class="hljs-built_in">signal</span>(full_s);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>Monitor for Producer&#x2F;Consumer 中的操作：</strong></p>
+<ol>
+<li><code>put(msg)</code>：这是生产者使用的操作，用于将消息放入缓冲区。<ul>
+<li>如果 <code>count</code> 等于缓冲区的最大容量 <code>N</code>，表示缓冲区已满，生产者需要等待。此时，它会调用 <code>wait(empty_s)</code>，暂停并等待直到 <code>empty_s</code> 条件被信号（即缓冲区不再为空）。</li>
+<li>一旦缓冲区有足够的空间，生产者将消息放入缓冲区，然后增加 <code>count</code> 计数。</li>
+<li>如果 <code>count</code> 从0变成1（表示之前是空的），则会发出 <code>signal(full_s)</code>，通知任何等待在 <code>full_s</code> 条件上的消费者。</li>
+</ul>
+</li>
+<li><code>get()</code>：这是消费者使用的操作，用于从缓冲区中取出消息。<ul>
+<li>如果 <code>count</code> 等于0，表示缓冲区为空，消费者需要等待。此时，它会调用 <code>wait(full_s)</code>，暂停并等待直到 <code>full_s</code> 条件被信号（即缓冲区不再满）。</li>
+<li>一旦缓冲区中有消息，消费者从中取出消息，然后减少 <code>count</code> 计数。</li>
+<li>如果 <code>count</code> 从N减少到N-1（表示之前是满的），则会发出 <code>signal(empty_s)</code>，通知任何等待在 <code>empty_s</code> 条件上的生产者。</li>
+</ul>
+</li>
+</ol>
+<p><strong>生产者代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function">cppCopy codeProducer</span><br><span class="hljs-function"><span class="hljs-title">while</span><span class="hljs-params">(<span class="hljs-literal">true</span>)</span> </span>&#123;<br>    msg = <span class="hljs-built_in">produce</span>();  <span class="hljs-comment">// 生成消息</span><br>    pr_co.<span class="hljs-built_in">put</span>(msg);   <span class="hljs-comment">// 将消息放入缓冲区</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在这段代码中，生产者不断循环生成消息，然后调用 <code>pr_co.put(msg)</code> 将消息放入缓冲区。</p>
+<p><strong>消费者代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function">cppCopy codeConsumer</span><br><span class="hljs-function"><span class="hljs-title">while</span><span class="hljs-params">(<span class="hljs-literal">true</span>)</span> </span>&#123;<br>    msg = pr_co.<span class="hljs-built_in">get</span>();     <span class="hljs-comment">// 从缓冲区中取出消息</span><br>    <span class="hljs-built_in">consume_msg</span>(msg);      <span class="hljs-comment">// 处理消息</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在这段代码中，消费者也不断循环，调用 <code>pr_co.get()</code> 从缓冲区中取出消息，然后对消息进行处理（通过 <code>consume_msg(msg)</code> 函数）。</p>
+<h4 id="消息系统"><a href="#消息系统" class="headerlink" title="消息系统"></a>消息系统</h4><p>组成要素：<br>消息（message): 在两个及以上进程或线程间交换信息</p>
+<p>邮箱 （mailbox）：在消息发送和接受之间储存消息的地方</p>
+<p>消息系统的基本操作：</p>
+<ul>
+<li><p>send(mailbox, message): 把消息放入邮箱</p>
+</li>
+<li><p>receive(mailbox, message): 从邮箱中删除邮件</p>
+</li>
+<li><p>create(mailbox)</p>
+</li>
+<li><p>delete(mailbox)</p>
+</li>
+</ul>
+<p>消息系统的寻址方式：</p>
+<p>消息系统的寻址方式是通过进程ID（PID）来标识源和目标进程。PID是一个唯一的标识符，用于标识正在运行的进程。当一个进程向另一个进程发送消息时，它将消息标记为源进程的PID，并将目标进程的PID作为消息的目标。这样，目标进程就可以通过其PID识别消息的来源，并采取适当的措施。如果有多个目标，或者目标未指定，则可以使用其他标识符来标识目标进程。</p>
+<p>消息格式</p>
+<ul>
+<li>固定长度：减少处理和储存的开销</li>
+<li>可变长度：更适合消息系统</li>
+</ul>
+<p>阻塞与非阻塞</p>
+<p>阻塞发送：进程发送信息后，它会一直阻塞，直到消息被接受</p>
+<p>非阻塞发送：在消息发送后，发送方继续工作，无需等待</p>
+<p>阻塞接受：进程执行接受时，它会被阻塞，直到接收到信息。</p>
+<p>非阻塞接受：进程执行接受，无需等待接受到消息。</p>
+<p><strong>最常见的组合是：非阻塞发送和阻塞接受</strong></p>
+<p>消息执行互斥：</p>
+<p>当进程接收到消息时，它可以进入临界区。</p>
+<p>当进程离开临界区时，他必须向邮箱发送新消息。</p>
+<h1 id="死锁-Deadlock-与饥饿-Starvation"><a href="#死锁-Deadlock-与饥饿-Starvation" class="headerlink" title="死锁( Deadlock) 与饥饿(Starvation)"></a>死锁( Deadlock) 与饥饿(Starvation)</h1><h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p>在死锁状态下，每个进程都在等待其他进程释放它们所需的资源，但没有一个进程愿意放弃自己已经获取的资源，因此所有进程都无法继续执行。</p>
+<ul>
+<li>互斥条件：资源只能被一个进程占用。</li>
+<li>请求与保持条件：进程可以请求额外的资源，同时保持已经分配的资源。</li>
+<li>不可剥夺条件：资源只能在进程自愿释放时才能够被回收。</li>
+<li>循环等待条件：多个进程之间形成一个等待资源的循环链。</li>
+</ul>
+<h2 id="饥饿"><a href="#饥饿" class="headerlink" title="饥饿"></a>饥饿</h2><p>一个进程由于某种调度策略而无法获得所需的资源，即使资源周期性地可用。这意味着进程被不公平地排除在资源分配之外，无法继续执行。饥饿通常发生在以下情况：</p>
+<ul>
+<li>优先级倾斜：低优先级进程一直在等待，但高优先级进程总是优先获得资源。</li>
+<li>锁定竞争：多个进程竞争相同的资源，但某些进程可能因竞争激烈而无法获得资源。</li>
+</ul>
+<h2 id="资源-resources"><a href="#资源-resources" class="headerlink" title="资源(resources)"></a>资源(resources)</h2><h3 id="可重用资源-Reusable-resources"><a href="#可重用资源-Reusable-resources" class="headerlink" title="可重用资源(Reusable resources)"></a>可重用资源(Reusable resources)</h3><p>可重用资源（Reusable resources）是那些可以同时被一个进程占用，而且在使用后不会被消耗的资源。这意味着多个进程可以依次使用相同的可重用资源，而资源在使用后并不会减少或损坏，因此可以被其他进程再次使用。以下是关于可重用资源的一些重要特点：</p>
+<ul>
+<li>Resources used by only process at a time, and not depleted by that use.</li>
+<li>After use, they are released for reuse by other process.</li>
+<li>Example: Processors, Main memory, devices, semaphores</li>
+</ul>
+<ol>
+<li>可同时使用：多个进程可以同时请求并使用可重用资源，而这些资源不会发生冲突。</li>
+<li>不会被耗尽：使用可重用资源不会导致资源的数量减少，它们仍然可以在未来被其他进程使用。</li>
+<li>释放后可以再次使用：当一个进程使用完可重用资源后，它会释放这些资源，以供其他进程使用。</li>
+<li>例子：可重用资源的示例包括处理器（CPU）、主存和辅助存储设备、各种外部设备，以及数据结构如数据库和信号量。</li>
+</ol>
+<h3 id="可消耗资源-Consumable-Resources"><a href="#可消耗资源-Consumable-Resources" class="headerlink" title="可消耗资源(Consumable Resources)"></a>可消耗资源(Consumable Resources)</h3><p>可消耗资源是由一个进程生成或产生的，然后传递给其他进程，最终由接收资源的进程消耗或销毁。这些资源通常用于进程之间的通信或协作。</p>
+<ul>
+<li>Resources created by one process and destroyed by another</li>
+<li>Infinite number of instances</li>
+<li>No need to release</li>
+<li>Example: signals, interrupts, message</li>
+</ul>
+<ol>
+<li>有无限数量的实例：可消耗资源通常可以有无限多的实例。这意味着可以不断地创建和消耗这些资源，而不会耗尽它们。</li>
+<li>无需显式释放：与可重用资源不同，可消耗资源通常无需显式释放。一旦资源被使用并消耗，它们可以自动被系统回收或销毁。</li>
+<li>示例：可消耗资源的示例包括信号（Signals）、中断（Interrupts）、消息（Messages）等。这些资源用于进程之间的通信和协作，例如，一个进程可以向另一个进程发送信号或消息，以通知它发生了某些事件或需要执行某些操作。</li>
+</ol>
+<p><strong>可重用资源导致死锁的示例</strong></p>
+<p>在这个示例中，有200MB的内存可供使用，并且有两个进程，P1和P2，它们都请求分配一些内存。</p>
+<ol>
+<li>初始请求：P1和P2都请求了一些内存，它们的请求都被满足（Request 80MB和Request 70MB）。此时，200MB的内存中还有剩余。</li>
+<li>同时第二次请求：问题出现在第二次请求，当P1和P2同时请求额外的内存（Request 60MB和Request 80MB）。由于它们同时请求内存，它们都会尝试占用未释放的初始请求内存。</li>
+<li>初始内存请求未释放：由于初始内存请求并没有被释放，内存资源不足以满足这两个同时进行的第二次请求。每个进程都需要等待对方释放内存，以便满足自己的第二次请求。</li>
+<li>结果是死锁：在这种情况下，由于两个进程都无法获得所需的内存，它们都被阻塞，等待对方释放内存，这导致了死锁。没有进程愿意主动释放内存，因为它们都在等待对方的释放。</li>
+</ol>
+<p><strong>可消耗资源(以message为例)导致死锁</strong></p>
+<ol>
+<li>进程依赖：P1需要接收P2发送的消息（N），而P2需要接收P1发送的消息（M）才能继续执行。这创建了一种相互依赖关系，其中每个进程等待另一个进程发送消息以满足它的接收操作。</li>
+<li>同时操作：问题出现在当P1和P2同时尝试执行<code>receive</code>操作时，这两个操作都是阻塞的，因为它们等待对方发送消息。</li>
+<li>结果是死锁：由于P1和P2都无法继续执行，它们被阻塞在<code>receive</code>操作上，等待对方发送消息。这导致了死锁，因为没有一个进程愿意主动发送消息，因为它们都在等待对方的消息。</li>
+</ol>
+<p>Philosophers”（用餐哲学家）问题。问题的背景是，有5位哲学家围坐在一张圆桌旁，每位哲学家要么在思考，要么在用餐。在桌子上有5碗面条和5个叉子，每位哲学家需要同时拿到他们面前的两个叉子才能用餐。然而，只有一个哲学家可以同时使用一个叉子。</p>
+<p>为了解决这个问题，文本提供了一个解决方案，使用信号量来控制资源的分配和哲学家的行为。下面是一些关键点的解释：</p>
+<ol>
+<li>信号量解决方案：为了控制资源的访问，每个叉子都有一个信号量，初始值为1，表示叉子是否被占用。另外，还有一个名为<code>table</code>的信号量，其初始值为4，表示最多允许4位哲学家同时坐在桌子旁。</li>
+<li>哲学家的行为：每位哲学家都是一个进程，它们以循环的方式执行以下行为：<ul>
+<li>思考：哲学家思考一段时间。</li>
+<li>尝试获取左边的叉子（<code>P(fork[i])</code>）。</li>
+<li>尝试获取右边的叉子（<code>P(fork[(i+1) mod 5])</code>）。</li>
+<li>吃面条：如果成功获得了两个叉子，那么哲学家可以用餐。</li>
+<li>释放叉子：用餐后，哲学家释放叉子（<code>V(fork[(i+1) mod 5])</code>和<code>V(fork[i])</code>）。</li>
+<li>释放桌子：哲学家用餐完毕后，释放桌子（<code>V(table)</code>），以便其他哲学家可以用餐。</li>
+</ul>
+</li>
+<li>死锁和饥饿问题：文本提到，最初的解决方案可能会导致死锁，因为所有哲学家在同一时刻都尝试获取左边的叉子。为了解决死锁，可以添加机制，使哲学家在获取左边的叉子时，如果右边的叉子已经被占用，则释放左边的叉子并等待一段时间后再尝试。这样，死锁问题得到解决。</li>
+<li>饥饿问题：即使死锁问题得到解决，仍然存在饥饿问题，因为如果所有哲学家在同一时刻都开始执行算法，它们可能会陷入无限循环。为了解决饥饿问题，可以引入随机等待时间，以确保哲学家们在不同时间尝试获取叉子，从而减少竞争。</li>
+</ol>
+<p>提到了一些可能的解决方案，以应对死锁和饥饿问题，这些问题通常出现在”Dining Philosophers”问题中。这些解决方案包括：</p>
+<ol>
+<li>限制哲学家的数量：一种简单的解决方案是限制在桌子旁的哲学家数量，以降低资源争夺的概率。例如，可以只允许最多四位哲学家同时坐在桌子旁，这样至少有一位哲学家能够吃饭，而不会导致死锁。</li>
+<li>不对称解决方案：在不对称解决方案中，哲学家的行为被设定为不同，以减少资源竞争。例如，偶数编号的哲学家可以首先尝试获取左边的叉子，而奇数编号的哲学家可以首先尝试获取右边的叉子。这样可以减少争用，但仍需要适当的资源分配。</li>
+<li>使用计数信号量：另一种解决方案是为每位哲学家提供一个计数信号量，用于跟踪可用的叉子数量。这需要小心的初始化，以确保适当的资源分配，以避免死锁和饥饿。</li>
+<li>形式化建模：最终，为了更好地处理这个问题的复杂性，可以采用形式化建模方法，例如Petri网、模型检测等，来分析和验证不同解决方案的正确性。这可以帮助确保哲学家问题的解决方案是可靠和健壮的。</li>
+</ol>
+<h2 id="资源分配图（Resource-Allocation-Graph，RAG）"><a href="#资源分配图（Resource-Allocation-Graph，RAG）" class="headerlink" title="资源分配图（Resource-Allocation Graph，RAG）"></a>资源分配图（Resource-Allocation Graph，RAG）</h2><p>资源分配图（Resource-Allocation Graph，RAG）是一种用于更形式化地描述死锁的方法，通常用于分析和识别系统中的死锁情况。RAG是一个有向图，它用于表示资源分配和进程等待的情况</p>
+<ol>
+<li>图的组成：<ul>
+<li>顶点（节点）集：资源分配图包括一组顶点，每个顶点通常代表一个进程或一个资源。</li>
+<li>边（连接顶点的线）集：边表示资源分配和等待的关系。</li>
+</ul>
+</li>
+<li>顶点表示：<ul>
+<li>顶点可以代表两种不同的实体：<ul>
+<li>进程：每个进程由一个顶点表示，表示该进程正在运行或等待资源。</li>
+<li>资源：每个资源也由一个顶点表示，表示该资源当前是否被分配给某个进程。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>边表示：<ul>
+<li>边表示资源的分配和等待关系。<ul>
+<li>分配边：当一个资源被分配给一个进程时，从资源的顶点到进程的顶点绘制一条边。</li>
+<li>等待边：当一个进程等待获取一个资源时，从进程的顶点到资源的顶点绘制一条边。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>图的状态：<ul>
+<li>资源分配图完全描述了系统的状态，包括哪些资源被分配给哪些进程，以及哪些进程正在等待哪些资源。</li>
+</ul>
+</li>
+<li>检测死锁：<ul>
+<li>通过分析资源分配图，可以检测潜在的死锁情况。如果图中存在环（循环等待），那么系统可能处于死锁状态。</li>
+</ul>
+</li>
+</ol>
+<h1 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h1><ul>
+<li>进程调度是指在一个多任务操作系统中，当一个进程完成执行或者由于等待I&#x2F;O操作而暂停时，操作系统需要决定接下来应该执行哪个进程。</li>
+<li>这是一个复杂的决策，因为通常系统中会有多个进程等待执行，而CPU数量有限。因此，需要一个组件来负责这一决策，这个组件被称为调度程序（Scheduler）。</li>
+<li>调度程序基于一定的调度算法来做出决策。这些算法定义了在什么情况下应该选择哪个进程来运行，以及每个进程运行的时间片。</li>
+<li>有许多不同的调度算法可供选择，每个算法都有其自己的优点和局限性，因此选择适当的调度算法对于系统性能非常重要。</li>
+</ul>
+<h2 id="突发周期"><a href="#突发周期" class="headerlink" title="突发周期"></a>突发周期</h2><ol>
+<li><p>CPU Burst（CPU突发）：</p>
+<p>A period of CPU execution with no I&#x2F;O</p>
+<ul>
+<li>CPU Burst是进程在执行过程中的一段时间，期间CPU被用于计算和执行指令，而没有进行输入&#x2F;输出操作（I&#x2F;O）。</li>
+<li>在CPU Burst期间，进程正在执行计算任务，进行数学运算，或执行其他需要CPU计算资源的操作。</li>
+</ul>
+</li>
+<li><p>I&#x2F;O Burst（I&#x2F;O突发）：</p>
+<p>Wait for I&#x2F;O signal</p>
+<ul>
+<li>I&#x2F;O Burst是进程在等待I&#x2F;O操作完成时的状态。在这个状态中，进程暂停CPU的使用，等待某种I&#x2F;O操作的信号或完成。</li>
+<li>通常，在I&#x2F;O Burst期间，进程会暂停执行，并将CPU资源释放给其他进程，以便系统可以更高效地利用CPU。</li>
+</ul>
+</li>
+</ol>
+<p>Burst cycles的交替发生通常是进程执行的一部分，进程在CPU Burst和I&#x2F;O Burst之间切换，以完成不同的计算和I&#x2F;O任务。这种交替可以确保系统中的多个进程都能得到处理，提高系统的并发性和资源利用率。</p>
+<p>In multiprogramming, mix the CPU and I&#x2F;O brust of different process to increase utilisation. When one process is waiting we execute another process.</p>
+<h2 id="调度器类型"><a href="#调度器类型" class="headerlink" title="调度器类型"></a>调度器类型</h2><ol>
+<li><p>长期调度器（Long-Term Scheduler）：</p>
+<p>A program becomes a process once selected by long-term scheduler, and it is added to the ready queue. Long controls the degree of mutiprogramming.</p>
+<ul>
+<li>长期调度器控制了被允许竞争系统资源的进程池。它决定将哪些程序（通常是从外部提交的）变成进程，并将它们添加到就绪队列（ready queue）中，以便它们能够参与CPU资源的竞争。</li>
+<li>长期调度器控制多道程序设计的程度，即决定系统中同时运行的进程数量。增加进程数量会导致每个进程能够分配到的CPU时间较少，但也提高了系统的并发性。</li>
+</ul>
+</li>
+<li><p>中期调度器（Medium-Term Scheduler）：</p>
+<p>Select what processes are kept in memory, actively competing for CPU acquisition.</p>
+<ul>
+<li>中期调度器负责选择哪些进程将保留在内存中，以积极竞争获取CPU资源。中期调度器充当了一个缓冲区，可以暂停和恢复进程，以调整系统的负载。</li>
+<li>中期调度器的作用是确保系统中的内存资源得到有效利用，并根据需要将进程从内存中移除，以便为新进程腾出空间。</li>
+</ul>
+</li>
+<li><p>短期调度器（Short-Term Scheduler）：</p>
+<p>Select what process is assigned to CPU</p>
+<p>Only selects from processes in the ready queue.</p>
+<ul>
+<li>短期调度器负责从就绪队列中选择下一个应该分配给CPU的进程。它只能从已准备好竞争CPU资源的进程中进行选择。</li>
+<li>短期调度器的作用是在内存中已准备好执行的进程中，选择一个来运行，以实现多任务并行执行。</li>
+</ul>
+</li>
+</ol>
+<p>这些不同的调度器在操作系统中起着不同的作用，长期调度器控制多道程序设计的程度，中期调度器管理内存中的进程，而短期调度器负责选择下一个要运行的进程，以确保系统的高效性和响应性。</p>
+<h2 id="调度队列"><a href="#调度队列" class="headerlink" title="调度队列"></a>调度队列</h2><ol>
+<li><p>就绪队列（Ready Queue）：</p>
+<p>Queue of all processes that are eligible to be scheduled.</p>
+<ul>
+<li>就绪队列包含了所有具备条件被调度执行的进程。这些进程已经准备好运行，只需要分配CPU资源就可以立即开始执行。通常，短期调度器（Short-Term Scheduler）从就绪队列中选择下一个要执行的进程。</li>
+</ul>
+</li>
+<li><p>就绪-暂停队列（Ready-Suspended Queue）：</p>
+<p>Queue of all processes that are ready to be execute but have been excluded by the medium.</p>
+<ul>
+<li>就绪-暂停队列包含了那些已准备好执行但由于一些原因被中期调度器（Medium-Term Scheduler）排除在外的进程。这些进程可能暂时不在内存中，或者由于某些原因被暂停。它们可以在稍后重新加入就绪队列。</li>
+</ul>
+</li>
+<li><p>阻塞队列（Blocked Queue）：</p>
+<p>Queue of all processes that are waiting for an event before going to ready queue.</p>
+<ul>
+<li>阻塞队列包含了那些正在等待某个事件发生的进程，然后才能继续执行。这些事件可能包括I&#x2F;O操作完成、信号接收等。进程在等待事件发生时被移动到阻塞队列。</li>
+</ul>
+</li>
+<li><p>阻塞-暂停队列（Blocked-Suspended Queue）：</p>
+<p>Queue of all processes that are waiting for an event and have been excluded by the medium.</p>
+<ul>
+<li>阻塞-暂停队列包含了那些正在等待事件发生的进程，但由于一些原因被中期调度器排除在外。这些进程可能暂时不在内存中，或者由于其他原因被暂停。它们可以在稍后重新加入阻塞队列。</li>
+</ul>
+</li>
+</ol>
+<p>这些调度队列在多任务操作系统中用于有效地管理和组织进程的执行。不同类型的队列允许操作系统将进程分类，以便根据各种条件和需求来做出决策。例如，短期调度器从就绪队列中选择进程以执行，中期调度器可能会在就绪-暂停队列和阻塞-暂停队列之间移动进程以优化系统负载，同时在阻塞队列中等待事件的进程则在事件发生后重新移动到就绪队列。</p>
+<h2 id="分派程序（Dispatcher）"><a href="#分派程序（Dispatcher）" class="headerlink" title="分派程序（Dispatcher）"></a>分派程序（Dispatcher）</h2><ul>
+<li>分派程序是一个操作系统组件，它的任务是在短期调度器选择下一个要执行的进程后，负责执行上下文切换，将CPU控制权分派给新的进程。</li>
+<li>分派程序必须尽可能快，因为它在每次进程切换时都会被调用。分派程序的性能直接影响系统的响应时间和效率。</li>
+</ul>
+<p>分派程序的功能：</p>
+<ul>
+<li>切换上下文(Switch context)：分派程序将正在运行的进程的上下文保存到进程控制块（Process Control Block，PCB）中，然后将将要运行的进程的PCB内容加载到内存中，以准备执行。</li>
+<li>存储相关数据：分派程序需要保存和恢复与进程执行相关的所有必要数据，以确保进程能够在下次运行时继续其执行。</li>
+<li>跳转到程序的正确位置( Jump to the right location in the program to  restart it, switching to user&#x2F; kernel mode if required.：分派程序必须确保控制权移交给新进程后，它从程序的正确位置开始执行。这可能涉及到切换用户模式和内核模式，具体取决于操作系统的设计和保护机制。</li>
+</ul>
+<p>分派延迟（Dispatch Latency）：</p>
+<ul>
+<li>分派延迟是指在短期调度器（Short-Term Scheduler）选择下一个要执行的进程后，需要经过一系列步骤才能将控制权分派给该进程的时间延迟。</li>
+<li>分派延迟包括以下步骤：<ul>
+<li>获取新进程执行所需的资源。Gets the resources needed to execute the new process<ul>
+<li>如果正在运行的进程只应在运行时拥有某些资源，需要将这些资源从运行中的进程中剥夺（资源抢占)。Preemption of running process resources.</li>
+</ul>
+</li>
+<li>分派程序（Dispatcher）执行切换上下文的操作，以将CPU控制权移交给新选定的进程。</li>
+</ul>
+</li>
+</ul>
+<h2 id="调度策略"><a href="#调度策略" class="headerlink" title="调度策略"></a>调度策略</h2><p>非抢占式调度（Non-preemptive Scheduling）：</p>
+<ul>
+<li>非抢占式调度是一种调度策略，其中调度决策只在进程自愿释放CPU控制权时才会发生。也就是说，进程只在主动让出CPU时，才会进行调度切换。</li>
+<li>这种调度策略可能导致以下特点和影响：<ul>
+<li>短时间的进程可能会经历长时间的延迟，因为长时间运行的进程不会被强制停止。</li>
+<li>从进程提交到完成的时间可能会变得难以预测，因为没有预定的时间片用于强制切换进程。</li>
+<li>错误或恶意进程可能会阻塞系统，因为它们不会自愿释放CPU。</li>
+</ul>
+</li>
+</ul>
+<p>抢占式调度（Preemptive Scheduling）：</p>
+<ul>
+<li><p>抢占式调度是一种调度策略，其中进程可以被强制从正在运行的CPU中移除，以分配给另一个进程。这可以发生在预定的时间片结束、高优先级进程到来、或发生某些特定事件时。</p>
+</li>
+<li><p>这种调度策略带来了以下特点和影响：</p>
+<ul>
+<li>恶意或错误的进程可以被强制从CPU中移除，以确保它们不会无限期地占用CPU资源。(Malicous or errant processes can be removed from the CPU)</li>
+<li>改善了响应时间，特别适用于交互式系统和时间共享系统，因为可以及时地响应用户的输入。(Improved response times are possible)</li>
+<li>对于软实时系统而言，抢占式调度是必要的，因为它可以确保紧急任务及时完成。然而，对于硬实时系统，通常不使用抢占，因为它们需要更加确定的响应时间保证。</li>
+</ul>
+</li>
+</ul>
+<p>抢占式调度允许操作系统更好地管理CPU资源，及时响应紧急情况，但也需要更多的调度开销。非抢占式调度在某些情况下可以更简单，但可能导致不可预测的系统行为。</p>
+<h3 id="调度目标"><a href="#调度目标" class="headerlink" title="调度目标"></a>调度目标</h3><ul>
+<li>最大化处理器利用率（Maximise processor utilisation）。</li>
+<li>最大化吞吐量（Maximise throughput），即单位时间内完成的进程数量。</li>
+<li>最小化就绪队列中的等待时间（Minimise waiting time in the ready queue）。</li>
+<li>最小化响应时间（Minimise response time），即首次获得CPU的等待时间。</li>
+<li>最小化周转时间（Minimise turnaround time），包括等待时间和执行时间。</li>
+<li>满足进程的截止日期（Complete processes by given deadlines）。</li>
+</ul>
+<p>不同的调度目标通常无法同时实现，因此操作系统调度算法通常专注于目标的子集，以平衡性能需求。</p>
+<p>无论采用何种调度策略，都应具备以下特点：</p>
+<ul>
+<li>政策执行（Policy enforcement）：确保系统的调度策略得以执行。</li>
+<li>公平性和平衡性（Fairness and Balance）：确保没有进程被饿死（starved），并且相似的进程受到相同的对待。No process is starved. Similar processes are treated the same.</li>
+<li>可预测性（Predictability）：在相似负载下，相同进程应在大致相同的时间内运行。</li>
+<li>可扩展性（Scalability）：在重负载下能够实现优雅的性能降级。</li>
+</ul>
+<p>为了实现调度目标，调度程序还应考虑进程的行为。进程行为通常根据其CPU突发模式进行分类。</p>
+<p>常见的进程分类包括：</p>
+<ul>
+<li>CPU密集型（CPU-bound）：通常会占用大部分CPU时间。</li>
+<li>I&#x2F;O密集型（I&#x2F;O-bound）：通常会频繁生成I&#x2F;O请求并释放处理器。</li>
+</ul>
+<p>大多数进程现在倾向于是I&#x2F;O密集型，因为CPU技术进步较快，而磁盘技术进展相对较慢。</p>
+<p><strong>典型进程（Typical Processes）</strong>：</p>
+<ul>
+<li>进程通常根据其活动性进行分类，包括批处理进程（Batch Process）和交互式进程（Interactive Process）。</li>
+<li>批处理进程通常是CPU密集型，不需要用户输入，而交互式进程通常是I&#x2F;O密集型，需要频繁的用户输入。</li>
+</ul>
+<p>对于批处理系统，吞吐量（throughput）和周转时间（turnaround time）是重要的。</p>
+<p>对于交互式系统，响应时间（response time）是关键。</p>
+<h2 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h2><h3 id="FCFS"><a href="#FCFS" class="headerlink" title="FCFS"></a>FCFS</h3><p>Implements FIFO</p>
+<p>FCFS is good for CPU-bound processes</p>
+<p>But the waiting time is bad if long processes come first.</p>
+<p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231219175551971.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20231219175551971"></p>
+<h3 id="Shortest-Job-First"><a href="#Shortest-Job-First" class="headerlink" title="Shortest Job First"></a>Shortest Job First</h3><p>Always schedule the process with the shortest upcoming burst time next.</p>
+<p>2 version:</p>
+<ul>
+<li>Non-preemptive - Shortest Job First</li>
+<li>Preemptive - Shortest Time Remaining Firest</li>
+</ul>
+<p>If all processes arrive at the same time, Non- preemptive is better.</p>
+<p><strong>Exponential Average</strong></p>
+<p>t<del>n</del> be the measured length of the n-th CPU burst.</p>
+<p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231219190231734.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20231219190231734"></p>
+<p>If a &#x3D; 0, then recent times have no effect.</p>
+<p>If a &#x3D; 1, only the most recent CPU burst is considered.</p>
+<p><strong>Usually a is 0.5</strong></p>
+<h3 id="Round-Robin"><a href="#Round-Robin" class="headerlink" title="Round Robin"></a>Round Robin</h3><p>Processes are dispatched FIFO but only given a limited amount of CPU time. (Called a time slice)</p>
+<p>RR performance heavily depends on the time slice size.</p>
+<h3 id="Priority-Scheduling"><a href="#Priority-Scheduling" class="headerlink" title="Priority Scheduling"></a>Priority Scheduling</h3><p>We schedule the most important processes first.</p>
+<p>Small numbers mean high priority.</p>
+<p><strong>Starvation</strong></p>
+<p>Low priority proesses might never execute, we need to increase priority as time progresses(ageing)</p>
+<h3 id="Multilevel-Queue-Scheduling"><a href="#Multilevel-Queue-Scheduling" class="headerlink" title="Multilevel Queue Scheduling"></a>Multilevel Queue Scheduling</h3><h3 id="Lottery-Scheduling"><a href="#Lottery-Scheduling" class="headerlink" title="Lottery Scheduling"></a>Lottery Scheduling</h3><p>Lottery scheduling is an adaptive scheduling approach to address the fairness problem.</p>
+<ul>
+<li>Each process owns some tickets</li>
+<li>On each time slice, a ticket is randomly picked.</li>
+</ul>
+<h2 id="Scheduling-in-Real-Time-Systems"><a href="#Scheduling-in-Real-Time-Systems" class="headerlink" title="Scheduling in Real-Time Systems"></a>Scheduling in Real-Time Systems</h2><p>Must meet the needs of processes that must produce correct output by a deadline.</p>
+<p>SJF is optimal for the average waiting time, but it does not guarantee a fixed waiting time for any process.</p>
+<h3 id="Soft-Real-Time-Scheduling"><a href="#Soft-Real-Time-Scheduling" class="headerlink" title="Soft Real-Time Scheduling"></a>Soft Real-Time Scheduling</h3><p>Missing an deadline occasionally is acceptable. </p>
+<p>Priority scheduling required. Small dispatch latency required.</p>
+<h3 id="Hard-Real-Time-Scheduling"><a href="#Hard-Real-Time-Scheduling" class="headerlink" title="Hard Real-Time Scheduling"></a>Hard Real-Time Scheduling</h3><p>Absolute deadline that always have to be met.(air traffic control)</p>
+<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><h2 id="储存单元-MU"><a href="#储存单元-MU" class="headerlink" title="储存单元 (MU)"></a>储存单元 (MU)</h2><ul>
+<li>存储单元是指可以表示为大型数据字或字节数组的存储设备，每个数据都有其独特的物理地址。</li>
+<li>存储单元的示例包括随机存取存储器（RAM）、闪存和磁盘存储。</li>
+<li>需要注意的是，存储单元本身并不负责生成它所使用的地址。</li>
+</ul>
+<p><strong>多道程序设计操作系统中存储的作用：</strong></p>
+<p>Memory is central to the multiprogramming OS, since a process must be in memory to execute.</p>
+<ul>
+<li>在多道程序设计中，多个进程同时加载到内存中，操作系统必须管理它们的执行。</li>
+<li>为了执行进程，它必须存在于内存中。存储单元存储了进程运行所需的程序指令和数据。</li>
+</ul>
+<p><strong>指令执行循环：</strong></p>
+<ol>
+<li><strong>加载指令：</strong> CPU通过从内存加载程序指令来启动指令执行循环。加载的指令的地址由程序计数器（PC）寄存器的内容决定，该寄存器跟踪下一条要执行的指令。</li>
+<li><strong>解码指令(decoded)：</strong> 一旦加载，CPU对指令进行解码。解码涉及解释指令并确定其需要执行的操作。</li>
+<li><strong>内存操作：</strong> 指令的执行可能涉及从内存中额外加载或存储数据。这反映了程序执行的动态性，其中在进程过程中经常需要从内存获取数据，并将其存回内存。</li>
+<li><strong>进程终止(terminate)：</strong> 最终，正在执行的进程将终止。当这发生时，它在内存中占用的空间被声明为空闲，允许操作系统加载和执行其他进程。</li>
+</ol>
+<h2 id="地址绑定"><a href="#地址绑定" class="headerlink" title="地址绑定"></a>地址绑定</h2><ul>
+<li>一个程序通常以二进制可执行文件的形式存储在磁盘(disk)上。</li>
+<li>为了执行该程序，它必须被加载，即被引入到内存中，放置在进程地址空间的代码段中。</li>
+<li>在具有虚拟内存的系统中，进程（或其部分）在执行期间可以在内存和磁盘之间移动（交换）。</li>
+</ul>
+<p><strong>大多数系统允许用户进程在内存单元的任何空闲位置驻留：</strong></p>
+<ul>
+<li>因此，进程的第一个物理地址不一定是0。</li>
+<li>由于这个原因，需要一种地址绑定机制(address binding mechanism)，使程序中使用的地址与正确的物理地址相关联。</li>
+</ul>
+<p>在这个背景下，地址绑定的目的是确保程序中使用的地址能够正确地映射到物理内存中的位置。因为程序可能在执行过程中从磁盘加载到内存，地址绑定机制必须能够动态地调整这些地址，以便它们正确地指向正在执行的程序的位置。这有助于确保程序在执行过程中能够正确地访问其代码和数据。</p>
+<p><strong>地址绑定时机</strong></p>
+<p><strong>1. 编译时（较早的系统）:</strong></p>
+<ul>
+<li>如果进程的内存位置在编译时是已知的，编译器可以生成程序可执行文件中的绝对代码(absoulute code)_。在这种情况下，程序中的地址引用也是物理地址。</li>
+<li>但是，如果进程位置发生变化，就需要重新编译程序（使用新地址）。</li>
+</ul>
+<p><strong>2. 载入时（较早的系统）:</strong></p>
+<ul>
+<li>如果在编译时内存位置是未知的，编译器将符号地址绑定到可重定位地址（即偏移量）。</li>
+<li>物理地址在载入时绑定。</li>
+<li>如果进程位置发生变化，无需重新编译程序，但如果位置发生变化，则必须重新加载程序。</li>
+</ul>
+<p><strong>3. 执行时（现代通用操作系统）:</strong></p>
+<ul>
+<li>如果在执行期间进程可以移动到另一个内存区域，那么绑定必须在运行时进行（动态绑定）。</li>
+<li>需要特殊的硬件来将进程地址转换为物理地址，这就是内存管理单元（MMU）的作用。</li>
+</ul>
+<p><em>Example</em></p>
+<p>使用了”Base and limit registers”（基址寄存器和限制寄存器）来管理进程的地址空间.</p>
+<h2 id="基址寄存器和限制寄存器"><a href="#基址寄存器和限制寄存器" class="headerlink" title="基址寄存器和限制寄存器:"></a><strong>基址寄存器和限制寄存器:</strong></h2><ul>
+<li><strong>基址寄存器（Base Register）：</strong> 它存储了一个进程可以访问的最小物理地址。也就是说，当一个进程要访问内存时，其地址将与基址相加，从而得到实际的物理地址。</li>
+<li><strong>限制寄存器（Limit Register）：</strong> 它存储了进程地址空间的大小。通过这个限制，系统可以确保进程只能访问其地址空间内的有效范围。</li>
+</ul>
+<p><strong>地址翻译过程:</strong></p>
+<ul>
+<li>当运行中的进程生成一个内存地址 m 时，该地址通过基址寄存器进行翻译，即最终的物理地址为 m + 基址。</li>
+<li>这个地址翻译是由内存管理单元（MMU）执行的硬件操作，它能够实时地将进程生成的逻辑地址翻译为实际的物理地址。</li>
+<li>如果 m 大于等于限制寄存器中的限制值（即超出了进程的地址空间），则会触发地址错误陷阱。</li>
+</ul>
+<p><strong>特权指令和内核模式:</strong></p>
+<ul>
+<li>基址寄存器和限制寄存器的设置只能通过特权指令完成，而这些指令通常只能在内核模式下执行。</li>
+<li>内核模式是操作系统运行的高特权级别，可以执行一些对系统关键部分进行管理的操作。</li>
+</ul>
+<p><strong>逻辑地址与物理地址空间:</strong></p>
+<ul>
+<li><p><strong>逻辑地址（Logical Address）:</strong> 由CPU处理，通常对应于进程的地址空间中的位置。</p>
+</li>
+<li><p>例如，一个32位处理器处理32位长的地址，进程的地址空间范围通常在0到2^32 - 1之间。</p>
+</li>
+<li><p><strong>在编译时和载入时地址绑定中的逻辑和物理地址:</strong></p>
+<ul>
+<li>在编译时和载入时地址绑定时，逻辑地址和物理地址是相同的。</li>
+</ul>
+</li>
+<li><p><strong>在运行时地址绑定（现代系统）中的逻辑和物理地址:</strong></p>
+<ul>
+<li>在运行时地址绑定时，逻辑地址和物理地址不同。</li>
+</ul>
+</li>
+</ul>
+<p><strong>使用基址和限制寄存器的系统示例:</strong></p>
+<ul>
+<li>在使用基址和限制寄存器的系统中，逻辑地址通过基址寄存器进行转换，最终得到物理地址。</li>
+</ul>
+<p><strong>举例说明:</strong></p>
+<ul>
+<li>假设基址寄存器的值是B，逻辑地址为L，那么物理地址就是 B + L。</li>
+<li>如果逻辑地址超出了限制寄存器指定的范围，就可能会触发错误</li>
+</ul>
+<h2 id="内存管理-MM-的重要性"><a href="#内存管理-MM-的重要性" class="headerlink" title="内存管理(MM)的重要性:"></a><strong>内存管理(MM)的重要性:</strong></h2><ul>
+<li>内存管理在计算机系统中是至关重要的。</li>
+<li>理想情况下，我们希望拥有无限大且速度极快的非易失性内存。(infinitely large and infinitely fast non-volatile memory)</li>
+<li>然而，在实际的计算机中，通常存在内存层次结构(memory hierarchy).</li>
+</ul>
+<p><strong>内存层次结构:</strong></p>
+<ul>
+<li><strong>主存储器（Primary Memory）:</strong> 相对较小但速度较快的易失性内存，如RAM（随机存取存储器）和缓存，也称为主存储器。</li>
+<li><strong>辅助存储器（Secondary Memory）:</strong> 大量但速度较慢的非易失性内存，如硬盘和闪存。</li>
+<li><strong>第三级存储器（在一些特殊系统中）:</strong> 存储在计算机外部，但仍然可访问，例如百度云盘。</li>
+</ul>
+<p><strong>内存管理的角色:</strong></p>
+<ul>
+<li><p>内存管理器:</p>
+<p> 操作系统的组件，负责以下任务：</p>
+<ol>
+<li>跟踪哪些内存部分正在使用，哪些未被使用. Keep track of which parts of memory are in use and which parts are not.</li>
+<li>在进程需要时分配内存，当进程完成时释放内存。Allocates memory to processes when they need it and deallocate it when they are done.</li>
+<li>在主存储器无法容纳所有进程时，在主存储器和磁盘之间进行交换管理。Manages swapping between main memory and disk when the main memory cannot hold all processes.</li>
+</ol>
+</li>
+</ul>
+<p><strong>内存管理系统:</strong></p>
+<ul>
+<li>内存管理系统可以分为两类：<ul>
+<li><strong>单道程序设计（Monoprogramming）:</strong> 一次只能执行一个程序。</li>
+<li><strong>多道程序设计（Multiprogramming）:</strong> 允许多个程序同时在内存中执行。</li>
+</ul>
+</li>
+</ul>
+<h3 id="单道程序设计（Monoprogramming）"><a href="#单道程序设计（Monoprogramming）" class="headerlink" title="单道程序设计（Monoprogramming）"></a><em>单道程序设计（Monoprogramming）</em></h3><p><strong>特点:</strong></p>
+<ul>
+<li><strong>非常简单:</strong> 一次只有一个用户进程在内存中（包括操作系统进程时可能为两个）。</li>
+<li><strong>内存管理仍然存在:</strong> 即使只有一个进程，内存管理仍然需要决定进程的数据将存储在何处。</li>
+<li><strong>缺乏保护:</strong> 单道程序设计通常缺乏对内存的保护机制，即进程不能访问其他进程的内存空间。</li>
+<li><strong>缺乏绑定和交换:</strong> 通常没有编译时或载入时的地址绑定，也没有进程之间的交换。</li>
+</ul>
+<p><strong>单道程序设计中的内存组织示例:</strong> 在单道程序设计中，内存的组织相对简单，因为只有一个用户进程在执行。以下是一些可能的内存组织示例：</p>
+<ol>
+<li><strong>顺序存储:</strong> 用户程序的指令和数据按顺序存放在内存中。</li>
+<li><strong>分区存储:</strong> 将内存划分为不同的区域，例如代码区、数据区等，以便存储用户程序的不同部分。</li>
+<li><strong>堆栈结构:</strong> 使用堆栈来管理函数调用和局部变量，使得程序的执行具有明显的结构。</li>
+</ol>
+<h3 id="多道程序设计（Multiprogramming）"><a href="#多道程序设计（Multiprogramming）" class="headerlink" title="多道程序设计（Multiprogramming）:"></a><em><strong>多道程序设计（Multiprogramming）:</strong></em></h3><p><strong>特点：</strong></p>
+<ul>
+<li><p>旨在同时为多个用户提供交互式服务。Provide interactive services to seveal users simultaneously.</p>
+<ul>
+<li>允许一次在内存中运行多个进程。</li>
+<li>提供保护、运行时绑定和交换（使用分页&#x2F;分段等技术，稍后会详细说明）。protection, run-time binding and swapping</li>
+</ul>
+</li>
+<li><p>目标是尽可能使处理器一直繁忙。</p>
+<ul>
+<li>Execute and not execute according to process state(I&#x2F;O or not).</li>
+</ul>
+</li>
+<li><p>Muiltiprogramming increases CPU utilisation.</p>
+</li>
+</ul>
+<p><strong>多道程序设计和性能:</strong></p>
+<ul>
+<li>当有n个进程在内存中时，其多道程序设计的程度为n。</li>
+<li>假设任何进程花费其时间的一部分p等待I&#x2F;O操作完成（0 &lt; p &lt; 1）。</li>
+<li>所有n个进程都被阻塞等待I&#x2F;O的概率为p^n。</li>
+</ul>
+<p><strong>CPU利用率的计算:</strong></p>
+<ul>
+<li>CPU利用率 &#x3D; 1 - p^n^，即1减去所有n个进程都等待I&#x2F;O的概率。</li>
+</ul>
+<p><strong>多道程序设计 Performance:</strong></p>
+<ul>
+<li>多道程序设计提高了CPU的利用率，因为在一个进程等待I&#x2F;O的时候，其他进程仍然可以在CPU上执行。</li>
+<li>通过保持处理器忙碌，系统可以更有效地利用计算资源。</li>
+</ul>
+<p><strong>性能与交互式服务:</strong></p>
+<ul>
+<li>多道程序设计的目标之一是为多用户提供交互式服务，确保系统对多个用户的响应是及时的。</li>
+<li>通过在等待I&#x2F;O操作的进程之间切换执行不执行I&#x2F;O的进程，系统可以更快地响应用户的请求。</li>
+</ul>
+<p><strong>案例：多道程序设计与性能:</strong> 尽管前述模型较为简化（它假设进程是独立的，I&#x2F;O阻塞的概率相同等），但它使我们能够进行具体的性能预测。</p>
+<p><strong>假设：</strong></p>
+<ul>
+<li>考虑一台计算机，有1 GB内存，其中操作系统占用200 MB，留出空间可以运行四个占用200 MB的进程。</li>
+<li>假设I&#x2F;O等待时间为80%。</li>
+</ul>
+<p><strong>性能预测:</strong></p>
+<ol>
+<li>如果我们忽略操作系统执行开销，我们将实现略低于60%的CPU利用率。</li>
+<li>如果我们再添加1 GB内存，我们可以运行另外五个进程；此时我们现在可以实现约86%的CPU利用率（性能提高了26%）。</li>
+<li>但是，如果我们再添加1 GB内存（总共14个进程和1个操作系统），CPU利用率仅会增加到约96%（性能提高了仅为10%）。</li>
+</ol>
+<p>这个案例说明了添加内存对系统性能的影响，并显示了性能提升可能会随着系统资源的增加而减缓。在实际系统中，性能受到许多因素的影响，包括硬件能力、操作系统的优化、应用程序的特性等。</p>
+<h2 id="内存组织"><a href="#内存组织" class="headerlink" title="内存组织"></a>内存组织</h2><ol>
+<li><strong>连续分配（Contiguous Allocation）:</strong><ul>
+<li><strong>固定分区（Fixed Partitions）:</strong> 将物理内存静态划分为若干分区，分区大小不一定相等。</li>
+<li><strong>可变分区（Variable Partitions）:</strong> 动态划分内存，根据进程需求动态分配。</li>
+</ul>
+</li>
+<li><strong>非连续分配（Non-contiguous Allocation）:</strong><ul>
+<li><strong>固定块（Paging）:</strong> 将内存划分为相等大小的块，可以在内存中分散，不一定是相邻的。</li>
+<li><strong>可变块（Segmentation）:</strong> 将内存划分为可变大小的块，每个块内的地址仍然是连续的，但不同块之间的地址可以是非连续的。</li>
+</ul>
+</li>
+</ol>
+<p><strong>固定分区:</strong></p>
+<ul>
+<li><strong>单输入队列:</strong> 如果一个分区变为空闲，将其分配给下一个适合的等待队列中的进程。</li>
+<li><strong>多输入队列:</strong> 新的进程放置在可以容纳它的最小分区的队列中。</li>
+<li><strong>多输入队列 of 不同大小:</strong> 队列中的进程必须等待，直到其分区可用。</li>
+</ul>
+<p><strong>固定分区的优缺点:</strong></p>
+<ul>
+<li><strong>优势:</strong> 在批处理系统上实现简单且有效。Simple implementation and effective on batch system.</li>
+<li>劣势:<ul>
+<li>内部碎片化问题：由于分区大小固定，某个进程未使用的空间将会丢失。Internal fragmentation problem.</li>
+<li>多输入队列可能导致性能大幅下降，因为大分区可能为空，但小分区可能队列已满。Loss of performance.</li>
+<li>不考虑动态行为。Does not account for dynamic behaviour.</li>
+</ul>
+</li>
+</ul>
+<p><strong>可变分区:</strong></p>
+<ul>
+<li>优势: 可变分区允许更大的适应性。adaptability<ul>
+<li>系统保留一个指示内存空闲部分的表。</li>
+<li>进程的大小得到考虑，如果有足够的可用连续空间，则被分配。</li>
+<li>分区的数量、位置和大小根据系统中运行的进程动态变化。</li>
+</ul>
+</li>
+<li>缺点:<ul>
+<li>外部碎片化问题：完成的进程可能会留下许多内存间隙。External fragmentation problem</li>
+<li>对于新进程可能没有足够的自由连续内存，尽管碎片总量很大。这个问题可以通过压缩(compaction)来解决。</li>
+</ul>
+</li>
+</ul>
+<h3 id="分页技术-Paging"><a href="#分页技术-Paging" class="headerlink" title="分页技术 (Paging):"></a><strong>分页技术 (Paging):</strong></h3><p><strong>基本策略:</strong></p>
+<ul>
+<li>物理内存被划分为小而相等的固定大小块（称为帧）。</li>
+<li>逻辑内存（即进程的地址空间）也被划分为与帧相同大小的块（称为页）。</li>
+<li>为了执行一个进程，它的页从磁盘加载到可用的内存帧中，依赖于一个页表。</li>
+</ul>
+<p><strong>加载程序:</strong></p>
+<ul>
+<li>如果有足够的空闲帧，程序可以加载。</li>
+<li>也可以只加载执行所需的几页（虚拟内存）。</li>
+</ul>
+<p><strong>分页技术的特点:</strong></p>
+<ul>
+<li><p>碎片化 (Fragmentation):</p>
+<ul>
+<li>内部碎片：仅为进程的最后一页的一小部分。</li>
+<li>外部碎片：没有（不需要压缩）。</li>
+</ul>
+</li>
+<li><p>每个逻辑地址（即CPU或进程地址）被分为两部分：</p>
+<ul>
+<li>页号和页内偏移。</li>
+</ul>
+</li>
+<li><p>页的大小通常是2^n^（例如，512字节-16 MB）；如果逻辑地址空间的大小是2^m^，则：</p>
+<ul>
+<li>m - n位给出页号。</li>
+<li>n位给出页内偏移。</li>
+</ul>
+</li>
+<li><p>使用处理器硬件将逻辑地址转换为物理地址。</p>
+<p><strong>分页硬件:</strong></p>
+<p><strong>小型页表:</strong></p>
+<ul>
+<li>如果页表较小（例如，256个条目），可以使用专用寄存器来实现。 dedicated register</li>
+</ul>
+<p><strong>分页硬件优化:</strong></p>
+<ul>
+<li><p>页表通常很大，保存在主内存中，但这对于使用寄存器来说速度较慢。</p>
+</li>
+<li><p>为了提高性能，使用</p>
+<p>转换查找缓冲器（TLB）</p>
+<p>：</p>
+<ul>
+<li>TLB是一个关联高速内存，将一个键（标签）与一个值关联。</li>
+<li>当提供一个键时，它会同时与所有键进行比较。</li>
+<li>需要替换策）。</li>
+<li>TLB的大小通常在64到1024个值之间。</li>
+</ul>
+</li>
+</ul>
+<p><strong>TLB的性能分析:</strong></p>
+<ul>
+<li>使用带有TLB的分页系统的性能分析可以通过<strong>命中比率</strong>完成，即页面号在TLB中找到的时间比例。</li>
+<li>有效内存访问时间（Te）的计算公式：<ul>
+<li>T<del>e</del> &#x3D; p × (T<del>t</del> + T<del>a</del>) + (1 − p) × (T<del>t</del> + 2T<del>a</del>)</li>
+<li>p：命中概率（例如，如果命中比率为80%，则p &#x3D; 0.8）</li>
+<li>T<del>t</del>：TLB访问时间</li>
+<li>T<del>a</del>：内存访问时间</li>
+</ul>
+</li>
+<li>TLB成本较高。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结:</strong> 分页技术通过将物理内存和逻辑内存划分为等大小的块来提供一种有效的内存管理方法。这可以减小内存碎片化，使程序更容易加载和运行。逻辑地址的划分和转换通过硬件支持，从而使得分页技术能够以较低的开销实现。</p>
+<h3 id="分段技术（Segmentation"><a href="#分段技术（Segmentation" class="headerlink" title="分段技术（Segmentation)"></a>分段技术（Segmentation)</h3><p><strong>基本策略:</strong></p>
+<ul>
+<li>逻辑内存被划分为若干段，每个段的长度可能不同。</li>
+<li>现在，逻辑地址由段号和段内偏移组成。</li>
+<li>逻辑地址和物理地址之间有更复杂的关系。</li>
+</ul>
+<p><strong>分段技术特点:</strong></p>
+<ul>
+<li>与分页不同，分段是对程序员可见的。<ul>
+<li>程序员通常将程序和数据分配给不同的段：主程序、堆栈、子程序、数据等。</li>
+<li>程序员必须注意最大段限制。</li>
+</ul>
+</li>
+<li>分段表中的条目包括段的基地址和限制寄存器。</li>
+<li>将保护与段相关联。</li>
+</ul>
+<p><strong>分段技术的碎片化:</strong></p>
+<ul>
+<li><strong>内部碎片:</strong> 无。</li>
+<li><strong>外部碎片:</strong> 没有解决，但比可变分区轻微，因为进程被分成的片段更小。</li>
+</ul>
+<p><strong>分段硬件:</strong></p>
+<ul>
+<li>逻辑地址翻译到物理地址需要硬件支持。</li>
+<li>段表存储在内存中，包括每个段的基地址和限制寄存器。</li>
+<li>段表通过段号进行索引，以查找对应的基地址和限制。</li>
+</ul>
+<p><strong>分页分段:</strong></p>
+<p><strong>解决分段中的外部碎片问题:</strong></p>
+<ul>
+<li>一种解决方案是将分页与分段结合（例如，Intel 80x86 CPU）。</li>
+</ul>
+<p><strong>分页分段的优势:</strong></p>
+<ul>
+<li>减少外部碎片。Reduces external fragmentation</li>
+<li>可用多个地址空间，指令可以具有较小的地址字段（不同段可以具有不同的地址空间大小）。</li>
+<li>使用虚拟内存时（进程的一部分可以交换到磁盘上）：<ul>
+<li>区分访问冲突和页面错误（页面不在内存中）。</li>
+<li>可以逐步进行交换。</li>
+</ul>
+</li>
+</ul>
+<p><strong>分页分段的劣势:</strong></p>
+<ul>
+<li>更为复杂。</li>
+<li>每个段需要一个页面表。A page table is needed per segment.</li>
+</ul>
+<p>外部碎片指的是分配给进程的内存空间中存在的、但由于空间分布不连续而不能被有效利用的未使用的小块内存。简而言之，外部碎片是内存中一些零散而无法合并的未使用空间。</p>
+<p>在分配内存时，如果系统将可用内存分成多个不相邻的块，即使总内存足够，但由于这些块之间的隔离，可能导致一些小的、无法利用的空闲空间。这就是外部碎片的概念。</p>
+<p>外部碎片可以导致系统难以找到足够大的内存块以满足某个进程的内存需求，即使系统的总体可用内存足够。</p>
+<p><strong>总结:</strong> 分段技术将逻辑内存划分为不同长度的段，对程序员可见。每个段都有自己的基地址和限制，与保护相关。虽然分段技术在内部没有碎片，但在外部可能存在碎片，这需要由程序员来管理。分段技术对于特定类型的应用程序和编程模型可能更为适用。</p>
+<h1 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h1><p><strong>概述:</strong></p>
+<ul>
+<li>虚拟内存是由系统硬件和软件支持的一种假象，即一个进程具有一个庞大且线性的可用内存空间（比主内存单元大得多）。</li>
+<li>使用虚拟内存，主内存可以被视为磁盘的高速缓存(cache)。</li>
+<li>在虚拟内存的上下文中，逻辑地址也被称为虚拟地址。</li>
+</ul>
+<p><strong>实际程序和虚拟内存:</strong></p>
+<ul>
+<li><p>实际程序通常可以分为两部分：</p>
+<ol>
+<li><p>经常需要的部分。</p>
+</li>
+<li><p>很少或从不需要的部分：</p>
+<ul>
+<li><p>处理异常错误条件的代码。</p>
+</li>
+<li><p>处理很少使用的选项和功能的代码。</p>
+</li>
+<li><p>分配超过严格需求的内存的代码（数组、表等）。</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>程序内的内存引用往往是聚集的（引用局部性原理）。Memory references within a program tend to be clustered.</p>
+</li>
+</ul>
+<h2 id="虚拟内存的优势"><a href="#虚拟内存的优势" class="headerlink" title="虚拟内存的优势:"></a><strong>虚拟内存的优势:</strong></h2><ul>
+<li>VM通过将进程的一部分放置在主内存中，一部分放置在磁盘上，以实现更大的地址空间，从而提供了一种吸引人的方案。</li>
+<li>VM的核心是延迟加载。</li>
+</ul>
+<p><strong>1. 超越物理内存限制:</strong> (Programs are not limited by the physical memory space )</p>
+<ul>
+<li>程序不受物理内存空间的限制。</li>
+<li>可以根据虚拟地址空间的允许范围，使程序变得更大：</li>
+<li>Save funding</li>
+</ul>
+<p><strong>2. 更好的多道程序设计(Better multiprogramming):</strong></p>
+<ul>
+<li>可以同时执行更多进程。</li>
+<li>进程可能处于ready状态（CPU利用率: 1 - p^n^）。</li>
+</ul>
+<p><strong>3. 减少I&#x2F;O需求:</strong></p>
+<ul>
+<li>加载程序或交换程序时需要的I&#x2F;O更少。</li>
+<li>increse CPU utilisation and throughput。</li>
+</ul>
+<h2 id="虚拟内存的特点"><a href="#虚拟内存的特点" class="headerlink" title="虚拟内存的特点:"></a><strong>虚拟内存的特点:</strong></h2><ul>
+<li>VM is Implemented by demand paging.<ul>
+<li>Only a few pages are bring into main memory.</li>
+</ul>
+</li>
+</ul>
+<p><strong>虚拟内存的支持:</strong></p>
+<ul>
+<li><p>VM  system supported in hardware</p>
+<ul>
+<li>Paging mechanism.(generate page faults)</li>
+</ul>
+</li>
+<li><p>In software</p>
+<ul>
+<li>Page swapping management.</li>
+</ul>
+</li>
+<li><p>在硬件中支持虚拟内存的系统使用<strong>分页机制</strong>，当引用磁盘中的页面时生成页错误。</p>
+</li>
+<li><p>在软件中，需要进行<strong>页面交换管理</strong>，由操作系统的算法支持。</p>
+</li>
+</ul>
+<h2 id="带有按需分页的页表"><a href="#带有按需分页的页表" class="headerlink" title="带有按需分页的页表:"></a><strong>带有按需分页的页表:</strong></h2><p><strong>对页表条目的添加:</strong></p>
+<ul>
+<li><p>存在位（Present Bit）:</p>
+<p> 如果页面在主内存中，将该位设置为1。</p>
+<ul>
+<li>当引用不在主内存中的页面时，会生成中断（页错误）。</li>
+</ul>
+</li>
+<li><p>修改位（Modified Bit）:</p>
+<p> 如果页面在上次加载到主内存后已更改，将该位设置为1。</p>
+<ul>
+<li>如果页面未更改，则在交换出去时无需写入磁盘。</li>
+</ul>
+</li>
+<li><p>控制位:</p>
+<ul>
+<li><strong>读&#x2F;写页面（Read&#x2F;Write Page）:</strong> 可以由两个或多个进程共享的只读页面。</li>
+<li><strong>内核&#x2F;用户页面（Kernel&#x2F;User Page）:</strong> 内核页面可以被强制一直保存在内存中。</li>
+</ul>
+</li>
+</ul>
+<p><strong>按需分页的页表工作方式:</strong></p>
+<ul>
+<li>如果页面在内存中，页表中相应的条目包含<strong>帧号</strong>。</li>
+<li>如果页面在磁盘中，页表中相应的条目包含<strong>磁盘中的地址或指向表的索引</strong></li>
+</ul>
+<h2 id="缺页中断处理"><a href="#缺页中断处理" class="headerlink" title="缺页中断处理"></a>缺页中断处理</h2><p>3 major steps:</p>
+<p><strong>1. 服务缺页中断(service the page-fault interrput):</strong></p>
+<ul>
+<li>陷入到操作系统（trap to the OS）。</li>
+<li>保存寄存器和进程状态(save registers and process state)。</li>
+<li>检查页面引用是否合法，并确定其在磁盘上的位置。</li>
+</ul>
+<p><strong>2. 读入缺失的页面 (read in the missing page):</strong></p>
+<ul>
+<li>从磁盘读入缺失的页面到一个空闲帧（free frame）。</li>
+<li>由于这是一个I&#x2F;O操作（较慢），另一个准备好的进程被分派到CPU。</li>
+<li>最终，来自磁盘的中断被发出（I&#x2F;O完成）。</li>
+</ul>
+<p><strong>3. 重新启动进程:</strong></p>
+<p>页面加载完成后，进程可以被重新启动：</p>
+<ul>
+<li>来自磁盘的中断表示页面已在内存中。</li>
+<li>这时，进程可以切换到准备就绪状态。</li>
+<li>最终，进程再次被调度，从中断处恢复执行。</li>
+</ul>
+<h2 id="缺页和性能"><a href="#缺页和性能" class="headerlink" title="缺页和性能:"></a><strong>缺页和性能:</strong></h2><p><strong>将缺页保持在最低限度:</strong></p>
+<ul>
+<li>缺页中断会对系统性能产生重大影响</li>
+<li>有效内存访问时间（T<del>e</del>）的计算方式为：<ul>
+<li>T<del>e</del> &#x3D; p x T<del>f</del> + (1 - p) x T<del>a</del></li>
+<li>其中：<ul>
+<li>T<del>f</del>: 缺页中断时间（处理缺页中断的时间）</li>
+<li>T<del>a</del>: 内存访问时间</li>
+<li>p: 页面错误的概率</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>性能影响:</strong></p>
+<ul>
+<li>缺页中断时间（Tf）通常比内存访问时间（Ta）高出数个数量级（例如，10毫秒与100纳秒）。</li>
+<li>因此，即使缺页的概率很低，也可能显著提高有效内存访问时间（Te）。</li>
+</ul>
+<h3 id="磁盘抖动-thrashing-和多道程序设计"><a href="#磁盘抖动-thrashing-和多道程序设计" class="headerlink" title="磁盘抖动(thrashing)和多道程序设计"></a>磁盘抖动(thrashing)和多道程序设计</h3><p><strong>磁盘抖动的问题:</strong></p>
+<ul>
+<li><strong>磁盘抖动（Thrashing）</strong> 是指系统花费大量时间在页面置换上而不是执行实际工作，导致系统性能急剧下降。</li>
+<li>磁盘抖动通常发生在系统试图维护过多进程时，导致它们的页面频繁地在内存和磁盘之间交换。</li>
+</ul>
+<p><strong>为避免磁盘抖动，需要采取负载控制措施(load control):</strong></p>
+<p>示例:</p>
+<ul>
+<li>只执行其驻留集足够大的进程。</li>
+<li>调整有效多道程序设计的程度，使缺页中断间隔的平均时间等于目标值（根据需要暂停进程）。</li>
+</ul>
+<p><strong>负载控制的目的:</strong></p>
+<ul>
+<li>避免系统陷入磁盘抖动状态，提高系统性能。</li>
+<li>通过智能地选择执行的进程，以及动态调整多道程序设计的程度，系统可以更有效地利用资源，避免频繁的页面置换。</li>
+</ul>
+<h2 id="虚拟内存中的内存管理"><a href="#虚拟内存中的内存管理" class="headerlink" title="虚拟内存中的内存管理"></a>虚拟内存中的内存管理</h2><p>在具有虚拟内存的系统中，操作系统主要处理两个内存管理问题：</p>
+<p><strong>1. 替换策略 (Replacement Policy):</strong></p>
+<ul>
+<li>当发生页面错误并且没有空闲帧可将页面换入时，操作系统必须选择一个帧进行替换（交换到磁盘上），以便将新页面带入。</li>
+<li>页面替换策略通常受到一些限制：<ul>
+<li>操作系统内核和控制结构的大部分通常存储在锁定的帧上（不能替换）。</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. 驻留集管理 (Resident Set Management):</strong></p>
+<ul>
+<li>动态或静态为每个活动进程选择帧的数量。</li>
+<li>允许的替换类型的选择，例如：<ul>
+<li>限制为导致页面错误的进程的页面。</li>
+<li>包括主存储器中的任何帧。</li>
+</ul>
+</li>
+</ul>
+<h4 id="替换策略"><a href="#替换策略" class="headerlink" title="替换策略"></a>替换策略</h4><p><strong>良好的替换策略应利用引用局部性原则:</strong></p>
+<ul>
+<li>引用局部性是指程序在一段时间内更有可能引用最近访问的页面。</li>
+<li>如果内存引用是随机的而不是局部化的，我们将无法有效地确定工作集。</li>
+</ul>
+<p><strong>替换算法:</strong></p>
+<ol>
+<li>Optimal (最佳):<ul>
+<li>替换最长时间内不会被引用的页面。(Replaces the page that will not be referenced for the longest period of time)</li>
+<li>具有最小数量的页面错误，但不可能实现（需要未来事件的信息）。</li>
+<li>用作衡量其他算法的标准。</li>
+</ul>
+</li>
+</ol>
+<p><strong>Optimal算法的例子:</strong></p>
+<ul>
+<li>Optimal算法会在每次页面错误时替换最长时间内不会被引用的页面。</li>
+</ul>
+<p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123220230748.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20231123220230748"></p>
+<ol start="2">
+<li>LRU(least recently used)<ul>
+<li>替换长时间没被使用的页面</li>
+<li>根据**(locality)**，未来一段时间这个页也不会被使用</li>
+<li>较难实现，由于Time costing</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123220827489.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20231123220827489"></p>
+<ol start="3">
+<li>FIFO<ul>
+<li>使用指针，以循环的方式替换页面</li>
+<li>很久以前获得的页面可能不再使用</li>
+<li>较易实现，但替换效果不好</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123221558256.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20231123221558256"></p>
+<p>指针所指的页面被替换，同时指针移动。</p>
+<p>若无替换页面则指针不移动。</p>
+<ol start="4">
+<li><p>Clock policy</p>
+<ul>
+<li>FIFO的变体</li>
+</ul>
+<h3 id="算法原理："><a href="#算法原理：" class="headerlink" title="算法原理："></a>算法原理：</h3><ol>
+<li><strong>初始化：</strong> 每个页面帧都有一个使用位，初始化为0。此外，有一个指向页面帧的指针，通常初始化为0。</li>
+<li><strong>页面引用：</strong> 当一个页面被引用或者首次加载到内存时，该页面的使用位被设置为1，表示它已经被访问过。</li>
+<li><strong>页面置换：</strong> 当需要进行页面置换时，操作系统开始遍历页面帧。</li>
+<li><strong>遍历过程：</strong> 遍历是一个循环过程，类似于时钟的指针在表盘上的移动。指针顺时针地遍历所有页面帧。</li>
+<li><strong>选择页面帧：</strong> 对于每个页面帧，检查其使用位。如果使用位为1，表示该页面最近被访问过，将其使用位设置为0，并移动指针到下一个页面帧。如果使用位为0，表示该页面较长时间没有被访问，选择该页面进行置换。</li>
+<li><strong>更新使用位：</strong> 在遍历的过程中，使用位为1的页面会在检查后被设置为0，以模拟它们的访问。</li>
+<li><strong>置换页面：</strong> 一旦选择了要置换的页面，操作系统将新页面加载到该页面帧中，并将其使用位设置为1。</li>
+<li><strong>继续遍历：</strong> 遍历继续，直到找到要置换的页面为止。</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20231123224117942.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20231123224117942"></p>
+<h4 id="页面大小的选择"><a href="#页面大小的选择" class="headerlink" title="页面大小的选择"></a><strong>页面大小的选择</strong></h4><p>小页面的优势：</p>
+<ul>
+<li>Memory is better</li>
+<li>improve locality</li>
+</ul>
+<p>大页面的优势：</p>
+<ul>
+<li>I&#x2F;O transfer time is small</li>
+</ul>
+<h4 id="页表的结构"><a href="#页表的结构" class="headerlink" title="页表的结构"></a><strong>页表的结构</strong></h4><p>存在的问题: 页表占用大部分内存</p>
+<ul>
+<li>2^m-n^ entries be required for m-bit long virtual address with n page offset bits.</li>
+<li>Ex: with <em>m &#x3D;32</em> and 4 KB page size -&gt; 2^20^</li>
+</ul>
+<p>Solution:</p>
+<ul>
+<li>hierarchical paging (分层页)</li>
+<li>inverted page table(倒页表)</li>
+</ul>
+<h5 id="分层页"><a href="#分层页" class="headerlink" title="分层页"></a>分层页</h5><p>Drawback: the time to convert a virtual address into a physical one is longer</p>
+<h5 id="倒页表"><a href="#倒页表" class="headerlink" title="倒页表"></a>倒页表</h5><h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><p>文件管理是操作系统中的一个关键方面，涉及对计算机上存储的数据进行组织和控制。当一个进程需要存储超出其即时运行时间的信息时，它利用文件管理系统来存储和检索数据。</p>
+<h2 id="进程在地址空间中储存信息面临的问题："><a href="#进程在地址空间中储存信息面临的问题：" class="headerlink" title="进程在地址空间中储存信息面临的问题："></a>进程在地址空间中储存信息面临的问题：</h2><ol>
+<li>易失性(Volatility)</li>
+</ol>
+<ul>
+<li>当一个进程终止时，其地址空间中存储的所有数据通常都会丢失。这是因为地址空间被释放，其中存储的任何信息都不再可访问。</li>
+</ul>
+<ol start="2">
+<li><p>信息共享</p>
+<p><strong>进程</strong>通常需要与其他进程共享信息，特别是当它们的生命周期不重叠时。</p>
+<p><strong>文件管理系统</strong>提供了持久存储的机制，允许数据被写入文件并被其他进程读取，即使它们在不同的时间执行。</p>
+</li>
+<li><p>有限的储存大小</p>
+<p><strong>进程</strong>地址空间有限，将大量数据存储在地址空间内可能并不实际。</p>
+<p><strong>文件系统</strong>通过提供一个持久且较大的存储空间</p>
+</li>
+</ol>
+<h2 id="解决：创建文件储存进程的信息"><a href="#解决：创建文件储存进程的信息" class="headerlink" title="解决：创建文件储存进程的信息"></a>解决：创建文件储存进程的信息</h2><ol>
+<li><strong>创建文件：</strong></li>
+</ol>
+<ul>
+<li>为了存储信息，可以为每个进程创建一个文件。文件是一种被命名的数据集合，通常保存在持久性的二级存储设备上，比如硬盘、CD&#x2F;DVD、固态硬盘、磁带等。</li>
+</ul>
+<ol start="2">
+<li>文件基本操作</li>
+</ol>
+<ul>
+<li>文件可以被看作是一个单元，可以执行各种基本操作，如打开（open）、关闭（close）、创建（create）、销毁（destroy）、复制（copy）、重命名（rename）、列出（list）等。这些操作使得系统能够有效地管理文件，进程可以根据需要对文件进行操作。</li>
+</ul>
+<ol start="3">
+<li>文件的单个数据操作</li>
+</ol>
+<ul>
+<li>除了对整个文件的基本操作外，文件内的个别数据项也可以被操作。这包括读取（read）、写入（write）、更新（update）、插入（insert）、删除（delete）等操作。这些操作允许进程以单元的方式操作文件内的数据，从而满足不同的信息存储和检索需求。</li>
+</ul>
+<h2 id="数据层次结构-Data-Hierarchy"><a href="#数据层次结构-Data-Hierarchy" class="headerlink" title="数据层次结构(Data Hierarchy)"></a>数据层次结构(Data Hierarchy)</h2><ol>
+<li><strong>最低层级：位 (Bits)</strong><ul>
+<li>位是信息的最基本单元，表示数据的最小单元，可以是0或1。</li>
+</ul>
+</li>
+<li><strong>中等层级：固定长度的位模式</strong><ul>
+<li><strong>字节（Byte）：</strong> 通常由8个位组成，是计算机中常见的存储单元。</li>
+<li><strong>字（Word）：</strong> 字的长度取决于计算机体系结构，可以是8、16、32或64位。</li>
+<li><strong>字符（Character）：</strong> 将字节、字或字组映射到语义符号（如ASCII码、Unicode等）的表示方式。</li>
+<li><strong>字段（Field）：</strong> 字符的组合，通常表示一个特定的数据项。</li>
+<li><strong>记录（Record）：</strong> 一组字段的集合，表示一个完整的数据项。</li>
+<li><strong>文件（File）：</strong> 一组相关记录的集合，通常代表某种数据的完整集合。</li>
+</ul>
+</li>
+<li><strong>最高层级：文件系统或数据库</strong><ul>
+<li><strong>文件系统：</strong> 用于组织和管理文件的系统，提供了文件和目录的层次结构，允许用户和程序访问和操作数据。</li>
+<li><strong>数据库：</strong> 一组相互关联的数据表，通过数据表之间的关系来组织和存储数据，提供了更高级别的数据管理和检索功能。</li>
+</ul>
+</li>
+</ol>
+<h3 id="Volume"><a href="#Volume" class="headerlink" title="Volume"></a>Volume</h3><ul>
+<li><p>卷是一个包含文件系统的单元，这个单元通常是一个辅助储存系统。硬盘驱动器，SSD.</p>
+</li>
+<li><p><strong>物理卷：</strong> 实际的硬件存储设备，如硬盘驱动器。物理卷是数据存储的物理实体。</p>
+</li>
+<li><p><strong>逻辑卷：</strong> 是在物理卷上创建的文件系统或数据集的逻辑表示。逻辑卷通过文件系统的管理，将物理存储划分成可管理的单元，使用户和应用程序能够方便地访问和使用存储。</p>
+</li>
+</ul>
+<h3 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h3><p>文件是存储在计算机系统中的一组数据，可以包含文本、图像、程序代码等。</p>
+<p>Record &amp; Block 是数据的基本单元。记录可以包含各种类型的信息例如，在数据库中，记录可以是一个数据表中的一行。</p>
+<ul>
+<li><strong>物理记录：</strong> 是最小的可以从或写入硬件存储设备的信息单元。这是硬件层面的定义，表示实际的存储单位。</li>
+<li><strong>逻辑记录：</strong> 是在软件层面上定义的数据单元，通常包含一定数量的物理记录。逻辑记录是按照应用程序的需要进行定义的，使得处理数据更加方便和高效。</li>
+<li>Block: Record 通常被组织成 Block. 文件系统通常以块为单位来读取和写入数据，这有助于提高效率，减少对存储设备的访问次数。</li>
+</ul>
+<h4 id="Example-in-Unix-amp-Windows"><a href="#Example-in-Unix-amp-Windows" class="headerlink" title="Example in Unix &amp; Windows"></a>Example in Unix &amp; Windows</h4><ul>
+<li>Unix 和 Windows 文件实际上是字节的序列，在物理上分组成块。</li>
+<li>字节被视为逻辑记录，而块则是物理记录。</li>
+</ul>
+<h4 id="文件特性"><a href="#文件特性" class="headerlink" title="文件特性"></a>文件特性</h4><p><strong>位置</strong></p>
+<p>文件储存在物理储存设备或文件系统的逻辑结构中。</p>
+<ul>
+<li><strong>物理位置：</strong> 文件实际存储在硬盘、固态硬盘等物理存储设备上。</li>
+<li><strong>逻辑结构：</strong> 文件系统提供了一个逻辑结构，用户和应用程序通过这个结构访问文件，而不必关心文件在物理设备上的确切位置。</li>
+</ul>
+<p><strong>大小与类型</strong></p>
+<p><strong>可访问性</strong></p>
+<ul>
+<li><p>文件的可访问性涉及对数据施加的访问限制。</p>
+</li>
+<li><p><strong>Owner Information（所有者信息）：</strong> 文件通常有一个所有者，该所有者是创建或拥有文件的用户。这有助于确定文件的控制和权限。</p>
+</li>
+<li><p>Read &#x2F; Write &#x2F; Execute Status（读&#x2F;写&#x2F;执行状态）：</p>
+<p> 文件系统通过这些状态来确定用户或进程对文件的访问权限。</p>
+<ul>
+<li><strong>读取（Read）：</strong> 用户或进程有权读取文件的内容。</li>
+<li><strong>写入（Write）：</strong> 用户或进程有权修改文件的内容。</li>
+<li><strong>执行（Execute）：</strong> 仅适用于可执行文件，允许用户或进程执行文件中的程序。</li>
+</ul>
+</li>
+</ul>
+<p><strong>设备独立性</strong></p>
+<p><strong>恢复或备份功能</strong></p>
+<p><strong>可选的加密功能</strong></p>
+<h4 id="目录-Directories"><a href="#目录-Directories" class="headerlink" title="目录(Directories)"></a>目录(Directories)</h4><p>为了组织和快速定位文件，文件系统使用目录：</p>
+<ol>
+<li><p><strong>目录的定义：</strong></p>
+<ul>
+<li>目录是特殊的文件，其中包含其他文件的名称和位置信息。</li>
+</ul>
+</li>
+<li><p><strong>目录项（Directory Entries）:</strong></p>
+<ul>
+<li>目录中的每个文件都由目录项表示，目录项包含诸如文件名、位置（物理块地址或在文件系统中的逻辑位置）、大小和类型、访问、修改和创建时间等信息字段。</li>
+</ul>
+</li>
+<li><p><strong>目录结构：</strong></p>
+<ul>
+<li><p>单层目录（Single-level or Flat File System）:</p>
+<ul>
+<li>这是最简单的文件系统组织形式，所有文件都存储在一个目录中。</li>
+<li>不存在两个文件可以具有相同的名称。</li>
+<li>文件系统必须对目录内容执行线性搜索，以定位每个文件，这可能导致性能不佳。</li>
+</ul>
+</li>
+<li><p>分层目录(Hierarchical FS):</p>
+<ul>
+<li><p>根目录(Root Directory) 作为文件结构的起点，位于储存设备上。</p>
+</li>
+<li><p>嵌套结构</p>
+<p>目录可以包含文件和其他目录，形成嵌套的结构。这意味着目录可以包含子目录，而子目录本身也可以包含文件或更多的子目录，从而形成一个层次结构。</p>
+</li>
+</ul>
+</li>
+<li><p>父目录和子目录</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="绝对路径与相对路径"><a href="#绝对路径与相对路径" class="headerlink" title="绝对路径与相对路径"></a>绝对路径与相对路径</h4><p>在同一目录下不能有两个文件具有相同的名称。</p>
+<p><strong>绝对路径：</strong></p>
+<ul>
+<li>绝对路径是文件名包括从根目录开始的完整路径。这样的路径提供了文件在整个文件系统中的确切位置。</li>
+<li>在Unix系统中，例如：<code>/etc/modules/file.txt</code> 是一个绝对路径，其中 <code>/</code> 表示根目录。</li>
+<li>在Windows系统中，例如：<code>C:\users\admin\file.txt</code> 是一个绝对路径，其中 <code>C:\</code> 是根目录。</li>
+</ul>
+<p><strong>绝对路径：</strong></p>
+<ul>
+<li>绝对路径是文件名包括从根目录开始的完整路径。这样的路径提供了文件在整个文件系统中的确切位置。</li>
+<li>在Unix系统中，例如：<code>/etc/modules/file.txt</code> 是一个绝对路径，其中 <code>/</code> 表示根目录。</li>
+<li>在Windows系统中，例如：<code>C:\users\admin\file.txt</code> 是一个绝对路径，其中 <code>C:\</code> 是根目录。</li>
+</ul>
+<h4 id="链接-Link"><a href="#链接-Link" class="headerlink" title="链接(Link)"></a>链接(Link)</h4><ol>
+<li><strong>链接的作用：</strong><ul>
+<li>链接允许在文件系统中建立引用，指向其他目录或文件，促进了数据共享和访问。</li>
+</ul>
+</li>
+<li><strong>链接的类型：</strong><ul>
+<li><strong>软链接（Soft Link）：</strong> 也称为符号链接，包含文件的路径名，即逻辑名称。软链接创建一个指向目标文件或目录的符号链接，允许在文件系统中创建一个别名，而不是实际的副本。</li>
+<li><strong>硬链接（Hard Link）：</strong> 包含文件在存储设备上的物理位置，通常是一个块号。硬链接创建一个指向文件数据块的额外链接，多个链接指向同一份实际数据。</li>
+</ul>
+</li>
+<li><strong>链接与目录结构：</strong><ul>
+<li>链接使我们能够将分层结构转化为：<ul>
+<li><strong>非循环结构（Acyclical Structures）：</strong> 允许目录具有两个不同的父目录。</li>
+<li><strong>循环结构（Cyclical Structures）：</strong> 允许目录形成环，即一个目录可能是另一个目录的父目录，同时也可能是该目录的子目录。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>链接中包含的内容：</strong><ul>
+<li><strong>软链接：</strong> 包含文件的逻辑路径名。</li>
+<li><strong>硬链接：</strong> 包含文件在存储设备上的物理位置，通常是块号。</li>
+</ul>
+</li>
+</ol>
+<h3 id="元数据-Metadata"><a href="#元数据-Metadata" class="headerlink" title="元数据(Metadata)"></a>元数据(Metadata)</h3><p>元数据是指文件系统本身的信息，它使得文件系统能够正常运作并保护其完整性。与用户数据不同，元数据是关于数据的数据</p>
+<ol>
+<li><strong>文件和目录的元数据：</strong><ul>
+<li>文件名</li>
+<li>文件大小</li>
+<li>文件类型</li>
+<li>文件创建时间、最后访问时间、最后修改时间</li>
+<li>文件权限和所有者信息</li>
+<li>文件所在的物理块地址或逻辑位置</li>
+</ul>
+</li>
+<li><strong>文件系统的元数据：</strong><ul>
+<li>文件系统的结构信息，如目录的组织方式，目录和文件的关系等。</li>
+<li>存储空间的管理信息，包括空闲块和已分配块的跟踪。</li>
+</ul>
+</li>
+</ol>
+<h3 id="超级块-Superblock"><a href="#超级块-Superblock" class="headerlink" title="超级块(Superblock)"></a>超级块(Superblock)</h3><p>文件系统创建超级块来存储关键的元数据.</p>
+<p>超级块通常包含以下信息：</p>
+<ol>
+<li><strong>文件系统类型的唯一标识符：</strong><ul>
+<li>用于确定文件系统的类型，例如EXT4、NTFS等。</li>
+</ul>
+</li>
+<li><strong>根目录的位置：</strong><ul>
+<li>指示文件系统中根目录的位置，从而使系统能够准确地开始检索文件和目录。</li>
+</ul>
+</li>
+<li><strong>文件系统中块的数量：</strong><ul>
+<li>描述整个文件系统的大小，以块为单位。</li>
+</ul>
+</li>
+<li><strong>辅助设备上可用空闲块的位置：</strong><ul>
+<li>记录在文件系统中哪些块是可用的，以便在需要时分配给新文件或扩展现有文件。</li>
+</ul>
+</li>
+<li><strong>健全性检查状态、上次修改时间等：</strong><ul>
+<li>用于确保超级块的完整性和文件系统的一致性。这包括上次修改超级块的时间戳以及其他状态信息。</li>
+</ul>
+</li>
+</ol>
+<h1 id="保护与安全"><a href="#保护与安全" class="headerlink" title="保护与安全"></a>保护与安全</h1><h2 id="保护"><a href="#保护" class="headerlink" title="保护"></a>保护</h2><p>Protection involves controlling the access of programs,processes, or users to the resources defined by a computer system. These resources include filed, memory segments(内存段), CPU.</p>
+<ul>
+<li>保护是实现计算机系统安全性的必要条件</li>
+</ul>
+<p><strong>保护目标</strong></p>
+<ul>
+<li><p><strong>Preventing Mischievous&#x2F;Intentional Violation of Access</strong></p>
+<p>区分资源的授权使用与非授权使用</p>
+</li>
+<li><p><strong>Ensuring Consistency with OS Policies (Reliability)</strong></p>
+<p>子系统之间接口的错误检测。子系统是操作系统中执行特定功能的组件。通过检测接口上的错误，系统可以防止问题从一个子系统传播到另一个子系统。</p>
+</li>
+</ul>
+<h3 id="计算机系统中保护的形式化模型"><a href="#计算机系统中保护的形式化模型" class="headerlink" title="计算机系统中保护的形式化模型"></a><strong>计算机系统中保护的形式化模型</strong></h3><ol>
+<li><p>对象(Objects):</p>
+<ul>
+<li><p>对象是需要访问控制的实体</p>
+<p>hardware: CPU, memory segments, printers.<br>software: files, semaphores.</p>
+</li>
+</ul>
+</li>
+<li><p>主体(Subjects):</p>
+<p>主体是访问对象的实体，可以是进程（processes）、用户等。主体是系统中的活动实体，它们需要执行操作并访问对象。</p>
+</li>
+<li><p>规则(Rules):</p>
+<p>规则定义了主体如何访问对象的方式。例如，对于<strong>CPU</strong>，规则可以涉及执行指令；对于<strong>内存</strong>，规则可能包括读取或写入；而对于<strong>文件</strong>，规则可能包括读取、写入或执行等操作。</p>
+</li>
+</ol>
+<h3 id="保护的原则"><a href="#保护的原则" class="headerlink" title="保护的原则"></a>保护的原则</h3><p><strong>仅允许进程访问经过授权的资源：</strong></p>
+<ul>
+<li>这个原则确保一个进程只能访问它被明确授权的资源。</li>
+</ul>
+<p><strong>仅允许进程访问其当前任务所需的资源：需要知道原则（或最小特权原则）：</strong></p>
+<ul>
+<li>这个原则表明一个进程只能访问它当前任务所需的资源，以限制由于故障进程导致的潜在损害。</li>
+</ul>
+<h3 id="保护域-Domain-of-Protection"><a href="#保护域-Domain-of-Protection" class="headerlink" title="保护域(Domain of Protection)"></a>保护域(Domain of Protection)</h3><p>保护域指定了一个进程可以访问的资源。在计算机系统中，这是一种用于限定进程访问权限的概念。</p>
+<p><code>&lt;object-name, right-set&gt;</code><br>其中:</p>
+<ul>
+<li><code>object-name</code> 表示资源的名称，例如文件名或其他系统对象的标识。</li>
+<li><code>right-set</code> 是一组权限或操作集合，表示了进程对这个资源所具有的操作权限。这可以包括读、写、执行等操作。</li>
+</ul>
+<p>例如，形式化定义可以表示为 <code>D = &lt;file F, &#123;read, write&#125;&gt;</code>，这表示保护域 <code>D</code> 中的任何进程都可以对文件 <code>F</code> 进行读取和写入的操作。</p>
+<h3 id="OS-保护"><a href="#OS-保护" class="headerlink" title="OS 保护"></a>OS 保护</h3><p>OS保护指的是执行管理系统资源使用规则的机制。这些规则由管理员、用户等设定，用于指导系统中各个组件对资源的使用。</p>
+<p>一般性的机制更为可取，因为不同地方或不同时期的规则可能会发生变化。这意味着系统设计时应尽量采用通用的、不易受到特定规则变动影响的保护机制。</p>
+<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><p><strong>恶意安全威胁：</strong></p>
+<ul>
+<li>未经授权读取数据、信息窃取，或者流量分析（属于被动威胁(passive threats)，影响数据的保密性）。</li>
+<li>未经授权破坏、篡改或伪造数据（属于主动威胁(active threats)，影响数据的完整性或真实性）。</li>
+<li>阻止系统的合法使用（属于主动威胁，影响系统的可用性）。</li>
+</ul>
+<p><strong>意外安全威胁:</strong></p>
+<ul>
+<li>人为错误，例如误删除文件或配置错误。</li>
+<li>硬件或软件错误，例如操作系统故障或应用程序错误。</li>
+<li>自然灾害，例如火灾、水灾等不可预测的自然事件。</li>
+</ul>
+<h3 id="攻击分类"><a href="#攻击分类" class="headerlink" title="攻击分类"></a><strong>攻击分类</strong></h3><ul>
+<li><p>强制系统调用(伪造攻击 fabrication attack)</p>
+<ul>
+<li>尝试非法的系统调用，或者使用非法参数进行合法系统调用.</li>
+</ul>
+</li>
+<li><p>Examining memory information(机密性攻击 confidentiality attack) </p>
+<ul>
+<li>一些系统在分配内存之前未清除相应空间，这可能导致机密信息泄漏。攻击者可能通过检查未清除的内存信息来获取敏感数据</li>
+</ul>
+</li>
+<li><p>Denial of service(availability attack)</p>
+<ul>
+<li>拒绝服务攻击旨在通过合法但是不断闲置的指令过载计算机，使其无法执行有用的任务。这种攻击旨在削弱系统的可用性，使其难以提供正常服务。</li>
+</ul>
+</li>
+</ul>
+<h3 id="用户认证"><a href="#用户认证" class="headerlink" title="用户认证"></a>用户认证</h3><ul>
+<li>User authentication is the first line of security</li>
+<li>如果没有通过认证进入系统，许多攻击不可能发生</li>
+</ul>
+<p>认证方式</p>
+<ul>
+<li>user knowledge (user identifier and password); most common</li>
+<li>user possession (key or smart card)</li>
+<li>user attributes (biometrics)</li>
+</ul>
+<p><strong>密码</strong></p>
+<ol>
+<li><p><strong>密码作为能力（密钥）：</strong></p>
+<ul>
+<li>将密码视为一种能力或密钥。在计算机安全术语中，密码通常是用于验证用户身份的机制，相当于一种访问权限。</li>
+</ul>
+</li>
+<li><p><strong>密码的潜在脆弱性：</strong></p>
+<ul>
+<li>密码可能面临以下潜在脆弱性：<ul>
+<li><strong>被猜测：</strong> 攻击者可能通过尝试不同的密码组合来猜测用户的密码。</li>
+<li><strong>被暴露或嗅探：</strong> 密码在传输或存储过程中可能被暴露或被嗅探到，导致泄露。</li>
+<li><strong>非法传输：</strong> 攻击者可能通过非法手段传输密码，例如中间人攻击（Man-in-the-Middle）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>安全的密码应该：</strong></p>
+<ul>
+<li><p>强大：</p>
+<p> 强密码具有足够的复杂性，使得通过暴力破解攻击变得更加困难。强密码的特征包括：</p>
+<ul>
+<li>长度足够，以避免暴力破解攻击。</li>
+<li>不常见或明显，即不与自然语言相关，以避免攻击者使用字典攻击。</li>
+</ul>
+</li>
+<li><p><strong>定期更改：</strong> 定期更改密码可以降低密码被非法使用或拦截的可能性</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>*<em>密码强度</em></p>
+<ol>
+<li><strong>长度：</strong><ul>
+<li>密码长度对密码强度有显著影响。具体而言，对于长度为 n 字节的密码，可能的不同密码组合数为 2^(8n)。</li>
+<li>因此，增加密码长度会显著提高密码的强度，因为攻击者需要尝试更多的可能组合。</li>
+</ul>
+</li>
+<li><strong>频率：</strong><ul>
+<li>密码的强度还受到其在使用中的频率影响。如果密码很少被使用，攻击者在尝试猜测时会面临更大的不确定性，这使密码更为强大。</li>
+</ul>
+</li>
+<li><strong>熵：</strong><ul>
+<li>熵是对密码强度的一种严格的度量。它衡量了密码中包含的信息的不确定性。</li>
+<li>如果密码中包含常见词语，攻击者可以使用字典攻击，只需检查几千个常见密码，而不必尝试所有可能的组合。</li>
+</ul>
+</li>
+</ol>
+<p><strong>密码保护措施</strong></p>
+<ol>
+<li><strong>限制登录次数&#x2F;频率：</strong><ul>
+<li>通过限制用户登录的次数或频率，系统可以减少暴力破解攻击的风险。例如，可以实施登录失败的计数和锁定机制，以防止攻击者通过尝试多个密码来猜测正确的密码。</li>
+</ul>
+</li>
+<li><strong>对密码文件进行访问控制：</strong><ul>
+<li>限制对存储密码的文件的访问是一种基本的安全措施。然而，如果入侵者通过某种漏洞访问密码文件，这种措施就不足以提供完整的保护。</li>
+</ul>
+</li>
+<li><strong>加密密码文件：</strong><ul>
+<li>通过对密码文件进行加密，即存储加密后的密码散列（例如使用哈希函数 f(p)），可以增加密码的安全性。即使攻击者能够访问密码文件，也很难还原出原始密码。</li>
+<li>但是，如果使用公共的哈希函数，攻击者仍然可能使用加密字典攻击来破解密码。</li>
+</ul>
+</li>
+<li><strong>使用盐值（Salting）：</strong><ul>
+<li>为了防止加密字典攻击，可以引入盐值，即在原始密码前添加一些随机字符，再进行加密。这使得相同密码在加密后的形式也是不同的，即使密码相同，由于盐值的不同，最终的哈希值也不同。</li>
+<li>盐值的使用有效地增加了攻击者进行搜索的空间，提高了破解密码的难度。</li>
+</ul>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Stage2/" class="category-chain-item">Stage2</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'mrle0429/mrle0429.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      京ICP备2025137218号-1
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

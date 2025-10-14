@@ -1,0 +1,723 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/le.png">
+  <link rel="icon" href="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/le.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mrle">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="首汽约车-Java实习生面试面试信息：  时间：2025年7月15日 14:00 形式：线下面试 时长：40分钟  Redis的常用数据结构？每种数据结构常用的情况 String: 缓存对象，常规计数 Hash: 购物车 List：消息队列 Set：点赞，共同关注 Zset：排行榜，电话排序  MySQL分页语句如何写LIMIT offset, size offset &#x3D; (pageNu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="首汽约车 Java">
+<meta property="og:url" content="http://example.com/2025/07/28/%E9%9D%A2%E7%BB%8F/%E9%A6%96%E6%B1%BD%E7%BA%A6%E8%BD%A6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="首汽约车-Java实习生面试面试信息：  时间：2025年7月15日 14:00 形式：线下面试 时长：40分钟  Redis的常用数据结构？每种数据结构常用的情况 String: 缓存对象，常规计数 Hash: 购物车 List：消息队列 Set：点赞，共同关注 Zset：排行榜，电话排序  MySQL分页语句如何写LIMIT offset, size offset &#x3D; (pageNu">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-14T13:36:35.787Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>首汽约车 Java - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":90,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21977573,"cnzz":null,"leancloud":{"app_id":"Zzk99gbfhUnSGIi3aVZorgkY-gzGzoHsz","app_key":"CHbdsGXBjsh9AtkfWokVzpbd","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21977573.js');
+      }
+    </script>
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mrle&#39;s Blog !</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/marathon/">
+                <i class="iconfont icon-trophy-fill"></i>
+                <span>Marathon</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/">
+                <i class="iconfont icon-book"></i>
+                <span>文章</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/%E8%83%8C%E6%99%AF%281%29.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="首汽约车 Java"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-28 00:00" pubdate>
+          2025年7月28日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">首汽约车 Java</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年10月14日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="首汽约车-Java实习生面试"><a href="#首汽约车-Java实习生面试" class="headerlink" title="首汽约车-Java实习生面试"></a>首汽约车-Java实习生面试</h1><p><strong>面试信息：</strong></p>
+<ul>
+<li>时间：2025年7月15日 14:00</li>
+<li>形式：线下面试</li>
+<li>时长：40分钟</li>
+</ul>
+<h2 id="Redis的常用数据结构？每种数据结构常用的情况"><a href="#Redis的常用数据结构？每种数据结构常用的情况" class="headerlink" title="Redis的常用数据结构？每种数据结构常用的情况"></a>Redis的常用数据结构？每种数据结构常用的情况</h2><ul>
+<li>String: 缓存对象，常规计数</li>
+<li>Hash: 购物车</li>
+<li>List：消息队列</li>
+<li>Set：点赞，共同关注</li>
+<li>Zset：排行榜，电话排序</li>
+</ul>
+<h2 id="MySQL分页语句如何写"><a href="#MySQL分页语句如何写" class="headerlink" title="MySQL分页语句如何写"></a>MySQL分页语句如何写</h2><p><code>LIMIT offset, size</code></p>
+<p>offset &#x3D; (pageNumber - 1) × size</p>
+<h2 id="你提到你用了策略模式，你能讲一下吗。你还了解哪些设计模式。挑一个介绍一下"><a href="#你提到你用了策略模式，你能讲一下吗。你还了解哪些设计模式。挑一个介绍一下" class="headerlink" title="你提到你用了策略模式，你能讲一下吗。你还了解哪些设计模式。挑一个介绍一下"></a>你提到你用了策略模式，你能讲一下吗。你还了解哪些设计模式。挑一个介绍一下</h2><p>在演唱会系统中，不同时间段在票务计算和定价策略上有差异：</p>
+<ul>
+<li>正常票价</li>
+<li>早鸟票价</li>
+<li>临期票价</li>
+</ul>
+<p>使用策略模式，将定价策略抽象为接口，各种不同的票价作为策略实现类，方便后期拓展和转换，避免if-else嵌套，拓展性强。</p>
+<p>单例模式，工厂模式，观察者模式，装饰器模式，代理模式</p>
+<p><strong>单例模式</strong></p>
+<p>Spring中的Bean默认是单例的</p>
+<h2 id="订单表中索引是如何设计的"><a href="#订单表中索引是如何设计的" class="headerlink" title="订单表中索引是如何设计的"></a>订单表中索引是如何设计的</h2><p>默认使用主键索引。订单号作为唯一索引，是业务的唯一标识。用户id也是索引，方便用户查询自己的订单。</p>
+<h2 id="项目是如何部署上线的，讲一讲"><a href="#项目是如何部署上线的，讲一讲" class="headerlink" title="项目是如何部署上线的，讲一讲"></a>项目是如何部署上线的，讲一讲</h2><p>首先后端部署：使用Maven打包，上传服务器后，使用<code>nohub+Java-jar</code>方式后台运行</p>
+<p>前端部署：<code>npm run build</code>部署vue项目</p>
+<p>Nginx配置转发</p>
+<h2 id="如何保持Redis和MySQL数据库的一致性"><a href="#如何保持Redis和MySQL数据库的一致性" class="headerlink" title="如何保持Redis和MySQL数据库的一致性"></a>如何保持Redis和MySQL数据库的一致性</h2><p><strong>延迟双删</strong></p>
+<ol>
+<li>先删除缓存</li>
+<li>更新数据库</li>
+<li>延迟500ms，删除缓存</li>
+</ol>
+<p>第一次删缓存：防止读到旧值；避免缓存穿插</p>
+<h2 id="你完成了哪个模块。详细介绍一个"><a href="#你完成了哪个模块。详细介绍一个" class="headerlink" title="你完成了哪个模块。详细介绍一个"></a>你完成了哪个模块。详细介绍一个</h2><p><strong>订单模块 + 权限模块</strong></p>
+<p><strong>订单模块：</strong> 支持的用户下单，订单状态管理，超时自动取消，订单查询与分页。</p>
+<p>关键点：使用MyBatis操作订单表，实现分页查询接口；利用Resid缓存订单状态提升接口响应速度，引入SpringTask实现定时任务，自动处理未支付订单的超时取消。</p>
+<p>为了应对缓存一致性问题，采用延迟双删策略，避免出现脏读或缓存击穿。</p>
+<p><strong>权限模块：</strong> 基于Spring Security + JWT实现用户登录、注册、角色控制及接口防护。</p>
+<p>关键点：用户注册登录后，生成JWT令牌返回前端。在认证过滤器中解析token并识别用户信息，针对不同的用户角色，配置不同的访问权限。</p>
+<h2 id="讲一讲JVM？你们远程的服务器内存是多少"><a href="#讲一讲JVM？你们远程的服务器内存是多少" class="headerlink" title="讲一讲JVM？你们远程的服务器内存是多少"></a>讲一讲JVM？你们远程的服务器内存是多少</h2><p>JVM是java虚拟机，用来解释自己的指令集并映射到本地CPU指令集和OS的系统调用。</p>
+<p>JVM屏蔽与操作系统平台相关的信息，使得Java程序只需要生成在Java虚拟机上运行的目标代码，就可以在不同平台不加修改的运行。即<strong>一次编译，到处运行</strong></p>
+<h2 id="如何解决超卖问题"><a href="#如何解决超卖问题" class="headerlink" title="如何解决超卖问题"></a>如何解决超卖问题</h2><p>Redis + Lua脚本 + 分布式锁 + 异步下单</p>
+<p>商品库存预先缓存在Redis；用户下单时，使用Lua脚本做库存查询和库存预减；若扣减成果，则发消息到MQ，异步创建订单。</p>
+<p>消费者收到订单创建消息后，异步将订单写入数据库；如果写入失败，系统可以做订单回滚。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%9D%A2%E7%BB%8F/" class="category-chain-item">面经</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'mrle0429/mrle0429.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      京ICP备2025137218号-1
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
