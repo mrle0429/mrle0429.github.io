@@ -138,7 +138,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -324,6 +324,15 @@
       <td style="text-align:right;">05:38/km</td>
     </tr>
   
+    <tr>
+      <td style="text-align:right;">2025-10-26</td>
+      <td>2025成都马拉松</td>
+      <td>成都</td>
+      <td style="text-align:center;">FM</td>
+      <td style="text-align:right;">03:44:09</td>
+      <td style="text-align:right;">05:18/km</td>
+    </tr>
+  
   </tbody>
 </table>
 
@@ -352,16 +361,18 @@
 
   
 
+  
 
 
 
-<div id="echarts6879" style="width: 100%;height:420px;margin: 0 auto"></div>
+
+<div id="echarts1115" style="width: 100%;height:420px;margin: 0 auto"></div>
 <script src="https://unpkg.com/echarts@5.6.0/dist/echarts.min.js"></script>
 <script>
-  if (window.eChartecharts6879ResizeHandler) {
-    window.removeEventListener("resize", eChartecharts6879ResizeHandler);
+  if (window.eChartecharts1115ResizeHandler) {
+    window.removeEventListener("resize", eChartecharts1115ResizeHandler);
   }
-  var optionecharts6879 = {
+  var optionecharts1115 = {
   "title": { "text": "全马净成绩（越低越好）" },
   "tooltip": {
     "trigger": "axis",
@@ -394,6 +405,10 @@
       
         
           ,"2025武汉马拉松"
+        
+      
+        
+          ,"2025成都马拉松"
         
       
     ],
@@ -464,17 +479,26 @@
           
         
       
+        
+          
+            ,{
+              "value": 13449,
+              "label": { "show": true, "position": "top", "formatter": "03:44:09" }
+            }
+          
+        
+      
     ]
   }
 ]
 };
   if (window.echarts !== undefined) {
-    var eChartecharts6879 = echarts.init(document.getElementById('echarts6879'));
-    eChartecharts6879.setOption(optionecharts6879);
-    var eChartecharts6879ResizeHandler = function() {
-      eChartecharts6879.resize();
+    var eChartecharts1115 = echarts.init(document.getElementById('echarts1115'));
+    eChartecharts1115.setOption(optionecharts1115);
+    var eChartecharts1115ResizeHandler = function() {
+      eChartecharts1115.resize();
     };
-    window.addEventListener("resize", eChartecharts6879ResizeHandler);
+    window.addEventListener("resize", eChartecharts1115ResizeHandler);
   }
 </script>
 
