@@ -333,6 +333,15 @@
       <td style="text-align:right;">05:18/km</td>
     </tr>
   
+    <tr>
+      <td style="text-align:right;">2025-11-16</td>
+      <td></td>
+      <td>南京</td>
+      <td style="text-align:center;">FM</td>
+      <td style="text-align:right;">03:27:51</td>
+      <td style="text-align:right;">04:56/km</td>
+    </tr>
+  
   </tbody>
 </table>
 
@@ -363,16 +372,22 @@
 
   
 
+  
+    
+    
+    
+  
 
 
 
-<div id="echarts3763" style="width: 100%;height:420px;margin: 0 auto"></div>
+
+<div id="echarts9102" style="width: 100%;height:420px;margin: 0 auto"></div>
 <script src="https://unpkg.com/echarts@5.6.0/dist/echarts.min.js"></script>
 <script>
-  if (window.eChartecharts3763ResizeHandler) {
-    window.removeEventListener("resize", eChartecharts3763ResizeHandler);
+  if (window.eChartecharts9102ResizeHandler) {
+    window.removeEventListener("resize", eChartecharts9102ResizeHandler);
   }
-  var optionecharts3763 = {
+  var optionecharts9102 = {
   "title": { "text": "全马净成绩（越低越好）" },
   "tooltip": {
     "trigger": "axis",
@@ -409,6 +424,10 @@
       
         
           ,"2025成都马拉松"
+        
+      
+        
+          ,""
         
       
     ],
@@ -453,10 +472,7 @@
           
             ,{
               "value": 12613,
-              "label": { "show": true, "position": "top", "fontWeight": "bold", "formatter": "⭐ 03:30:13" },
-              "itemStyle": { "color": "#d97706" },     // PB 点颜色（可调）
-              "symbolSize": 16,                        // PB 点更大
-              "z": 10
+              "label": { "show": true, "position": "top", "formatter": "03:30:13" }
             }
           
         
@@ -488,17 +504,29 @@
           
         
       
+        
+          
+            ,{
+              "value": 12471,
+              "label": { "show": true, "position": "top", "fontWeight": "bold", "formatter": "⭐ 03:27:51" },
+              "itemStyle": { "color": "#d97706" },     // PB 点颜色（可调）
+              "symbolSize": 16,                        // PB 点更大
+              "z": 10
+            }
+          
+        
+      
     ]
   }
 ]
 };
   if (window.echarts !== undefined) {
-    var eChartecharts3763 = echarts.init(document.getElementById('echarts3763'));
-    eChartecharts3763.setOption(optionecharts3763);
-    var eChartecharts3763ResizeHandler = function() {
-      eChartecharts3763.resize();
+    var eChartecharts9102 = echarts.init(document.getElementById('echarts9102'));
+    eChartecharts9102.setOption(optionecharts9102);
+    var eChartecharts9102ResizeHandler = function() {
+      eChartecharts9102.resize();
     };
-    window.addEventListener("resize", eChartecharts3763ResizeHandler);
+    window.addEventListener("resize", eChartecharts9102ResizeHandler);
   }
 </script>
 
