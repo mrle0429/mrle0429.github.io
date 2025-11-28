@@ -18,12 +18,12 @@
   <meta name="author" content="Mrle">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Count DigitsNO.1This is a transfer int to str. This is not a math solution 123def count_digits1(x):    x&#x3D;str(x)    return len(x)  NO.2123456def count_digits2(x):    count &#x3D; 0    while x !&#x3D; 0:        x">
+    <meta name="description" content="Count Digits NO.1 This is a transfer int to str. This is not a math solution 123def count_digits1(x):    x&#x3D;str(x)    return len(x) NO.2 123456def count_digits2(x):    count &#x3D; 0    while x !&#x3D; 0:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Count and Sum Digits">
 <meta property="og:url" content="http://example.com/2023/03/01/Stage1/Count%20and%20Sum%20Digits/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Count DigitsNO.1This is a transfer int to str. This is not a math solution 123def count_digits1(x):    x&#x3D;str(x)    return len(x)  NO.2123456def count_digits2(x):    count &#x3D; 0    while x !&#x3D; 0:        x">
+<meta property="og:description" content="Count Digits NO.1 This is a transfer int to str. This is not a math solution 123def count_digits1(x):    x&#x3D;str(x)    return len(x) NO.2 123456def count_digits2(x):    count &#x3D; 0    while x !&#x3D; 0:">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-01T13:55:26.000Z">
 <meta property="article:modified_time" content="2025-10-14T13:30:33.243Z">
@@ -334,18 +334,20 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Count-Digits"><a href="#Count-Digits" class="headerlink" title="Count Digits"></a>Count Digits</h1><h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><p>This is a transfer int to str. This is not a math solution</p>
+                <h1>Count Digits</h1>
+<h2 id="NO-1">NO.1</h2>
+<p>This is a transfer int to str. This is not a math solution</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_digits1</span>(<span class="hljs-params">x</span>):<br>    x=<span class="hljs-built_in">str</span>(x)<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(x)<br></code></pre></td></tr></table></figure>
-
-<h2 id="NO-2"><a href="#NO-2" class="headerlink" title="NO.2"></a>NO.2</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_digits2</span>(<span class="hljs-params">x</span>):<br>    count = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> x != <span class="hljs-number">0</span>:<br>        x = x // <span class="hljs-number">10</span><br>        count = count +<span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> count<br></code></pre></td></tr></table></figure>
-
-<h2 id="NO-3"><a href="#NO-3" class="headerlink" title="NO.3"></a>NO.3</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_digits3</span>(<span class="hljs-params">n</span>):   <span class="hljs-comment">#Recursion</span><br>	<span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">10</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> (<span class="hljs-number">1</span> + count_digits3(n //<span class="hljs-number">10</span>))<br></code></pre></td></tr></table></figure>
-
-<p>This is about Recursion. </p>
-<h1 id="Sum-Digits"><a href="#Sum-Digits" class="headerlink" title="Sum Digits"></a>Sum Digits</h1><h2 id="NO-1-1"><a href="#NO-1-1" class="headerlink" title="NO.1"></a>NO.1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_digit1</span>(<span class="hljs-params">n</span>):<br>    <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">10</span>:<br>        <span class="hljs-keyword">return</span> n<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> (n%<span class="hljs-number">10</span> + sum_digit1(n//<span class="hljs-number">10</span>))<br></code></pre></td></tr></table></figure>
-
-<h2 id="NO-2-1"><a href="#NO-2-1" class="headerlink" title="NO.2"></a>NO.2</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs pyt">def sum_digit2(n):<br>    sum=1<br>    while n != 0:<br>        sum = sum * (n%10)<br>        n = n // 10<br>    return sum<br></code></pre></td></tr></table></figure>
-
+<h2 id="NO-2">NO.2</h2>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_digits2</span>(<span class="hljs-params">x</span>):<br>    count = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> x != <span class="hljs-number">0</span>:<br>        x = x // <span class="hljs-number">10</span><br>        count = count +<span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> count<br></code></pre></td></tr></table></figure>
+<h2 id="NO-3">NO.3</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_digits3</span>(<span class="hljs-params">n</span>):   <span class="hljs-comment">#Recursion</span><br>	<span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">10</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> (<span class="hljs-number">1</span> + count_digits3(n //<span class="hljs-number">10</span>))<br></code></pre></td></tr></table></figure>
+<p>This is about Recursion.</p>
+<h1>Sum Digits</h1>
+<h2 id="NO-1-2">NO.1</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_digit1</span>(<span class="hljs-params">n</span>):<br>    <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">10</span>:<br>        <span class="hljs-keyword">return</span> n<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> (n%<span class="hljs-number">10</span> + sum_digit1(n//<span class="hljs-number">10</span>))<br></code></pre></td></tr></table></figure>
+<h2 id="NO-2-2">NO.2</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs pyt">def sum_digit2(n):<br>    sum=1<br>    while n != 0:<br>        sum = sum * (n%10)<br>        n = n // 10<br>    return sum<br></code></pre></td></tr></table></figure>
 
                 
               </div>

@@ -18,12 +18,12 @@
   <meta name="author" content="MRLE">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Lecture 0Lecture: David Lillis 2 Assignment (40%) and Written Final Exam(60%) Lecture 1Tree树是按层构造的数据结构，每个数据间的关系是父与子。-  数据储存在Node中 每个节点有且仅有一个父节点（除root节点），可以有任意数量的子节点。  术语  Root of tree: A     头节点，没有父节点">
+    <meta name="description" content="Lecture 0 Lecture: David Lillis 2 Assignment (40%) and Written Final Exam(60%) Lecture 1 Tree 树是按层构造的数据结构，每个数据间的关系是父与子。-  数据储存在Node中 每个节点有且仅有一个父节点（除root节点），可以有任意数量的子节点。  术语   Root of tree: A     头节点，没">
 <meta property="og:type" content="article">
 <meta property="og:title" content="COMP 2014J 数据结构 Personal Notes">
 <meta property="og:url" content="http://example.com/2024/03/08/Stage2/COMP-2014J-LEARNING-PROCESS/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Lecture 0Lecture: David Lillis 2 Assignment (40%) and Written Final Exam(60%) Lecture 1Tree树是按层构造的数据结构，每个数据间的关系是父与子。-  数据储存在Node中 每个节点有且仅有一个父节点（除root节点），可以有任意数量的子节点。  术语  Root of tree: A     头节点，没有父节点">
+<meta property="og:description" content="Lecture 0 Lecture: David Lillis 2 Assignment (40%) and Written Final Exam(60%) Lecture 1 Tree 树是按层构造的数据结构，每个数据间的关系是父与子。-  数据储存在Node中 每个节点有且仅有一个父节点（除root节点），可以有任意数量的子节点。  术语   Root of tree: A     头节点，没">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240307215642213.png">
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308113222487.png">
@@ -272,7 +272,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.2k 字
+          4.1k 字
         
       </span>
     
@@ -349,56 +349,76 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Lecture-0"><a href="#Lecture-0" class="headerlink" title="Lecture 0"></a>Lecture 0</h1><p>Lecture: David Lillis</p>
+                <h1>Lecture 0</h1>
+<p>Lecture: David Lillis</p>
 <p>2 Assignment (40%) and Written Final Exam(60%)</p>
-<h1 id="Lecture-1"><a href="#Lecture-1" class="headerlink" title="Lecture 1"></a>Lecture 1</h1><h2 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h2><p>树是按层构造的数据结构，每个数据间的关系是父与子。-</p>
+<h1>Lecture 1</h1>
+<h2 id="Tree">Tree</h2>
+<p>树是按层构造的数据结构，每个数据间的关系是父与子。-</p>
 <ul>
 <li>数据储存在Node中</li>
 <li>每个节点有且仅有一个父节点（除root节点），可以有任意数量的子节点。</li>
 </ul>
 <p>术语</p>
 <ul>
-<li><p><strong>Root</strong> of tree: A     头节点，没有父节点 </p>
+<li>
+<p><strong>Root</strong> of tree: A     头节点，没有父节点</p>
 </li>
-<li><p><strong>Parent</strong> of H: F</p>
+<li>
+<p><strong>Parent</strong> of H: F</p>
 </li>
-<li><p><strong>Children</strong> of J : K, L</p>
+<li>
+<p><strong>Children</strong> of J : K, L</p>
 </li>
-<li><p><strong>Siblings</strong> of F: G   姊妹节点</p>
+<li>
+<p><strong>Siblings</strong> of F: G   姊妹节点</p>
 </li>
-<li><p><strong>Internal</strong> Nodes: A, B, C, F, G, I, J  (至少有一个子节点)</p>
+<li>
+<p><strong>Internal</strong> Nodes: A, B, C, F, G, I, J  (至少有一个子节点)</p>
 </li>
-<li><p><strong>External</strong> Nodes: D, E, H, K, L (没有子节点)</p>
+<li>
+<p><strong>External</strong> Nodes: D, E, H, K, L (没有子节点)</p>
 </li>
-<li><p><strong>Ancestor</strong> of I: A, C, G, I  (自己也可以是自己的祖先)</p>
+<li>
+<p><strong>Ancestor</strong> of I: A, C, G, I  (自己也可以是自己的祖先)</p>
 </li>
-<li><p><strong>Descendant</strong> of I: I, J, K, L (自己也是自己的后代)</p>
+<li>
+<p><strong>Descendant</strong> of I: I, J, K, L (自己也是自己的后代)</p>
 </li>
-<li><p><strong>Edge</strong>: (U,V) U 是 V 的父节点 </p>
+<li>
+<p><strong>Edge</strong>: (U,V) U 是 V 的父节点</p>
 <p>（A, B), (G, I), BUT (A, G), (F, C) 不是Edge.</p>
 </li>
-<li><p><strong>Path</strong>: 从上到下的有序路径</p>
+<li>
+<p><strong>Path</strong>: 从上到下的有序路径</p>
 <p>（A, C, G, I)</p>
 </li>
-<li><p><strong>Depth</strong> of a node: 该节点祖先的个数，不包括该节点。Depth(A) &#x3D; 0  Depth(G) &#x3D; 2</p>
+<li>
+<p><strong>Depth</strong> of a node: 该节点祖先的个数，不包括该节点。Depth(A) = 0  Depth(G) = 2</p>
 </li>
-<li><p><strong>Degree</strong> of a node: 该节点子节点的个数。degree(A) &#x3D; 2, degree(G) &#x3D; 1</p>
+<li>
+<p><strong>Degree</strong> of a node: 该节点子节点的个数。degree(A) = 2, degree(G) = 1</p>
 </li>
-<li><p><strong>Height of a tree</strong>： 树的层数  height(T) &#x3D; 5.  最高的节点高度就是树的层数.</p>
+<li>
+<p><strong>Height of a tree</strong>： 树的层数  height(T) = 5.  最高的节点高度就是树的层数.</p>
 </li>
-<li><p><strong>Subtree of tree T rooted at node v</strong> : 子树</p>
+<li>
+<p><strong>Subtree of tree T rooted at node v</strong> : 子树</p>
 </li>
 </ul>
 <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240307215642213.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240307215642213" style="zoom: 25%;">
-
-<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p>最多允许有两个子节点，分为左子节点和右子节点，左节点在右节点之前。</p>
+<h2 id="二叉树">二叉树</h2>
+<p>最多允许有两个子节点，分为左子节点和右子节点，左节点在右节点之前。</p>
 <p><strong>真二叉树</strong>(Proper Binary Tree): 节点的度为0或2</p>
 <ul>
-<li><p>通过将外部节点扩展为内部节点来实现树</p>
+<li>
+<p>通过将外部节点扩展为内部节点来实现树</p>
 </li>
-<li><p>只有内部节点存储数据，外部节点为空</p>
+<li>
+<p>只有内部节点存储数据，外部节点为空</p>
 </li>
-<li><p>关键操作</p>
+<li>
+<p>关键操作</p>
 <ul>
 <li><code>expandExternal(p, e)</code>  创建两个新的空位置,并将它们作为p的左右子元素添加，并将元素e存储在p处。如果p不是外部的，则会发生错误。</li>
 <li><code>remove(p)</code> 如果p的左子元素是外部的，则删除它和p并用右子元素替换p。如果右子节点是外部的，删除它和p并用左子节点替换它。如果两个子节点都在内部或p在外部，则会出错。</li>
@@ -406,54 +426,47 @@
 <p>如果一个节点的两个子节点都是内部节点，则无法删除。朴素的理解，删除后无法确定两个姊妹节点的关系。</p>
 </li>
 </ul>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><embed src="./Trees-Exercises.pdf" width="100%" height="750" type="application/pdf">
-
-<h1 id="Lecture-2-Tree-Traversals-and-Binary-Search-Trees"><a href="#Lecture-2-Tree-Traversals-and-Binary-Search-Trees" class="headerlink" title="Lecture 2 Tree Traversals and Binary Search Trees"></a>Lecture 2 Tree Traversals and Binary Search Trees</h1><h2 id="树的遍历和访问者模式"><a href="#树的遍历和访问者模式" class="headerlink" title="树的遍历和访问者模式"></a>树的遍历和访问者模式</h2><p>先序遍历：中，左，右   遍历后对于任意的节点都应满足这个顺序</p>
+<h2 id="练习">练习</h2>
+<embed src="./Trees-Exercises.pdf" width="100%" height="750" type="application/pdf">
+<h1>Lecture 2 Tree Traversals and Binary Search Trees</h1>
+<h2 id="树的遍历和访问者模式">树的遍历和访问者模式</h2>
+<p>先序遍历：中，左，右   遍历后对于任意的节点都应满足这个顺序</p>
 <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308113222487.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240308113222487" style="zoom: 33%;">
-
 <p>实现：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 递归实现</span><br><span class="hljs-keyword">void</span> <span class="hljs-title function_">preorder</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>    <span class="hljs-keyword">if</span>(root == <span class="hljs-literal">null</span>) &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    print(root.val);<br>    preorder(root.left);<br>    preoerder(root.right);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
 <p>中序遍历：左，中，右   只对二叉树有意义</p>
 <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308114134154.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240308114134154" style="zoom: 33%;">
-
 <p>实现：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 递归实现</span><br><span class="hljs-keyword">void</span> <span class="hljs-title function_">inorder</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>    <span class="hljs-keyword">if</span>(root == <span class="hljs-literal">null</span>) &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    preorder(root.left);<br>    print(root.val);<br>    preoerder(root.right);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
 <p>后序遍历：左，右，中</p>
 <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308114417818.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240308114417818" style="zoom:33%;">
-
 <p>实现：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 递归实现</span><br><span class="hljs-keyword">void</span> <span class="hljs-title function_">postorder</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>    <span class="hljs-keyword">if</span>(root == <span class="hljs-literal">null</span>) &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    preorder(root.left);<br>    preoerder(root.right);<br>    print(root.val);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
 <p>遍历顺序的选择：</p>
 <ul>
-<li><p>释放树种的内存（一次删除一个节点）</p>
+<li>
+<p>释放树种的内存（一次删除一个节点）</p>
 <p>后序遍历：不会在删除子节点前删除他的父节点</p>
 </li>
-<li><p>复制整个树</p>
+<li>
+<p>复制整个树</p>
 <p>前序遍历：先添加父节点的副本再添加子节点副本</p>
 </li>
-<li><p>使用树表示文件系统结构，计算目录&#x2F;文件的大小</p>
+<li>
+<p>使用树表示文件系统结构，计算目录/文件的大小</p>
 <p>后序遍历：先计算子树大小，相加得到目录大小</p>
 </li>
-<li><p>二叉搜索树中的排序</p>
+<li>
+<p>二叉搜索树中的排序</p>
 <p>中序遍历</p>
 </li>
 </ul>
-<p>思考题：<br>利用先序与中序遍历构造二叉树</p>
+<p>思考题：
+利用先序与中序遍历构造二叉树</p>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">测试链接LeetCode</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> TreeNode <span class="hljs-title function_">buildTree</span><span class="hljs-params">(<span class="hljs-type">int</span>[] pre, <span class="hljs-type">int</span>[] in)</span> &#123;<br>		<span class="hljs-keyword">if</span> (pre == <span class="hljs-literal">null</span> || in == <span class="hljs-literal">null</span> || pre.length != in.length) &#123;<br>			<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>		&#125;<br>		HashMap&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; in.length; i++) &#123;<br>			map.put(in[i], i);<br>		&#125;<br>		<span class="hljs-keyword">return</span> f(pre, <span class="hljs-number">0</span>, pre.length - <span class="hljs-number">1</span>, in, <span class="hljs-number">0</span>, in.length - <span class="hljs-number">1</span>, map);<br>	&#125;<br><br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> TreeNode <span class="hljs-title function_">f</span><span class="hljs-params">(<span class="hljs-type">int</span>[] pre, <span class="hljs-type">int</span> l1, <span class="hljs-type">int</span> r1, <span class="hljs-type">int</span>[] in, <span class="hljs-type">int</span> l2, <span class="hljs-type">int</span> r2, HashMap&lt;Integer, Integer&gt; map)</span> &#123;<br>		<span class="hljs-keyword">if</span> (l1 &gt; r1) &#123;<br>			<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>		&#125;<br>		<span class="hljs-type">TreeNode</span> <span class="hljs-variable">head</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TreeNode</span>(pre[l1]);<br>		<span class="hljs-keyword">if</span> (l1 == r1) &#123;<br>			<span class="hljs-keyword">return</span> head;<br>		&#125;<br>		<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> map.get(pre[l1]);<br>		<span class="hljs-comment">// pre : l1(........)[.......r1]</span><br>		<span class="hljs-comment">// in  : (l2......)k[........r2]</span><br>		<span class="hljs-comment">// (...)是左树对应，[...]是右树的对应</span><br>		head.left = f(pre, l1 + <span class="hljs-number">1</span>, (l1 + <span class="hljs-number">1</span>) + (k - l2 - <span class="hljs-number">1</span>), in, l2, k-<span class="hljs-number">1</span>, map);<br>        head.right = f(pre, l1 + k - l2 + <span class="hljs-number">1</span>, r1, in, k + <span class="hljs-number">1</span>, r2,map);<br>		<span class="hljs-keyword">return</span> head;<br>	&#125;<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h2><p>将元素储存为有序结构的二叉树</p>
+<h2 id="二叉搜索树">二叉搜索树</h2>
+<p>将元素储存为有序结构的二叉树</p>
 <ol>
 <li>内部节点储存element</li>
 <li>左子节点小于父节点</li>
@@ -463,20 +476,21 @@
 <p>中序遍历可得到正确的顺序</p>
 <p>三种基本操作：</p>
 <ul>
-<li><p>put(k, v). 加入键和值。如果k已经存在，将值替换为v.</p>
+<li>
+<p>put(k, v). 加入键和值。如果k已经存在，将值替换为v.</p>
 <p>利用find()方法查找k，若不存在k，在find()返回的节点处(一个外部节点)扩展两个节点，将其变为内部节点，在这一节点插入(k,v). 如果存在k，则直接将v替换.</p>
 </li>
-<li><p>get(k). 返回这个键关联的值.</p>
+<li>
+<p>get(k). 返回这个键关联的值.</p>
 </li>
-<li><p>remove(k). 删除k这个键</p>
+<li>
+<p>remove(k). 删除k这个键</p>
 <p>利用find()找到k，若k只有一个外部子节点，直接使用删除方法。如果由两个内部子节点，找到该节点的下一最大节点，将其复制到k这一节点处。</p>
-<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308130244406.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240308130244406" style="zoom:33%;"></li>
+<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240308130244406.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240308130244406" style="zoom:33%;">
+</li>
 </ul>
 <p>这三种操作基于<code>find(k, n)</code> 从n开始查找，如果k存在，则返回包含k的节点。如果k不存在，则返回搜索结束的外部节点。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java">TreeNode <span class="hljs-title function_">find</span><span class="hljs-params">(k,n)</span> &#123;<br>    <span class="hljs-keyword">if</span>(T.isExternal(n)) &#123;<br>        <span class="hljs-keyword">return</span> n;<br>    &#125;<br>    <span class="hljs-keyword">if</span> k &lt; n.key()&#123;<br>        <span class="hljs-keyword">return</span> find(k, n.left);<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(k &gt; n.key()) &#123;<br>        <span class="hljs-keyword">return</span> find(k, n.right);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">return</span> n;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
 <p>性能：</p>
 <p>空间：O(n)</p>
 <p>时间：</p>
@@ -485,56 +499,69 @@
 <li><strong>插入操作</strong>：插入操作的时间复杂度与查找类似，也是 O(log n)。但如果插入的数据是有序的，树会退化成链表，插入操作的时间复杂度会变为 O(n)。</li>
 <li><strong>删除操作</strong>：删除操作的时间复杂度也与查找类似，平均情况下为 O(log n)。但同样，如果树的结构不平衡，最坏情况下可能达到 O(n)。</li>
 </ul>
-<p>Example:<br><embed src="./02c-Binary-Search-Tree-Example.pdf" width="100%" height="750" type="application/pdf"></p>
-<h1 id="Lecture-3"><a href="#Lecture-3" class="headerlink" title="Lecture 3"></a>Lecture 3</h1><h2 id="AVL-Trees-平衡二叉树"><a href="#AVL-Trees-平衡二叉树" class="headerlink" title="AVL Trees 平衡二叉树"></a>AVL Trees 平衡二叉树</h2><h3 id="AVL：一种平衡二叉搜索树"><a href="#AVL：一种平衡二叉搜索树" class="headerlink" title="AVL：一种平衡二叉搜索树"></a>AVL：一种平衡二叉搜索树</h3><ol>
-<li><p>对于任意子节点，其子树的高度相差最多为1</p>
+<p>Example:
+<embed src="./02c-Binary-Search-Tree-Example.pdf" width="100%" height="750" type="application/pdf"></p>
+<h1>Lecture 3</h1>
+<h2 id="AVL-Trees-平衡二叉树">AVL Trees 平衡二叉树</h2>
+<h3 id="AVL：一种平衡二叉搜索树">AVL：一种平衡二叉搜索树</h3>
+<ol>
+<li>
+<p>对于任意子节点，其子树的高度相差最多为1</p>
 </li>
-<li><p>对于任意子节点，其子树也为AVL</p>
+<li>
+<p>对于任意子节点，其子树也为AVL</p>
 </li>
-<li><p>AVL的性能均为O(logN)</p>
-<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240311090328888.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240311090328888" style="zoom:33%;"></li>
+<li>
+<p>AVL的性能均为O(logN)</p>
+<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240311090328888.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240311090328888" style="zoom:33%;">
+</li>
 </ol>
-<h3 id="AVL插入："><a href="#AVL插入：" class="headerlink" title="AVL插入："></a>AVL插入：</h3><p>和普通的二叉搜索树相同，但在插入后，需要检查是否仍然满足性质，若不满足，需通过<strong>trinode restructuring</strong>来维持树平衡。</p>
+<h3 id="AVL插入：">AVL插入：</h3>
+<p>和普通的二叉搜索树相同，但在插入后，需要检查是否仍然满足性质，若不满足，需通过<strong>trinode restructuring</strong>来维持树平衡。</p>
 <ul>
-<li><p>检查平衡：从新展开的节点开始向上搜索，比较每个节点子节点的高度，如果高度差大于1，则树不平衡。</p>
-<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314203954911.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240314203954911" style="zoom:50%;"></li>
+<li>
+<p>检查平衡：从新展开的节点开始向上搜索，比较每个节点子节点的高度，如果高度差大于1，则树不平衡。</p>
+<img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314203954911.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240314203954911" style="zoom:50%;">
+</li>
 </ul>
 <p>插入54之后，上图树不平衡。我们从54向上搜素，找到第一个不平衡的节点Z，然后设Z的子节点（高度更高的）为Y节点，然后将Y的子节点（高度更高的）设为X。执行<code>restructure(x)</code>对树重建。</p>
-<h3 id="Trinode-重组"><a href="#Trinode-重组" class="headerlink" title="Trinode 重组"></a>Trinode 重组</h3><p>设(a, b, c) 为 x, y, z 按从小到大顺序排列。执行旋转操作，另B成为中间的节点(即其他两个节点的父节点)</p>
+<h3 id="Trinode-重组">Trinode 重组</h3>
+<p>设(a, b, c) 为 x, y, z 按从小到大顺序排列。执行旋转操作，另B成为中间的节点(即其他两个节点的父节点)</p>
 <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314205130971.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240314205130971" style="zoom:40%;">
-
 <p>单次旋转：</p>
 <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314205211943.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240314205211943" style="zoom:50%;">
-
 <p>双次旋转：</p>
 <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240314205531895.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240314205531895" style="zoom:50%;">
-
-<h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p>被删除地节点节点成为空的外部节点。从根节点开始向下检查平衡。执行Trinode重组。</p>
-<h1 id="Lecture-4a-Amortised-Analysis"><a href="#Lecture-4a-Amortised-Analysis" class="headerlink" title="Lecture 4a Amortised-Analysis"></a>Lecture 4a Amortised-Analysis</h1><p>摊销分析：考虑一系列操作的总体影响平衡每个操作的成本。</p>
-<h1 id="Lecture-4b-Splay-Trees"><a href="#Lecture-4b-Splay-Trees" class="headerlink" title="Lecture 4b Splay Trees"></a>Lecture 4b Splay Trees</h1><p>一种使用平摊的二叉搜索树。使用<strong>Splaying</strong>维持平衡 (move-to-root)</p>
+<h3 id="删除节点">删除节点</h3>
+<p>被删除地节点节点成为空的外部节点。从根节点开始向下检查平衡。执行Trinode重组。</p>
+<h1>Lecture 4a Amortised-Analysis</h1>
+<p>摊销分析：考虑一系列操作的总体影响平衡每个操作的成本。</p>
+<h1>Lecture 4b Splay Trees</h1>
+<p>一种使用平摊的二叉搜索树。使用<strong>Splaying</strong>维持平衡 (move-to-root)</p>
 <p>特殊的性质：</p>
 <ul>
 <li>最近访问过的节点可以再次快速访问</li>
 <li>用于数据压缩</li>
 </ul>
-<h2 id="Splaying"><a href="#Splaying" class="headerlink" title="Splaying"></a>Splaying</h2><p>给定内部节点X。不断重构将X移动至根节点。根据父节点(Y)和祖父节点(Z)决定如何重构。</p>
+<h2 id="Splaying">Splaying</h2>
+<p>给定内部节点X。不断重构将X移动至根节点。根据父节点(Y)和祖父节点(Z)决定如何重构。</p>
 <p>重构操作：</p>
 <ul>
 <li>Zig(没有祖父节点)</li>
 </ul>
 <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240416220405617.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240416220405617" style="zoom:50%;">
-
 <ul>
-<li><p>Zig-Zig(同AVL单旋转的形状) <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240416220448849.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240416220448849" style="zoom:50%;"></p>
+<li>
+<p>Zig-Zig(同AVL单旋转的形状) <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240416220448849.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240416220448849" style="zoom:50%;"></p>
 <ol>
 <li>X替换Z，Y成为X的子节点，Z成为Y的子节点</li>
 <li>维持树的大小关系（左小右大）</li>
 <li>起始状态与AVL相同，结果并不同</li>
 </ol>
 </li>
-<li><p>Zig-Zag(同AVL双旋转的形状)</p>
+<li>
+<p>Zig-Zag(同AVL双旋转的形状)</p>
 <img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/image-20240416220941337.png" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="image-20240416220941337" style="zoom:50%;">
-
 <ol>
 <li>X成为根节点，Y，Z分别是X的左右子节点</li>
 <li>树的in-order关系维持（左小右大）</li>
@@ -542,21 +569,25 @@
 </ol>
 </li>
 </ul>
-<h2 id="Splay-Trees"><a href="#Splay-Trees" class="headerlink" title="Splay Trees"></a>Splay Trees</h2><ul>
+<h2 id="Splay-Trees">Splay Trees</h2>
+<ul>
 <li>get(k): 如果找到K，Splay(k)。若K不存在，对最后的外部节点的父节点执行Splay</li>
 <li>put(k, v): 对新的放入的节点执行Splay</li>
 <li>remove(k): 对实际被删除的节点的父节点执行Splay。删除规则同搜索二叉树</li>
 </ul>
-<h2 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h2><p>查找，插入和删除均为O(logN)</p>
-<h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><p>3&#x2F;16 上传源代码</p>
+<h2 id="性能分析">性能分析</h2>
+<p>查找，插入和删除均为O(logN)</p>
+<h1>Lab 1</h1>
+<p>3/16 上传源代码</p>
 <embed src="./WS1-Trees.pdf" width="100%" height="750" type="application/pdf">
-
 <p><a target="_blank" rel="noopener" href="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/comp2014J/lab_1_src.zip">src文件下载</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// </span><br></code></pre></td></tr></table></figure>
-
-<h1 id="Lab-2"><a href="#Lab-2" class="headerlink" title="Lab 2"></a>Lab 2</h1><p>3&#x2F;20上传源代码</p>
+<h1>Lab 2</h1>
+<p>3/20上传源代码</p>
 <p><a target="_blank" rel="noopener" href="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/comp2014J/lab_2_src.zip">src文件下载</a></p>
-<h1 id="Lab-3"><a href="#Lab-3" class="headerlink" title="Lab 3"></a>Lab 3</h1><p>3&#x2F;27 上传源代码<br><embed src="./WS3-Binary_Tree_Internals.pdf" width="100%" height="750" type="application/pdf"></p>
+<h1>Lab 3</h1>
+<p>3/27 上传源代码
+<embed src="./WS3-Binary_Tree_Internals.pdf" width="100%" height="750" type="application/pdf"></p>
 <p><a target="_blank" rel="noopener" href="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/comp2014J/Compled-WS3-Source.zip">zip项目文件下载</a></p>
 
                 

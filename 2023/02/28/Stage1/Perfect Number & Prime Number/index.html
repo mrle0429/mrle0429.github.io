@@ -18,12 +18,12 @@
   <meta name="author" content="Mrle">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Prime numberIt is a basic problem for CS students. The part aim  to give more intersiting solution. NO.1According to Henry, he asks us to not print such as ‘for’,  ‘break’,’continue’. Something only p">
+    <meta name="description" content="Prime number It is a basic problem for CS students. The part aim  to give more intersiting solution. NO.1 According to Henry, he asks us to not print such as ‘for’,  ‘break’,‘continue’. Something only">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Perfect Number &amp; Prime Number">
 <meta property="og:url" content="http://example.com/2023/02/28/Stage1/Perfect%20Number%20&%20Prime%20Number/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Prime numberIt is a basic problem for CS students. The part aim  to give more intersiting solution. NO.1According to Henry, he asks us to not print such as ‘for’,  ‘break’,’continue’. Something only p">
+<meta property="og:description" content="Prime number It is a basic problem for CS students. The part aim  to give more intersiting solution. NO.1 According to Henry, he asks us to not print such as ‘for’,  ‘break’,‘continue’. Something only">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-28T13:59:29.000Z">
 <meta property="article:modified_time" content="2025-10-14T13:30:33.384Z">
@@ -334,23 +334,21 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Prime-number"><a href="#Prime-number" class="headerlink" title="Prime number"></a>Prime number</h1><p>It is a basic problem for CS students. The part aim  to give more intersiting solution.</p>
-<h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><p>According to Henry, he asks us to not print such as ‘for’,  ‘break’,’continue’. Something only python could be used. </p>
+                <h1>Prime number</h1>
+<p>It is a basic problem for CS students. The part aim  to give more intersiting solution.</p>
+<h2 id="NO-1">NO.1</h2>
+<p>According to Henry, he asks us to not print such as ‘for’,  ‘break’,‘continue’. Something only python could be used.</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_prime</span>(<span class="hljs-params">x</span>):<br>  <span class="hljs-keyword">if</span> x &lt;= <span class="hljs-number">1</span>:<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>  <span class="hljs-keyword">elif</span> x == <span class="hljs-number">2</span>:<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br>  <span class="hljs-keyword">elif</span> x % <span class="hljs-number">2</span> ==<span class="hljs-number">0</span>:<br>      <span class="hljs-keyword">return</span>  <span class="hljs-literal">False</span><br>  <span class="hljs-keyword">else</span>:<br>      i =<span class="hljs-number">3</span><br>      <span class="hljs-keyword">while</span> i * i &lt;= x:<br>          <span class="hljs-keyword">if</span> x % i == <span class="hljs-number">0</span>:<br>              <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>          i = i + <span class="hljs-number">2</span><br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
-
 <p>This is a code only use ‘if’ and ‘while’. Maybe i need to change ‘Ture’ or ‘False’ to ‘1’ and ‘0’.</p>
-<p>About the prime, as we as all kown, 1 is not a prime as the prime defination. All even number except 2 is not prime, because they could be int division by 2. So i only to search odd number. </p>
-<p>Let x divise i ,i always be an even, if there no x % i&#x3D;0</p>
+<p>About the prime, as we as all kown, 1 is not a prime as the prime defination. All even number except 2 is not prime, because they could be int division by 2. So i only to search odd number.</p>
+<p>Let x divise i ,i always be an even, if there no x % i=0</p>
 <p>so, x must be a prime.</p>
-<p>For the condition of while. i only need to while to sqrt{x}. Those factors always show in double. Such as 28&#x3D;4*7 it has a factor smaller than sqrt{x}, at the same the another is greater than sqrt{x}. So i only to identify a aspect between smaller and greater.</p>
-<h1 id="Perfect-number"><a href="#Perfect-number" class="headerlink" title="Perfect number"></a>Perfect number</h1><h2 id="NO-1-1"><a href="#NO-1-1" class="headerlink" title="NO.1"></a>NO.1</h2><p>Perfect number is a positive integer whose sum of its proper divisiors is equal to one.</p>
-<p>Example 1+2+3&#x3D;6. The 6 is a perfect number.</p>
+<p>For the condition of while. i only need to while to sqrt{x}. Those factors always show in double. Such as 28=4*7 it has a factor smaller than sqrt{x}, at the same the another is greater than sqrt{x}. So i only to identify a aspect between smaller and greater.</p>
+<h1>Perfect number</h1>
+<h2 id="NO-1-2">NO.1</h2>
+<p>Perfect number is a positive integer whose sum of its proper divisiors is equal to one.</p>
+<p>Example 1+2+3=6. The 6 is a perfect number.</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_perfect</span>(<span class="hljs-params">x</span>):<br>    <span class="hljs-built_in">sum</span> = <span class="hljs-number">1</span><br>    i = <span class="hljs-number">2</span><br>    <span class="hljs-keyword">while</span> i &lt; x:<br>        <span class="hljs-keyword">if</span> x % i == <span class="hljs-number">0</span>:<br>            <span class="hljs-built_in">sum</span> = <span class="hljs-built_in">sum</span> + i<br>        i = i + <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">sum</span> == x:<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br></code></pre></td></tr></table></figure>
-
-
-
-
-
 <p>未完待续</p>
 
                 

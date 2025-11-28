@@ -18,12 +18,12 @@
   <meta name="author" content="Mrle">
   <meta name="keywords" content="">
   
-    <meta name="description" content="2025 Soochow University预推免机试复盘 批次：第一批下午场(8&#x2F;30 13-16) 语言：python 不用外部库，尽量用最基础的包 格式类似leetcode的关键函数格式，但是不能实时判断是否解答题目，需要自己编写测试用例。最后提交一个py文件。  1. 日期是否合法✅ 注意判断闰年的方式：(y % 400 &#x3D;&#x3D; 0) or (y % 4 &#x3D;&#x3D; 0 and y %">
+    <meta name="description" content="2025 Soochow University预推免机试复盘  批次：第一批下午场(8&#x2F;30 13-16) 语言：python 不用外部库，尽量用最基础的包 格式类似leetcode的关键函数格式，但是不能实时判断是否解答题目，需要自己编写测试用例。最后提交一个py文件。  1. 日期是否合法 ✅ 注意判断闰年的方式：(y % 400 &#x3D;&#x3D; 0) or (y % 4 &#x3D;&#x3D; 0 and y % 10">
 <meta property="og:type" content="article">
 <meta property="og:title" content="苏大CS预推免机试复盘">
 <meta property="og:url" content="http://example.com/2025/08/30/%E6%8E%A8%E5%85%8D%E8%AE%B0%E5%BD%95/2025-Soochow-University%E9%A2%84%E6%8E%A8%E5%85%8D%E6%9C%BA%E8%AF%95%E5%A4%8D%E7%9B%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="2025 Soochow University预推免机试复盘 批次：第一批下午场(8&#x2F;30 13-16) 语言：python 不用外部库，尽量用最基础的包 格式类似leetcode的关键函数格式，但是不能实时判断是否解答题目，需要自己编写测试用例。最后提交一个py文件。  1. 日期是否合法✅ 注意判断闰年的方式：(y % 400 &#x3D;&#x3D; 0) or (y % 4 &#x3D;&#x3D; 0 and y %">
+<meta property="og:description" content="2025 Soochow University预推免机试复盘  批次：第一批下午场(8&#x2F;30 13-16) 语言：python 不用外部库，尽量用最基础的包 格式类似leetcode的关键函数格式，但是不能实时判断是否解答题目，需要自己编写测试用例。最后提交一个py文件。  1. 日期是否合法 ✅ 注意判断闰年的方式：(y % 400 &#x3D;&#x3D; 0) or (y % 4 &#x3D;&#x3D; 0 and y % 10">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-30T14:53:31.000Z">
 <meta property="article:modified_time" content="2025-10-14T13:24:18.763Z">
@@ -334,49 +334,55 @@
             
               <div class="markdown-body">
                 
-                <h1 id="2025-Soochow-University预推免机试复盘"><a href="#2025-Soochow-University预推免机试复盘" class="headerlink" title="2025 Soochow University预推免机试复盘"></a>2025 <strong>Soochow University</strong>预推免机试复盘</h1><blockquote>
-<p>批次：第一批下午场(8&#x2F;30 13-16)</p>
+                <h1>2025 <strong>Soochow University</strong>预推免机试复盘</h1>
+<blockquote>
+<p>批次：第一批下午场(8/30 13-16)</p>
 <p>语言：python</p>
 <p>不用外部库，尽量用最基础的包</p>
 <p>格式类似leetcode的关键函数格式，但是不能实时判断是否解答题目，需要自己编写测试用例。最后提交一个py文件。</p>
 </blockquote>
-<h2 id="1-日期是否合法"><a href="#1-日期是否合法" class="headerlink" title="1. 日期是否合法"></a>1. 日期是否合法</h2><p>✅</p>
+<h2 id="1-日期是否合法">1. 日期是否合法</h2>
+<p>✅</p>
 <p>注意判断闰年的方式：<code>(y % 400 == 0) or (y % 4 == 0 and y % 100 != 0)</code></p>
-<h2 id="2-从仅含字母与数字的字符串中提取整数，求区间内的最小值与最大值"><a href="#2-从仅含字母与数字的字符串中提取整数，求区间内的最小值与最大值" class="headerlink" title="2.从仅含字母与数字的字符串中提取整数，求区间内的最小值与最大值"></a>2.从仅含字母与数字的字符串中提取整数，求区间内的最小值与最大值</h2><p>✅</p>
+<h2 id="2-从仅含字母与数字的字符串中提取整数，求区间内的最小值与最大值">2.从仅含字母与数字的字符串中提取整数，求区间内的最小值与最大值</h2>
+<p>✅</p>
 <p>给定字符串 <code>s</code>（只含 <code>[a-zA-Z0-9]</code>），以及闭区间 <code>[L, R]</code>。从 <code>s</code> 中提取所有<strong>连续数字</strong>形成的整数，筛出落在 <code>[L,R]</code> 的，输出它们的 <code>min</code> 和 <code>max</code>。</p>
-<h2 id="3-判断-num-是否为「不含重复数字的素数」"><a href="#3-判断-num-是否为「不含重复数字的素数」" class="headerlink" title="3. 判断 num 是否为「不含重复数字的素数」"></a>3. 判断 <code>num</code> 是否为「不含重复数字的素数」</h2><p><em>输入num &lt; 1e8</em></p>
+<h2 id="3-判断-num-是否为「不含重复数字的素数」">3. 判断 <code>num</code> 是否为「不含重复数字的素数」</h2>
+<p><em>输入num &lt; 1e8</em></p>
 <p>✅</p>
 <p>用<strong>试除法</strong>判断素数加速处理</p>
 <p><em>考试时，注意到题目中提到的数据量要求，但是没有想到取根号的技巧，仅使用了朴素的判断素数的方法，可能会导致超时</em></p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs maxima">def is_prime(<span class="hljs-built_in">num</span>):<br>	<span class="hljs-keyword">if</span> <span class="hljs-built_in">num</span> &lt; <span class="hljs-number">2</span>: <span class="hljs-built_in">return</span> False<br>	<span class="hljs-keyword">if</span> <span class="hljs-built_in">num</span> <span class="hljs-symbol">%</span> <span class="hljs-number">2</span>: <span class="hljs-built_in">return</span> <span class="hljs-built_in">num</span> == <span class="hljs-number">2</span><br>	r = int(math.<span class="hljs-built_in">isqrt</span>(<span class="hljs-built_in">num</span>))   # 取<span class="hljs-built_in">num</span>的平方根<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>, r + <span class="hljs-number">1</span>, <span class="hljs-number">2</span>):<br>		<span class="hljs-keyword">if</span> <span class="hljs-built_in">num</span> <span class="hljs-symbol">%</span> <span class="hljs-number">2</span> == <span class="hljs-number">0</span>: <br>			<span class="hljs-built_in">return</span> False<br>	<span class="hljs-built_in">return</span> True<br></code></pre></td></tr></table></figure>
-
 <p>判断是否有重复数字</p>
 <p><em>考试时知道应该用位掩码的方案，但是我不太会，就用了下面这个笨笨的方法，希望判卷不卡内存和时间</em>😭</p>
 <figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">def</span> <span class="hljs-function"><span class="hljs-title">distinct_digit</span>(<span class="hljs-variable">num</span>):</span><br><span class="hljs-function">	<span class="hljs-variable">s</span> = <span class="hljs-title">str</span>(<span class="hljs-variable">n</span>)</span><br>	<span class="hljs-variable">return</span> <span class="hljs-function"><span class="hljs-title">len</span>(<span class="hljs-variable">s</span>) == <span class="hljs-title">len</span>(<span class="hljs-title">set</span>(<span class="hljs-variable">s</span>))</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="4-给定整数数组-arr-和一个个位数-d-0-9-，找出所有中间位等于-d-的数，返回其中最大值。若无，输出-1"><a href="#4-给定整数数组-arr-和一个个位数-d-0-9-，找出所有中间位等于-d-的数，返回其中最大值。若无，输出-1" class="headerlink" title="4. 给定整数数组 arr 和一个个位数 d [0..9]，找出所有中间位等于 d 的数，返回其中最大值。若无，输出 -1"></a>4. 给定整数数组 <code>arr</code> 和一个<strong>个位数</strong> <code>d [0..9]</code>，找出所有<strong>中间位</strong>等于 <code>d</code> 的数，返回其中<strong>最大值</strong>。若无，输出 <code>-1</code></h2><p>✅</p>
+<h2 id="4-给定整数数组-arr-和一个个位数-d-0-9-，找出所有中间位等于-d-的数，返回其中最大值。若无，输出-1">4. 给定整数数组 <code>arr</code> 和一个<strong>个位数</strong> <code>d [0..9]</code>，找出所有<strong>中间位</strong>等于 <code>d</code> 的数，返回其中<strong>最大值</strong>。若无，输出 <code>-1</code></h2>
+<p>✅</p>
 <p><strong>奇数位数</strong>的数，其正中间那一位；偶数位数的数时偏左的那一位</p>
 <p>基础的一道双指针</p>
-<h2 id="5-过滤文件：后缀匹配-文件名回文（忽略大小写），返回第一个"><a href="#5-过滤文件：后缀匹配-文件名回文（忽略大小写），返回第一个" class="headerlink" title="5. 过滤文件：后缀匹配 + 文件名回文（忽略大小写），返回第一个"></a>5. 过滤文件：后缀匹配 + 文件名回文（忽略大小写），返回第一个</h2><p>✅</p>
+<h2 id="5-过滤文件：后缀匹配-文件名回文（忽略大小写），返回第一个">5. 过滤文件：后缀匹配 + 文件名回文（忽略大小写），返回第一个</h2>
+<p>✅</p>
 <p>（这个有点奇怪，测试样例中返回的是下标为1的数？？？？</p>
 <p>给定 <code>n</code> 个文件名和目标后缀（扩展名）<code>ext</code>，找出<strong>第一个</strong>满足：</p>
 <ul>
 <li>后缀为 <code>ext</code>（一般大小写不敏感）；</li>
 <li><strong>不含后缀</strong>的basename为<strong>回文</strong>（忽略大小写）</li>
 </ul>
-<h2 id="6-蛇形遍历矩阵（lc-498-Medium"><a href="#6-蛇形遍历矩阵（lc-498-Medium" class="headerlink" title="6. 蛇形遍历矩阵（lc 498 Medium)"></a>6. 蛇形遍历矩阵（lc 498 Medium)</h2><p>❌</p>
+<h2 id="6-蛇形遍历矩阵（lc-498-Medium">6. 蛇形遍历矩阵（lc 498 Medium)</h2>
+<p>❌</p>
 <p><em>这题遗憾，浪费了很多时间，没有做出来；</em></p>
-<h2 id="7-每-k-个结点一组反转链表-（lc-25-Hard"><a href="#7-每-k-个结点一组反转链表-（lc-25-Hard" class="headerlink" title="7. 每 k 个结点一组反转链表 （lc 25 Hard)"></a>7. 每 k 个结点一组反转链表 （lc 25 Hard)</h2><p>✅</p>
+<h2 id="7-每-k-个结点一组反转链表-（lc-25-Hard">7. 每 k 个结点一组反转链表 （lc 25 Hard)</h2>
+<p>✅</p>
 <p>给定单链表头指针和整数 <code>k</code>，将链表每 <code>k</code> 个结点一组翻转（不足 <code>k</code> 的尾部保持原样），返回新表头。</p>
-<h2 id="8-二叉树（不记得了-）"><a href="#8-二叉树（不记得了-）" class="headerlink" title="8. 二叉树（不记得了!）"></a>8. 二叉树（不记得了!）</h2><h2 id="9-乘积最大子数组-lc-152-Medium"><a href="#9-乘积最大子数组-lc-152-Medium" class="headerlink" title="9. 乘积最大子数组 (lc 152 Medium)"></a>9. 乘积最大子数组 (lc 152 Medium)</h2><p>❌</p>
+<h2 id="8-二叉树（不记得了-）">8. 二叉树（不记得了!）</h2>
+<h2 id="9-乘积最大子数组-lc-152-Medium">9. 乘积最大子数组 (lc 152 Medium)</h2>
+<p>❌</p>
 <p>没时间做了，又丢一题。</p>
-<h2 id="10-打家劫舍-lc-198-medium"><a href="#10-打家劫舍-lc-198-medium" class="headerlink" title="10. 打家劫舍 (lc 198 medium)"></a>10. 打家劫舍 (lc 198 medium)</h2><p>✅</p>
+<h2 id="10-打家劫舍-lc-198-medium">10. 打家劫舍 (lc 198 medium)</h2>
+<p>✅</p>
 <p>题目其实是决定让哪家捐钱，不抢钱</p>
 <p><em>有时间限制，我没时间想优化了，直接默写l</em></p>
 <figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs inform7">def rob(nums):<br>	n = len(nums)<br>	# dp<span class="hljs-comment">[i]</span>: 偷i间房子，收获的最大金额<br>	# dp<span class="hljs-comment">[i]</span> = max(dp<span class="hljs-comment">[i-1]</span>, dp<span class="hljs-comment">[i - 2]</span> + num<span class="hljs-comment">[i-1]</span>)     <br>	dp = <span class="hljs-comment">[0]</span> * (n + 1)<br>	dp<span class="hljs-comment">[0]</span> = 0     # 一间都不偷<br>	dp<span class="hljs-comment">[1]</span> = nums<span class="hljs-comment">[0]</span>  # 对于第一间，只有一个选择 -》 偷<br>	for i in range(2, n+1):<br>		dp<span class="hljs-comment">[i]</span> = max(dp<span class="hljs-comment">[i-1]</span>, dp<span class="hljs-comment">[i-2]</span> + nums<span class="hljs-comment">[i - 1]</span>)   #下标容易乱，注意一些<br>	return dp<span class="hljs-comment">[n]</span><br></code></pre></td></tr></table></figure>
-
 <p><strong>留个疑问，这个怎么做时间优化？还是说这个解法能过测试</strong></p>
 
                 

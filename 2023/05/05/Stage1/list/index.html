@@ -18,12 +18,12 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="选择排序动图解析 算法步骤首先在未排序序列中找到最小元素，存放到排序序列的起始位置。 再从剩余未排序元素中继续寻找最小元素，然后放到已排序序列的末尾。 重复第二步，直到所有元素均排序完毕 代码实现(By Lecture)123456789101112def selection_sort(given_list, length):    i &#x3D; 0    while i !&#x3D; length:">
+    <meta name="description" content="选择排序 动图解析  算法步骤 首先在未排序序列中找到最小元素，存放到排序序列的起始位置。 再从剩余未排序元素中继续寻找最小元素，然后放到已排序序列的末尾。 重复第二步，直到所有元素均排序完毕 代码实现(By Lecture) 123456789101112def selection_sort(given_list, length):    i &#x3D; 0    while i !&#x3D; length:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sorting  a list">
 <meta property="og:url" content="http://example.com/2023/05/05/Stage1/list/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="选择排序动图解析 算法步骤首先在未排序序列中找到最小元素，存放到排序序列的起始位置。 再从剩余未排序元素中继续寻找最小元素，然后放到已排序序列的末尾。 重复第二步，直到所有元素均排序完毕 代码实现(By Lecture)123456789101112def selection_sort(given_list, length):    i &#x3D; 0    while i !&#x3D; length:">
+<meta property="og:description" content="选择排序 动图解析  算法步骤 首先在未排序序列中找到最小元素，存放到排序序列的起始位置。 再从剩余未排序元素中继续寻找最小元素，然后放到已排序序列的末尾。 重复第二步，直到所有元素均排序完毕 代码实现(By Lecture) 123456789101112def selection_sort(given_list, length):    i &#x3D; 0    while i !&#x3D; length:">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/selectionSort.gif">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif">
@@ -337,19 +337,23 @@
             
               <div class="markdown-body">
                 
-                <h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><h2 id="动图解析"><a href="#动图解析" class="headerlink" title="动图解析"></a>动图解析</h2><p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/selectionSort.gif" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload></p>
-<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>首先在未排序序列中找到最小元素，存放到排序序列的起始位置。</p>
+                <h1>选择排序</h1>
+<h2 id="动图解析">动图解析</h2>
+<p><img src="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/selectionSort.gif" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt></p>
+<h2 id="算法步骤">算法步骤</h2>
+<p>首先在未排序序列中找到最小元素，存放到排序序列的起始位置。</p>
 <p>再从剩余未排序元素中继续寻找最小元素，然后放到已排序序列的末尾。</p>
 <p>重复第二步，直到所有元素均排序完毕</p>
-<h2 id="代码实现-By-Lecture"><a href="#代码实现-By-Lecture" class="headerlink" title="代码实现(By Lecture)"></a>代码实现(By Lecture)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">selection_sort</span>(<span class="hljs-params">given_list, length</span>):<br>    i = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> i != length:<br>        j = i<br>        min_index = i<br>        <span class="hljs-keyword">while</span> j != length :<br>            <span class="hljs-keyword">if</span> given_list[j] &lt; given_list[min_index]:<br>                min_index = j<br>            j = j +<span class="hljs-number">1</span><br>        swap(given_list, i, min_index)<br>        i = i + <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> given_list<br></code></pre></td></tr></table></figure>
-
-
-
-<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><h2 id="动图解析-1"><a href="#动图解析-1" class="headerlink" title="动图解析"></a>动图解析</h2><p><img src="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="InsertionSort"></p>
-<h2 id="算法步骤-1"><a href="#算法步骤-1" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>将元素分为 <strong>已排序</strong> 和 <strong>未排序</strong> 两组</p>
+<h2 id="代码实现-By-Lecture">代码实现(By Lecture)</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">selection_sort</span>(<span class="hljs-params">given_list, length</span>):<br>    i = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> i != length:<br>        j = i<br>        min_index = i<br>        <span class="hljs-keyword">while</span> j != length :<br>            <span class="hljs-keyword">if</span> given_list[j] &lt; given_list[min_index]:<br>                min_index = j<br>            j = j +<span class="hljs-number">1</span><br>        swap(given_list, i, min_index)<br>        i = i + <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> given_list<br></code></pre></td></tr></table></figure>
+<h1>插入排序</h1>
+<h2 id="动图解析-2">动图解析</h2>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif" srcset="https://mrle-1316607909.cos.ap-hongkong.myqcloud.com/img/loading.gif" lazyload alt="InsertionSort"></p>
+<h2 id="算法步骤-2">算法步骤</h2>
+<p>将元素分为 <strong>已排序</strong> 和 <strong>未排序</strong> 两组</p>
 <p>扫描未排序数组，将其插入已排序数组的正确位置</p>
-<h2 id="代码实现（By-lecture"><a href="#代码实现（By-lecture" class="headerlink" title="代码实现（By lecture)"></a>代码实现（By lecture)</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">insertion_sort</span>(<span class="hljs-params">given_list, length</span>):<br>    i = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> i != length:<br>        j = i<br>        <span class="hljs-keyword">while</span> j != <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> given_list[j-<span class="hljs-number">1</span>] &gt; given_list[j]:<br>            swap(given_list, j, j-<span class="hljs-number">1</span>)<br>            j = j - <span class="hljs-number">1</span><br>        i = i + <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> given_list<br></code></pre></td></tr></table></figure>
-
+<h2 id="代码实现（By-lecture">代码实现（By lecture)</h2>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">insertion_sort</span>(<span class="hljs-params">given_list, length</span>):<br>    i = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> i != length:<br>        j = i<br>        <span class="hljs-keyword">while</span> j != <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> given_list[j-<span class="hljs-number">1</span>] &gt; given_list[j]:<br>            swap(given_list, j, j-<span class="hljs-number">1</span>)<br>            j = j - <span class="hljs-number">1</span><br>        i = i + <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> given_list<br></code></pre></td></tr></table></figure>
 
                 
               </div>
