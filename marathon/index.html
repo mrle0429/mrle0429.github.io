@@ -389,13 +389,13 @@
   
 
 
-<div id="echarts8914" style="width: 100%;height:420px;margin: 0 auto"></div>
+<div id="echarts2835" style="width: 100%;height:420px;margin: 0 auto"></div>
 <script src="https://unpkg.com/echarts@5.6.0/dist/echarts.min.js"></script>
 <script>
-  if (window.eChartecharts8914ResizeHandler) {
-    window.removeEventListener("resize", eChartecharts8914ResizeHandler);
+  if (window.eChartecharts2835ResizeHandler) {
+    window.removeEventListener("resize", eChartecharts2835ResizeHandler);
   }
-  var optionecharts8914 = {
+  var optionecharts2835 = {
   "title": { "text": "全马净成绩（越低越好）" },
   "tooltip": {
     "trigger": "axis",
@@ -529,12 +529,12 @@
 ]
 };
   if (window.echarts !== undefined) {
-    var eChartecharts8914 = echarts.init(document.getElementById('echarts8914'));
-    eChartecharts8914.setOption(optionecharts8914);
-    var eChartecharts8914ResizeHandler = function() {
-      eChartecharts8914.resize();
+    var eChartecharts2835 = echarts.init(document.getElementById('echarts2835'));
+    eChartecharts2835.setOption(optionecharts2835);
+    var eChartecharts2835ResizeHandler = function() {
+      eChartecharts2835.resize();
     };
-    window.addEventListener("resize", eChartecharts8914ResizeHandler);
+    window.addEventListener("resize", eChartecharts2835ResizeHandler);
   }
 </script>
 
