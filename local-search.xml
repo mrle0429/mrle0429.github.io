@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>为什么是Zotero</title>
+    <link href="/2026/03/21/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AFZotero/"/>
+    <url>/2026/03/21/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AFZotero/</url>
+    
+    <content type="html"><![CDATA[<h1><strong>为什么是Zotero</strong></h1><h2 id="来时路-绿色鲸鱼"><strong>来时路: 绿色鲸鱼</strong></h2><p>还记得刚开始读第一篇paper的时候：打开pdf，用有道划词翻译，觉得不错的句子就涂上高亮。看着满屏晦涩专业术语和五颜六色的标记，脑袋也变大。我当时就觉得这样肯定不行吧，一点也不想看。</p><p>后来，书中很多朋友推荐小绿鲸，下载安装打开一篇文献。</p><p><img src="https://markdown-macros-1316607909.cos.ap-beijing.myqcloud.com/images/%E6%88%AA%E5%B1%8F2026-03-20%2020.30.33.png" alt="截屏2026-03-20 20.30.33"></p><p>完美！翻译，AI问答，笔记… 基础功能完全够用，全文翻译，AI总结，AI问答有token限制。在阅读量不大的阶段，这对于当时的我已经绰绰有余。</p><p>尽管小绿鲸经常要登录，没有高级模型，高级功能还要会员，启动很慢。好在我当时的使用频率不高，影响很小。</p><p>直到2026年1月，当时我正在密集调研毕设的选题，我希望能够每天向我推送最新的和毕设主题相关的文章。<a href="https://github.com/TideDra/zotero-arxiv-daily">zotero-arxiv-daily</a>: 这个插件每天从zotero的最新提交中选取与我本地zotero仓库中高相关的文献，使用AI模型生成TLDR总结并发到我的邮箱。</p><p><img src="https://markdown-macros-1316607909.cos.ap-beijing.myqcloud.com/images/%E6%88%AA%E5%B1%8F2026-03-20%2022.29.33.png" alt="截屏2026-03-20 22.29.33"></p><p>借此契机，我就将文献阅读的工作流转移到了Zotero上。</p><p>接下来详细分享我的Zotero使用方式。</p><blockquote><p>我的背景</p><p>CS专业，英文文献，依赖AI模型辅助阅读，写Latex，bib引用</p></blockquote><h2 id="工作流"><strong>工作流</strong></h2><p>我不想罗列Zotero的功能清单，尽管那样会很干货。你可以直接查阅<a href="https://zotero-chinese.com/">Zotero中文社区</a> 这里会一步一步教你如何配置功能</p><p>我想以真实的场景，介绍我的实际使用场景，让你看看Zotero真的在帮我解决什么事情。</p><p>Part 1: 我要看哪些文章？</p><ul><li>Zotero-arxiv-daily每天发送10篇最新文章</li><li>文章的reference列表中的文章</li><li>公众号推荐的感兴趣的文章</li><li>老板的最新工作产出</li></ul><p>Part2: 如何将我要看的文章加入Zotero</p><p>配合浏览器扩展 Zotero Connector，只需在网页端轻轻一点，可以直接将文献导入Zotero中。告别手动下载文件和重命名文件的烦恼。</p><p><img src="https://markdown-macros-1316607909.cos.ap-beijing.myqcloud.com/images/%E6%88%AA%E5%B1%8F2026-03-20%2021.30.18.png" alt="截屏2026-03-20 21.30.18">截屏2026-03-20 21.30.18</p><p>点击Zotero Connector插件，文章就会自动保存到Zotero中啦。</p><p>Part3: 如何阅读在Zotero中的文献</p><p>关键的两个事情: AI总结和高质量翻译</p><p><a href="https://github.com/steven-jianhao-li/zotero-AI-Butler#readme">zotero-ai-butler</a>: Zotero AI 管家</p><p>功能及其强大，使用非常方便，需要自行配置API。我使用的文字模型是gemini-3-flash-preview，图形模型是gemini-3-pro-image-preview。如果你没有可用的API，推荐使用Openrouter购买多种模型的API。下面列出我经常使用的功能: 文章内容总结，一图总结文章，思维导图总结文章，AI对话问答。</p><p>AI管家总结</p><p><img src="https://markdown-macros-1316607909.cos.ap-beijing.myqcloud.com/images/%E6%88%AA%E5%B1%8F2026-03-20%2021.45.41.png" alt="截屏2026-03-20 21.45.41">截屏2026-03-20 21.45.41</p><p>AI一图总结文章</p><p><img src="https://markdown-macros-1316607909.cos.ap-beijing.myqcloud.com/images/image.jpg" alt="image">image</p><p>AI问答</p><p><img src="https://markdown-macros-1316607909.cos.ap-beijing.myqcloud.com/images/%E6%88%AA%E5%B1%8F2026-03-20%2021.55.40.png" alt="截屏2026-03-20 21.55.40">截屏2026-03-20 21.55.40</p><p><a href="https://github.com/guaguastandup/zotero-pdf2zh#readme">Zotero Pdf2zh</a>: 全文翻译软件</p><p><img src="https://markdown-macros-1316607909.cos.ap-beijing.myqcloud.com/images/%E6%88%AA%E5%B1%8F2026-03-20%2021.52.21.png" alt="截屏2026-03-20 21.52.21">截屏2026-03-20 21.52.21</p><p><a href="https://github.com/windingwind/zotero-pdf-translate#readme">zotero-pdf-translate</a>: 划词翻译</p><p>精读论文的时候少不了需要逐句翻译，这个翻译插件可以选择多种翻译引擎，我选择的是Gemini的翻译。</p><p>Part4: 如何记笔记</p><p><a href="https://github.com/windingwind/zotero-better-notes">Better Notes</a>: Everything about note management.这个笔记功能很强大，我还没有学会使用。</p><p>其实我还是偏爱使用Typora记一些轻量，简单的笔记。克制的使用工具，反而是效率最高的。</p><p>Part5: 引用文献</p><p><a href>Better bibtex</a>: 由于我使用latex, 使用这个插件可以直接导出bib格式，所以引用文献的事情对我很方便。</p><h2 id="尾声：最终是Zotero"><strong>尾声：最终是Zotero</strong></h2><p>Zotero的可玩性非常高，还有很多有意思的功能可以探索。</p><p>开源开放的底层架构，全球开发者共同维护的社区，无限可拓展功能的潜能，这可能是我选择Zotero的原因吧。</p><p>如果你也被抵消的文献阅读方式困扰，不妨花一个下午，配置一套属于你的Zotero工作流。</p><p><strong>工具本身不会替你读完论文，但一套合适的系统，会让你更愿意开始，也更容易坚持下去。</strong></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>软件使用推荐-Mac</title>
     <link href="/2026/01/11/softwareForMac/"/>
     <url>/2026/01/11/softwareForMac/</url>
@@ -653,17 +672,6 @@
   
   
   <entry>
-    <title>Mrle</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<h1>Hi, 我是刘乐</h1><p>欢迎来到 <strong>mrlepro</strong> —— 生活、学习被记录在此。</p><ul><li>Intrest：Recommendation &amp; AIGTD</li><li>Focus on：路跑、越野跑、骑行</li></ul><h1>关于这个博客</h1><p>mrlepro 在 2023 年 1 月 18 日诞生。</p><p>这个博客是使用 Hexo + GitHub Pages + 阿里云 搭建的。</p><hr><h1>最近在做的事情</h1><p>结束了长达三个月的实习，到明年9月入学，不会再安排一段固定的事情去做。我希望能用这段时间进行探索，学点新东西，多出去跑跑，多爬几座山…</p><p>放一个时间轴，随便记记</p><ul><li>2026.9 入学</li><li>2026.8</li><li>2026.7</li><li>2026.6</li><li>2026.5</li><li>2026.4</li><li>2025.3</li><li>2026.2  计划将跑步训练可视化的数据迁移到博客上</li></ul>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>分类</title>
     <link href="/"/>
     <url>/</url>
@@ -675,22 +683,11 @@
   
   
   <entry>
-    <title>运动记录</title>
+    <title>Mrle</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="markdown-body"><h2>运动热力图</h2><div class="run-heatmap" data-title="Running Heatmap" data-manifest-url="https://cdn.jsdelivr.net/gh/mrle0429/running_page@master/assets/github_manifest.json"></div><h2>路线地图</h2><iframe src="https://run.mrlepro.com/widget-route-map?year=auto" style="width:100%;height:620px;border:0;border-radius:12px;overflow:hidden;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><h2>成绩一览</h2><table>  <thead>    <tr>      <th style="text-align:right;">日期</th>      <th>赛事</th>      <th>城市</th>      <th style="text-align:center;">项目</th>      <th style="text-align:right;">净成绩</th>      <th style="text-align:right;">配速</th>    </tr>  </thead>  <tbody>      <tr>      <td style="text-align:right;">2024-04-14</td>      <td>2024雄安马拉松（半程）</td>      <td>雄安</td>      <td style="text-align:center;">HM</td>      <td style="text-align:right;">01:43:10</td>      <td style="text-align:right;">04:53/km</td>    </tr>      <tr>      <td style="text-align:right;">2024-05-12</td>      <td>2024秦皇岛马拉松</td>      <td>秦皇岛</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:53:25</td>      <td style="text-align:right;">05:32/km</td>    </tr>      <tr>      <td style="text-align:right;">2024-10-20</td>      <td>2024天津马拉松</td>      <td>天津</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:30:13</td>      <td style="text-align:right;">04:59/km</td>    </tr>      <tr>      <td style="text-align:right;">2024-11-03</td>      <td>2024北京马拉松</td>      <td>北京</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:30:18</td>      <td style="text-align:right;">04:59/km</td>    </tr>      <tr>      <td style="text-align:right;">2025-03-23</td>      <td>2025武汉马拉松</td>      <td>武汉</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:57:57</td>      <td style="text-align:right;">05:38/km</td>    </tr>      <tr>      <td style="text-align:right;">2025-10-26</td>      <td>2025成都马拉松</td>      <td>成都</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:44:09</td>      <td style="text-align:right;">05:18/km</td>    </tr>      <tr>      <td style="text-align:right;">2025-11-16</td>      <td>2025南京马拉松</td>      <td>南京</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:27:51</td>      <td style="text-align:right;">04:56/km</td>    </tr>    </tbody></table></div><hr><h2 id="全马净成绩趋势（Chip）">全马净成绩趋势（Chip）</h2>                                                        <div id="echarts7403" style="width: 100%;height:420px;margin: 0 auto"></div><script src="https://unpkg.com/echarts@5.6.0/dist/echarts.min.js"></script><script>  if (window.eChartecharts7403ResizeHandler) {    window.removeEventListener("resize", eChartecharts7403ResizeHandler);  }  var optionecharts7403 = {  "title": { "text": "全马净成绩（越低越好）" },  "tooltip": {    "trigger": "axis",    "valueFormatter": function (s) {      var h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = Math.round(s%60);      var pad = function(x){ return x<10?('0'+x):(''+x); };      return (h>0? pad(h)+':' : '') + pad(m) + ':' + pad(sec);    }  },  "grid": { "left": "3%", "right": "4%", "bottom": "12%", "containLabel": true },  "xAxis": {    "type": "category",    "data": [                                            "2024秦皇岛马拉松"                                ,"2024天津马拉松"                                ,"2024北京马拉松"                                ,"2025武汉马拉松"                                ,"2025成都马拉松"                                ,"2025南京马拉松"                  ],    "axisLabel": { "interval": 0, "rotate": 12 }  },  "yAxis": {    "type": "value",    "name": "净成绩",    "min": 7200,          // 不显示2小时以下    "axisLabel": {      "formatter": function (s) {        var h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = Math.round(s%60);        var pad = function(x){ return x<10?('0'+x):(''+x); };        return (h>0? pad(h)+':' : '') + pad(m) + ':' + pad(sec);      }    }  },  "series": [  {    "type": "line",    "smooth": true,    "showSymbol": true,    "symbolSize": 10,                 // 常规点大小    "lineStyle": { "width": 3 },      // 线条加粗    "data": [                                                        {              "value": 14005,              "label": { "show": true, "position": "top", "formatter": "03:53:25" }            }                                                      ,{              "value": 12613,              "label": { "show": true, "position": "top", "formatter": "03:30:13" }            }                                                      ,{              "value": 12618,              "label": { "show": true, "position": "top", "formatter": "03:30:18" }            }                                                      ,{              "value": 14277,              "label": { "show": true, "position": "top", "formatter": "03:57:57" }            }                                                      ,{              "value": 13449,              "label": { "show": true, "position": "top", "formatter": "03:44:09" }            }                                                      ,{              "value": 12471,              "label": { "show": true, "position": "top", "fontWeight": "bold", "formatter": "⭐ 03:27:51" },              "itemStyle": { "color": "#d97706" },     // PB 点颜色（可调）              "symbolSize": 16,                        // PB 点更大              "z": 10            }                            ]  }]};  if (window.echarts !== undefined) {    var eChartecharts7403 = echarts.init(document.getElementById('echarts7403'));    eChartecharts7403.setOption(optionecharts7403);    var eChartecharts7403ResizeHandler = function() {      eChartecharts7403.resize();    };    window.addEventListener("resize", eChartecharts7403ResizeHandler);  }</script>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>标签</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1>Hi, 我是刘乐</h1><p>欢迎来到 <strong>mrlepro</strong> —— 生活、学习被记录在此。</p><ul><li>Intrest：Recommendation &amp; AIGTD</li><li>Focus on：路跑、越野跑、骑行</li></ul><h1>关于这个博客</h1><p>mrlepro 在 2023 年 1 月 18 日诞生。</p><p>这个博客是使用 Hexo + GitHub Pages + 阿里云 搭建的。</p><hr><h1>最近在做的事情</h1><p>结束了长达三个月的实习，到明年9月入学，不会再安排一段固定的事情去做。我希望能用这段时间进行探索，学点新东西，多出去跑跑，多爬几座山…</p><p>放一个时间轴，随便记记</p><ul><li>2026.9 入学</li><li>2026.8</li><li>2026.7</li><li>2026.6</li><li>2026.5</li><li>2026.4</li><li>2025.3</li><li>2026.2  计划将跑步训练可视化的数据迁移到博客上</li></ul>]]></content>
     
   </entry>
   
@@ -701,7 +698,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* build time:Tue Feb 10 2026 21:03:29 GMT+0800 (中国标准时间)*/.run-heatmap{border:1px solid #e5e7eb;border-radius:12px;padding:16px;background:#fff;margin:12px 0 20px}.run-heatmap-title{font-size:18px;font-weight:700;margin-bottom:12px}.run-heatmap-years{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.run-heatmap-btn{border:1px solid #d1d5db;background:#fff;border-radius:8px;padding:4px 10px;cursor:pointer}.run-heatmap-btn.is-active{background:#111827;color:#fff;border-color:#111827}.run-heatmap-content{overflow-x:auto}.run-heatmap-content img,.run-heatmap-content svg{width:100%;height:auto;display:block}.run-heatmap-tip{margin-top:8px;font-size:12px;color:#6b7280}/* rebuild by neat */]]></content>
+    <content type="html"><![CDATA[/* build time:Sat Mar 21 2026 11:52:57 GMT+0800 (中国标准时间)*/.run-heatmap{border:1px solid #e5e7eb;border-radius:12px;padding:16px;background:#fff;margin:12px 0 20px}.run-heatmap-title{font-size:18px;font-weight:700;margin-bottom:12px}.run-heatmap-years{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.run-heatmap-btn{border:1px solid #d1d5db;background:#fff;border-radius:8px;padding:4px 10px;cursor:pointer}.run-heatmap-btn.is-active{background:#111827;color:#fff;border-color:#111827}.run-heatmap-content{overflow-x:auto}.run-heatmap-content img,.run-heatmap-content svg{width:100%;height:auto;display:block}.run-heatmap-tip{margin-top:8px;font-size:12px;color:#6b7280}/* rebuild by neat */]]></content>
     
   </entry>
   
@@ -719,11 +716,33 @@
   
   
   <entry>
+    <title>运动记录</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<div class="markdown-body"><h2>运动热力图</h2><div class="run-heatmap" data-title="Running Heatmap" data-manifest-url="https://cdn.jsdelivr.net/gh/mrle0429/running_page@master/assets/github_manifest.json"></div><h2>路线地图</h2><iframe src="https://run.mrlepro.com/widget-route-map?year=auto" style="width:100%;height:620px;border:0;border-radius:12px;overflow:hidden;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><h2>成绩一览</h2><table>  <thead>    <tr>      <th style="text-align:right;">日期</th>      <th>赛事</th>      <th>城市</th>      <th style="text-align:center;">项目</th>      <th style="text-align:right;">净成绩</th>      <th style="text-align:right;">配速</th>    </tr>  </thead>  <tbody>      <tr>      <td style="text-align:right;">2024-04-14</td>      <td>2024雄安马拉松（半程）</td>      <td>雄安</td>      <td style="text-align:center;">HM</td>      <td style="text-align:right;">01:43:10</td>      <td style="text-align:right;">04:53/km</td>    </tr>      <tr>      <td style="text-align:right;">2024-05-12</td>      <td>2024秦皇岛马拉松</td>      <td>秦皇岛</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:53:25</td>      <td style="text-align:right;">05:32/km</td>    </tr>      <tr>      <td style="text-align:right;">2024-10-20</td>      <td>2024天津马拉松</td>      <td>天津</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:30:13</td>      <td style="text-align:right;">04:59/km</td>    </tr>      <tr>      <td style="text-align:right;">2024-11-03</td>      <td>2024北京马拉松</td>      <td>北京</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:30:18</td>      <td style="text-align:right;">04:59/km</td>    </tr>      <tr>      <td style="text-align:right;">2025-03-23</td>      <td>2025武汉马拉松</td>      <td>武汉</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:57:57</td>      <td style="text-align:right;">05:38/km</td>    </tr>      <tr>      <td style="text-align:right;">2025-10-26</td>      <td>2025成都马拉松</td>      <td>成都</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:44:09</td>      <td style="text-align:right;">05:18/km</td>    </tr>      <tr>      <td style="text-align:right;">2025-11-16</td>      <td>2025南京马拉松</td>      <td>南京</td>      <td style="text-align:center;">FM</td>      <td style="text-align:right;">03:27:51</td>      <td style="text-align:right;">04:56/km</td>    </tr>    </tbody></table></div><hr><h2 id="全马净成绩趋势（Chip）">全马净成绩趋势（Chip）</h2>                                                        <div id="echarts238" style="width: 100%;height:420px;margin: 0 auto"></div><script src="https://unpkg.com/echarts@5.6.0/dist/echarts.min.js"></script><script>  if (window.eChartecharts238ResizeHandler) {    window.removeEventListener("resize", eChartecharts238ResizeHandler);  }  var optionecharts238 = {  "title": { "text": "全马净成绩（越低越好）" },  "tooltip": {    "trigger": "axis",    "valueFormatter": function (s) {      var h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = Math.round(s%60);      var pad = function(x){ return x<10?('0'+x):(''+x); };      return (h>0? pad(h)+':' : '') + pad(m) + ':' + pad(sec);    }  },  "grid": { "left": "3%", "right": "4%", "bottom": "12%", "containLabel": true },  "xAxis": {    "type": "category",    "data": [                                            "2024秦皇岛马拉松"                                ,"2024天津马拉松"                                ,"2024北京马拉松"                                ,"2025武汉马拉松"                                ,"2025成都马拉松"                                ,"2025南京马拉松"                  ],    "axisLabel": { "interval": 0, "rotate": 12 }  },  "yAxis": {    "type": "value",    "name": "净成绩",    "min": 7200,          // 不显示2小时以下    "axisLabel": {      "formatter": function (s) {        var h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = Math.round(s%60);        var pad = function(x){ return x<10?('0'+x):(''+x); };        return (h>0? pad(h)+':' : '') + pad(m) + ':' + pad(sec);      }    }  },  "series": [  {    "type": "line",    "smooth": true,    "showSymbol": true,    "symbolSize": 10,                 // 常规点大小    "lineStyle": { "width": 3 },      // 线条加粗    "data": [                                                        {              "value": 14005,              "label": { "show": true, "position": "top", "formatter": "03:53:25" }            }                                                      ,{              "value": 12613,              "label": { "show": true, "position": "top", "formatter": "03:30:13" }            }                                                      ,{              "value": 12618,              "label": { "show": true, "position": "top", "formatter": "03:30:18" }            }                                                      ,{              "value": 14277,              "label": { "show": true, "position": "top", "formatter": "03:57:57" }            }                                                      ,{              "value": 13449,              "label": { "show": true, "position": "top", "formatter": "03:44:09" }            }                                                      ,{              "value": 12471,              "label": { "show": true, "position": "top", "fontWeight": "bold", "formatter": "⭐ 03:27:51" },              "itemStyle": { "color": "#d97706" },     // PB 点颜色（可调）              "symbolSize": 16,                        // PB 点更大              "z": 10            }                            ]  }]};  if (window.echarts !== undefined) {    var eChartecharts238 = echarts.init(document.getElementById('echarts238'));    eChartecharts238.setOption(optionecharts238);    var eChartecharts238ResizeHandler = function() {      eChartecharts238.resize();    };    window.addEventListener("resize", eChartecharts238ResizeHandler);  }</script>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/"/>
     <url>/</url>
     
     <content type="html"><![CDATA[(function () {  var manifestUrl =    "https://cdn.jsdelivr.net/gh/mrle0429/running_page@master/assets/github_manifest.json";  function getBase(url) {    return url.replace(/\/[^/]*$/, "");  }  function prefetchUrl(url) {    // Hint for browser scheduler    var link = document.createElement("link");    link.rel = "prefetch";    link.href = url;    document.head.appendChild(link);    // Warm real cache for later page switch    fetch(url, { cache: "force-cache" }).catch(function () {});  }  function run() {    fetch(manifestUrl, { cache: "no-store" })      .then(function (res) {        if (!res.ok) throw new Error("manifest load failed");        return res.json();      })      .then(function (manifest) {        var files = manifest.files || {};        var defaultYear = String(manifest.default_year || "Total");        var years = Array.isArray(manifest.years) ? manifest.years : Object.keys(files);        var year = files[defaultYear] ? defaultYear : String(years[0] || "Total");        var file = files[year];        if (!file) return;        var version = manifest.version ? "?v=" + encodeURIComponent(manifest.version) : "";        var base = getBase(manifestUrl);        prefetchUrl(base + "/" + file + version);      })      .catch(function () {});  }  if ("requestIdleCallback" in window) {    requestIdleCallback(run, { timeout: 1500 });  } else {    setTimeout(run, 600);  }})();]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>标签</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[]]></content>
     
   </entry>
   
